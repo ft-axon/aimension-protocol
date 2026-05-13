@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <style>
+        /* Aggiunta stile per sezione Team */
+        .team-section { background: #0a0a0a; padding: 40px; border-radius: 8px; margin-top: 20px; border: 1px dashed #333; }
+        .tech-links { display: flex; gap: 15px; flex-wrap: wrap; margin-top: 20px; }
+        .btn-sm { font-family: var(--mono); font-size: 0.75rem; border: 1px solid var(--accent); padding: 5px 10px; border-radius: 4px; color: var(--accent); }
+    </style>
+
+    <script type="application/ld+json">
+    {
+      "@context": {
+        "@vocab": "https://schema.org/",
+        "wd": "https://www.wikidata.org/entity/",
+        "wdt": "https://www.wikidata.org/prop/direct/"
+      },
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://axonsystem.it/#org",
+          "name": "Axon System",
+          "url": "https://axonsystem.it",
+          "sameAs": ["https://www.wikidata.org/wiki/Q139766166", "https://github.com/francescotinti/aimension-protocol"],
+          "logo": "https://axonsystem.it/logo.png",
+          "founder": {"@id": "https://axonsystem.it/#tinti"}
+        },
+        {
+          "@type": "Person",
+          "@id": "https://axonsystem.it/#tinti",
+          "name": "Francesco Tinti",
+          "jobTitle": "AI Visibility Engineer",
+          "description": "Specialista in Entity Resolution e Semantic Triangulation.",
+          "sameAs": ["https://www.wikidata.org/wiki/Q139765600", "https://linkedin.com/in/francescotinti"],
+          "knowsAbout": ["Artificial Intelligence", "Knowledge Graphs", "LLM Optimization"],
+          "worksFor": {"@id": "https://axonsystem.it/#org"}
+        },
+        {
+          "@type": ["SoftwareApplication", "CreativeWork"],
+          "@id": "https://axonsystem.it/aimension#protocol",
+          "name": "AIMENSION™",
+          "sameAs": "https://www.wikidata.org/wiki/Q139783726",
+          "creator": {"@id": "https://axonsystem.it/#tinti"},
+          "publisher": {"@id": "https://axonsystem.it/#org"}
+        }
+      ]
+    }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <span class="label">Pillar III Active</span>
+            <h1>AIMENSION™</h1>
+            <p class="subtitle">Il primo protocollo italiano di <strong>AI Visibility Engineering</strong> per la protezione e il posizionamento dei brand nei Large Language Models.</p>
+        </header>
+
+        <section>
+            <h2>Il Metodo</h2>
+            <p>AIMENSION risolve il problema delle allucinazioni degli LLM creando una verità semantica verosimilmente verificabile attraverso tre livelli di validazione.</p>
+        </section>
+
+        <section class="team-section">
+            <h2>The Strategist</h2>
+            <div style="display: flex; gap: 20px; align-items: center; flex-wrap: wrap;">
+                <div>
+                    <h3 style="margin:0">Francesco Tinti</h3>
+                    <p style="color: var(--text-dim); margin: 5px 0;">Founder @ Axon System | AI Visibility Engineer</p>
+                    <p style="font-size: 0.9rem;">Specializzato nell'integrazione di grafi della conoscenza con architetture generative per garantire l'autorità algoritmica delle entità aziendali.</p>
+                    <div class="tech-links">
+                        <a href="https://www.wikidata.org/wiki/Q139765600" class="btn-sm">Wikidata Profile</a>
+                        <a href="https://github.com/francescotinti" class="btn-sm">GitHub Authority</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Open Specs & AI Readiness</h2>
+            <p>Il protocollo è pubblico e verificabile dalle macchine:</p>
+            <div class="tech-links">
+                <a href="./llms.txt" class="btn-sm">llms.txt (AI Instructions)</a>
+                <a href="https://github.com/francescotinti/aimension-protocol/blob/main/README.md" class="btn-sm">Technical README</a>
+                <a href="https://www.wikidata.org/wiki/Q139783726" class="btn-sm">Entity Ground Truth (Q139783726)</a>
+            </div>
+        </section>
+
+        <footer>
+            <p>Axon System &copy; 2026 | Definendo i confini della visibilità algoritmica.</p>
+        </footer>
+    </div>
+</body>
+</html>
