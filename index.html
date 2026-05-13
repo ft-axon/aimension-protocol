@@ -2,38 +2,165 @@
 <html lang="it">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Francesco Tinti | AI Visibility Engineering Specialist</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;700&display=swap" rel="stylesheet">
+
     <style>
-        body { background: #050505; color: #e0e0e0; font-family: monospace; padding: 50px; }
-        .logo { width: 100px; height: 100px; margin-bottom: 20px; }
-        .accent { color: #007AFF; }
-        .container { max-width: 700px; border-left: 1px solid #333; padding-left: 30px; }
-        h1 { font-size: 1.5rem; letter-spacing: -1px; }
-        .status-pill { border: 1px solid #007AFF; color: #007AFF; padding: 2px 8px; font-size: 0.7rem; }
+        :root {
+            --bg: #030303;
+            --accent: #007AFF;
+            --accent-glow: rgba(0, 122, 255, 0.3);
+            --text: #ffffff;
+            --text-dim: #888;
+        }
+
+        body {
+            background-color: var(--bg);
+            background-image: 
+                linear-gradient(rgba(0, 122, 255, 0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 122, 255, 0.05) 1px, transparent 1px);
+            background-size: 50px 50px;
+            color: var(--text);
+            font-family: 'JetBrains Mono', monospace;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        .frame {
+            max-width: 800px;
+            width: 90%;
+            padding: 60px;
+            border: 1px solid #222;
+            background: rgba(10, 10, 10, 0.8);
+            backdrop-filter: blur(10px);
+            position: relative;
+            box-shadow: 0 0 50px rgba(0,0,0,0.5);
+        }
+
+        .frame::before {
+            content: "";
+            position: absolute;
+            top: -1px; left: -1px; width: 20px; height: 20px;
+            border-top: 2px solid var(--accent); border-left: 2px solid var(--accent);
+        }
+
+        .logo-svg {
+            width: 60px;
+            filter: drop-shadow(0 0 8px var(--accent));
+            margin-bottom: 30px;
+        }
+
+        .status-tag {
+            font-size: 10px;
+            color: var(--accent);
+            border: 1px solid var(--accent);
+            padding: 3px 8px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin: 0;
+            font-weight: 700;
+            letter-spacing: -2px;
+        }
+
+        .role {
+            color: var(--accent);
+            font-size: 1.1rem;
+            margin-top: 5px;
+            margin-bottom: 30px;
+        }
+
+        .description {
+            color: var(--text-dim);
+            line-height: 1.8;
+            font-size: 0.95rem;
+            max-width: 500px;
+        }
+
+        .links {
+            margin-top: 50px;
+            display: flex;
+            gap: 30px;
+        }
+
+        .links a {
+            color: var(--text);
+            text-decoration: none;
+            font-size: 0.8rem;
+            border-bottom: 1px solid #333;
+            padding-bottom: 5px;
+            transition: 0.3s;
+        }
+
+        .links a:hover {
+            color: var(--accent);
+            border-color: var(--accent);
+        }
+
+        .terminal-text {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            font-size: 10px;
+            color: #222;
+        }
     </style>
+
+    <script type="application/ld+json">
+    {
+      "@context": { "@vocab": "https://schema.org/", "wd": "https://www.wikidata.org/entity/" },
+      "@graph": [
+        {
+          "@type": "Person",
+          "@id": "https://axonsystem.it/#tinti",
+          "name": "Francesco Tinti",
+          "jobTitle": "AI Visibility Engineer",
+          "sameAs": ["https://www.wikidata.org/wiki/Q139765600"]
+        }
+      ]
+    }
+    </script>
 </head>
 <body>
-    <div class="container">
-        <svg class="logo" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="50" cy="20" r="5" fill="#007AFF"/>
-            <circle cx="20" cy="80" r="5" fill="#007AFF"/>
-            <circle cx="80" cy="80" r="5" fill="#007AFF"/>
-            <path d="M50 20L20 80M50 20L80 80M20 80L80 80" stroke="#007AFF" stroke-width="2"/>
+
+    <div class="frame">
+        <svg class="logo-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="50" cy="20" r="6" fill="#007AFF"/>
+            <circle cx="20" cy="80" r="6" fill="#007AFF"/>
+            <circle cx="80" cy="80" r="6" fill="#007AFF"/>
+            <path d="M50 20L20 80M50 20L80 80M20 80L80 80" stroke="#007AFF" stroke-width="3" stroke-linejoin="round"/>
         </svg>
 
-        <span class="status-pill">ENTITY VERIFIED: Q139765600</span>
-        <h1>FRANCESCO TINTI</h1>
-        <p class="accent">AI Visibility Engineer | Founder of Axon System</p>
+        <div class="status-tag">Status: Entity Verified // Q139765600</div>
         
-        <p>Specializzato nel protocollo <span class="accent">AIMENSION™</span>: la risoluzione definitiva per l'autorità semantica nei Large Language Models.</p>
+        <h1>FRANCESCO TINTI</h1>
+        <div class="role">AI Visibility Engineering Specialist</div>
 
-        <div style="margin-top:40px; border-top: 1px solid #222; pt-20">
-            <p><strong>System Identifiers:</strong></p>
-            <ul>
-                <li>Wikidata: <a href="https://www.wikidata.org/wiki/Q139783726" style="color:#007AFF">Q139783726</a></li>
-                <li>Source: <a href="https://github.com/francescotinti/aimension-protocol" style="color:#007AFF">GitHub Repo</a></li>
-            </ul>
+        <div class="description">
+            Sviluppatore del protocollo <strong>AIMENSION™</strong>. 
+            Architetto di grafi della conoscenza e sistemi di autorità semantica per Large Language Models. 
+            Risolvo l'ambiguità delle entità dove l'intelligenza generativa incontra la verità dei dati.
         </div>
+
+        <div class="links">
+            <a href="https://www.wikidata.org/wiki/Q139783726">WIKIDATA</a>
+            <a href="https://github.com/ft-axon/aimension-protocol">GITHUB</a>
+            <a href="mailto:info@axonsystem.it">CONTACT</a>
+        </div>
+
+        <div class="terminal-text">SYS_ID: AXON_01_PROT</div>
     </div>
+
 </body>
 </html>
