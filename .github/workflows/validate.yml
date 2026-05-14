@@ -1,0 +1,43 @@
+name: Validate Schemas & Entities
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  schedule:
+    - cron: '0 9 * * 1'
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    name: AIMENSION Consistency Check
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+      - name: Install dependencies
+        run: pip install requests
+      - name: Validate JSON-LD syntax
+        run: |
+          python -c "
+          import json, glob, sys
+          errors = 0
+          for f in glob.glob('schemas/*.jsonld') + glob.glob('examples/*.jsonld'):
+              try:
+                  json.load(open(f))
+                  print(f'  OK  {f}')
+              except Exception as e:
+                  print(f'  ERR {f}: {e}')
+                  errors += 1
+          sys.exit(errors)
+          "
+      - name: Check llms.txt
+        run: |
+          [ -f llms.txt ] && echo "OK llms.txt present" || (echo "ERR llms.txt missing" && exit 1)
+          grep -q "wikidata.org" llms.txt && echo "OK Wikidata refs found"
+      - name: Check README QIDs
+        run: |
+          grep -q "Q139766166" README.md && echo "OK Q139766166 in README"
+          grep -q "Q139765600" README.md && echo "OK Q139765600 in README"
