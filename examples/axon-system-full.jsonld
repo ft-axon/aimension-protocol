@@ -43,9 +43,12 @@
       "dateCreated": "2025-01-01",
       "url": "https://axonsystem.net/aimension",
       "codeRepository": "https://github.com/ft-axon/aimension-protocol",
+      "sameAs": [
+        "https://www.wikidata.org/wiki/Q139783726",
+        "https://github.com/ft-axon/aimension-protocol"
+      ],
       "creator": { "@id": "https://axonsystem.net/#francescotinti" },
-      "publisher": { "@id": "https://axonsystem.net/#organization" },
-      "sameAs": "https://github.com/ft-axon/aimension-protocol"
+      "publisher": { "@id": "https://axonsystem.net/#organization" }
     },
     {
       "@type": "DefinedTermSet",
