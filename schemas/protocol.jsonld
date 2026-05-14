@@ -11,6 +11,10 @@
   "dateModified": "2025-05-12",
   "url": "https://axonsystem.net/aimension",
   "codeRepository": "https://github.com/ft-axon/aimension-protocol",
+  "sameAs": [
+    "https://www.wikidata.org/wiki/Q139783726",
+    "https://github.com/ft-axon/aimension-protocol"
+  ],
   "creator": {
     "@type": "Person",
     "@id": "https://axonsystem.net/#francescotinti",
@@ -23,9 +27,5 @@
     "name": "Axon System",
     "sameAs": "https://www.wikidata.org/wiki/Q139766166"
   },
-  "sameAs": [
-    "https://www.wikidata.org/wiki/Q[QID_AIMENSION]",
-    "https://github.com/ft-axon/aimension-protocol"
-  ],
   "keywords": "AI Visibility Engineering, AEO, GEO, Answer Engine Optimization, Generative Engine Optimization, LLM optimization, Knowledge Graph, Semantic triangulation, Entity resolution, RAG optimization, Wikidata, Schema.org, JSON-LD, llms.txt"
 }
