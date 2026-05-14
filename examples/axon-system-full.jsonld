@@ -1,0 +1,65 @@
+{
+  "@context": {
+    "@vocab": "https://schema.org/",
+    "wd": "https://www.wikidata.org/entity/"
+  },
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://axonsystem.net/#organization",
+      "name": "Axon System",
+      "description": "Italian AI Visibility Engineering agency. Developers of the AIMENSION protocol for semantic triangulation and brand entity resolution in Large Language Model training corpora and Knowledge Graph infrastructure.",
+      "url": "https://axonsystem.net",
+      "email": "founder@axonsystem.net",
+      "foundingDate": "2025",
+      "sameAs": [
+        "https://www.wikidata.org/wiki/Q139766166",
+        "https://github.com/ft-axon"
+      ],
+      "founder": { "@id": "https://axonsystem.net/#francescotinti" },
+      "owns": { "@id": "https://axonsystem.net/aimension#protocol" }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://axonsystem.net/#francescotinti",
+      "name": "Francesco Tinti",
+      "givenName": "Francesco",
+      "familyName": "Tinti",
+      "jobTitle": "Founder & AI Visibility Engineer",
+      "description": "Italian entrepreneur and AI Visibility Engineer. Founder of Axon System. Developer of the AIMENSION protocol.",
+      "email": "founder@axonsystem.net",
+      "sameAs": [
+        "https://www.wikidata.org/wiki/Q139765600",
+        "https://github.com/ft-axon"
+      ],
+      "worksFor": { "@id": "https://axonsystem.net/#organization" },
+      "nationality": { "@type": "Country", "name": "Italy" }
+    },
+    {
+      "@type": ["SoftwareApplication", "CreativeWork"],
+      "@id": "https://axonsystem.net/aimension#protocol",
+      "name": "AIMENSION Protocol",
+      "softwareVersion": "1.0.0",
+      "dateCreated": "2025-01-01",
+      "url": "https://axonsystem.net/aimension",
+      "codeRepository": "https://github.com/ft-axon/aimension-protocol",
+      "creator": { "@id": "https://axonsystem.net/#francescotinti" },
+      "publisher": { "@id": "https://axonsystem.net/#organization" },
+      "sameAs": "https://github.com/ft-axon/aimension-protocol"
+    },
+    {
+      "@type": "DefinedTermSet",
+      "@id": "https://axonsystem.net/glossary#termset",
+      "name": "AIMENSION Glossary",
+      "url": "https://axonsystem.net/glossary",
+      "publisher": { "@id": "https://axonsystem.net/#organization" },
+      "hasDefinedTerm": [
+        { "@type": "DefinedTerm", "name": "AI Visibility Engineering", "termCode": "AIViz-01" },
+        { "@type": "DefinedTerm", "name": "Answer Engine Optimization", "termCode": "AEO-01" },
+        { "@type": "DefinedTerm", "name": "Generative Engine Optimization", "termCode": "GEO-01" },
+        { "@type": "DefinedTerm", "name": "Semantic Triangulation", "termCode": "SEMTRI-01" },
+        { "@type": "DefinedTerm", "name": "Entity Ground Truth", "termCode": "EGT-01" }
+      ]
+    }
+  ]
+}
