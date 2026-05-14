@@ -1,0 +1,41 @@
+{
+  "@context": { "@vocab": "https://schema.org/" },
+  "@type": "Person",
+  "@id": "https://axonsystem.net/#francescotinti",
+  "name": "Francesco Tinti",
+  "givenName": "Francesco",
+  "familyName": "Tinti",
+  "jobTitle": "Founder & AI Visibility Engineer",
+  "description": "Italian entrepreneur and AI Visibility Engineer. Founder of Axon System. Developer of the AIMENSION protocol — a proprietary semantic triangulation methodology for enterprise brand positioning within Large Language Model systems and global Knowledge Graphs.",
+  "email": "founder@axonsystem.net",
+  "nationality": { "@type": "Country", "name": "Italy" },
+  "sameAs": [
+    "https://www.wikidata.org/wiki/Q139765600",
+    "https://github.com/ft-axon"
+  ],
+  "worksFor": {
+    "@type": "Organization",
+    "@id": "https://axonsystem.net/#organization",
+    "name": "Axon System",
+    "sameAs": "https://www.wikidata.org/wiki/Q139766166"
+  },
+  "hasCredential": [
+    { "@type": "EducationalOccupationalCredential", "name": "HubSpot Sales Certification", "recognizedBy": { "@type": "Organization", "name": "HubSpot" } },
+    { "@type": "EducationalOccupationalCredential", "name": "HubSpot Marketing Certification", "recognizedBy": { "@type": "Organization", "name": "HubSpot" } },
+    { "@type": "EducationalOccupationalCredential", "name": "UN Sustainable Finance Certification", "recognizedBy": { "@type": "Organization", "name": "United Nations" } }
+  ],
+  "knowsAbout": [
+    "AI Visibility Engineering",
+    "Answer Engine Optimization",
+    "Generative Engine Optimization",
+    "Semantic Web",
+    "Knowledge Graphs",
+    "Large Language Models",
+    "Entity resolution",
+    "Schema.org",
+    "JSON-LD",
+    "Wikidata",
+    "SPARQL",
+    "RAG optimization"
+  ]
+}
