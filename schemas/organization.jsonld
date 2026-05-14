@@ -1,0 +1,34 @@
+{
+  "@context": {
+    "@vocab": "https://schema.org/",
+    "wd": "https://www.wikidata.org/entity/"
+  },
+  "@type": "Organization",
+  "@id": "https://axonsystem.net/#organization",
+  "name": "Axon System",
+  "description": "Italian AI Visibility Engineering agency. Developers of the AIMENSION protocol for semantic triangulation and brand entity resolution in Large Language Model training corpora and Knowledge Graph infrastructure.",
+  "url": "https://axonsystem.net",
+  "email": "founder@axonsystem.net",
+  "foundingDate": "2025",
+  "areaServed": { "@type": "Country", "name": "Italy" },
+  "sameAs": [
+    "https://www.wikidata.org/wiki/Q139766166",
+    "https://github.com/ft-axon"
+  ],
+  "founder": {
+    "@type": "Person",
+    "@id": "https://axonsystem.net/#francescotinti",
+    "name": "Francesco Tinti",
+    "sameAs": "https://www.wikidata.org/wiki/Q139765600"
+  },
+  "knowsAbout": [
+    "AI Visibility Engineering",
+    "Answer Engine Optimization",
+    "Generative Engine Optimization",
+    "Knowledge Graph engineering",
+    "Semantic Web architecture",
+    "Entity resolution",
+    "RAG pipeline optimization",
+    "Wikidata entity management"
+  ]
+}
