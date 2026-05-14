@@ -1,166 +1,1634 @@
 <!DOCTYPE html>
-<html lang="it">
+<html lang="en" data-lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Francesco Tinti | AI Visibility Engineering Specialist</title>
-    
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;700&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <style>
-        :root {
-            --bg: #030303;
-            --accent: #007AFF;
-            --accent-glow: rgba(0, 122, 255, 0.3);
-            --text: #ffffff;
-            --text-dim: #888;
-        }
+<title>Axon System — AI Visibility Engineering & AIMENSION Protocol</title>
+<meta name="description" content="Axon System engineers AI visibility for enterprise brands. The AIMENSION Protocol — a proprietary semantic intelligence system that makes your brand the authoritative source of truth for every AI system, knowledge graph, and language model on earth. Founded by Francesco Tinti.">
+<meta name="keywords" content="AI Visibility Engineering, AIMENSION Protocol, Answer Engine Optimization, Generative Engine Optimization, AEO, GEO, LLM optimization, Knowledge Graph, entity resolution, Wikidata, Schema.org, JSON-LD, brand AI positioning, RAG optimization, enterprise AI, semantic intelligence, Francesco Tinti, Axon System">
+<meta name="author" content="Francesco Tinti — Axon System">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+<link rel="canonical" href="https://axonsystem.net/">
 
-        body {
-            background-color: var(--bg);
-            background-image: 
-                linear-gradient(rgba(0, 122, 255, 0.05) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(0, 122, 255, 0.05) 1px, transparent 1px);
-            background-size: 50px 50px;
-            color: var(--text);
-            font-family: 'JetBrains Mono', monospace;
-            margin: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            overflow-x: hidden;
-        }
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://axonsystem.net/">
+<meta property="og:title" content="Axon System — AI Visibility Engineering for Enterprise Brands">
+<meta property="og:description" content="We engineer the conditions under which AI systems cite, trust, and recommend your brand. The AIMENSION Protocol — semantic intelligence at enterprise scale.">
+<meta property="og:image" content="https://axonsystem.net/assets/og-image.png">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="it_IT">
+<meta property="og:site_name" content="Axon System">
 
-        .frame {
-            max-width: 800px;
-            width: 90%;
-            padding: 60px;
-            border: 1px solid #222;
-            background: rgba(10, 10, 10, 0.8);
-            backdrop-filter: blur(10px);
-            position: relative;
-            box-shadow: 0 0 50px rgba(0,0,0,0.5);
-        }
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Axon System — AI Visibility Engineering">
+<meta name="twitter:description" content="We engineer the conditions under which AI systems cite, trust, and recommend your brand.">
+<meta name="twitter:image" content="https://axonsystem.net/assets/og-image.png">
 
-        .frame::before {
-            content: "";
-            position: absolute;
-            top: -1px; left: -1px; width: 20px; height: 20px;
-            border-top: 2px solid var(--accent); border-left: 2px solid var(--accent);
-        }
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
 
-        .logo-svg {
-            width: 60px;
-            filter: drop-shadow(0 0 8px var(--accent));
-            margin-bottom: 30px;
-        }
-
-        .status-tag {
-            font-size: 10px;
-            color: var(--accent);
-            border: 1px solid var(--accent);
-            padding: 3px 8px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            display: inline-block;
-            margin-bottom: 20px;
-        }
-
-        h1 {
-            font-size: 2.5rem;
-            margin: 0;
-            font-weight: 700;
-            letter-spacing: -2px;
-        }
-
-        .role {
-            color: var(--accent);
-            font-size: 1.1rem;
-            margin-top: 5px;
-            margin-bottom: 30px;
-        }
-
-        .description {
-            color: var(--text-dim);
-            line-height: 1.8;
-            font-size: 0.95rem;
-            max-width: 500px;
-        }
-
-        .links {
-            margin-top: 50px;
-            display: flex;
-            gap: 30px;
-        }
-
-        .links a {
-            color: var(--text);
-            text-decoration: none;
-            font-size: 0.8rem;
-            border-bottom: 1px solid #333;
-            padding-bottom: 5px;
-            transition: 0.3s;
-        }
-
-        .links a:hover {
-            color: var(--accent);
-            border-color: var(--accent);
-        }
-
-        .terminal-text {
-            position: absolute;
-            bottom: 20px;
-            right: 20px;
-            font-size: 10px;
-            color: #222;
-        }
-    </style>
-
-    <script type="application/ld+json">
+<!-- ═══ STRUCTURED DATA — AIMENSION PILLAR III ═══ -->
+<script type="application/ld+json">
+{
+  "@context": {
+    "@vocab": "https://schema.org/",
+    "wd": "https://www.wikidata.org/entity/",
+    "wdt": "https://www.wikidata.org/prop/direct/"
+  },
+  "@graph": [
     {
-      "@context": { "@vocab": "https://schema.org/", "wd": "https://www.wikidata.org/entity/" },
-      "@graph": [
+      "@type": "Organization",
+      "@id": "https://axonsystem.net/#organization",
+      "name": "Axon System",
+      "description": "Italian AI Visibility Engineering agency. Developers of the AIMENSION protocol — a proprietary semantic intelligence system for establishing verifiable enterprise brand authority within Large Language Model training corpora, Knowledge Graph infrastructure, and RAG pipeline resolution systems.",
+      "url": "https://axonsystem.net",
+      "email": "founder@axonsystem.net",
+      "foundingDate": "2025",
+      "areaServed": "IT",
+      "sameAs": [
+        "https://www.wikidata.org/wiki/Q139766166",
+        "https://github.com/ft-axon"
+      ],
+      "founder": { "@id": "https://axonsystem.net/#francescotinti" },
+      "owns": { "@id": "https://axonsystem.net/aimension#protocol" },
+      "knowsAbout": [
+        "AI Visibility Engineering",
+        "Answer Engine Optimization",
+        "Generative Engine Optimization",
+        "Large Language Model optimization",
+        "Knowledge Graph engineering",
+        "Semantic Web architecture",
+        "Entity resolution",
+        "RAG pipeline optimization",
+        "Brand semantic authority",
+        "Wikidata entity management"
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "AIMENSION Services",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "AIMENSION Full Implementation",
+              "description": "End-to-end deployment of the three-pillar AIMENSION protocol for enterprise brands."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "AI Visibility Audit",
+              "description": "Complete diagnostic of enterprise brand presence across LLM systems, Knowledge Graphs, and RAG pipelines."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Semantic Architecture Design",
+              "description": "Custom Schema.org taxonomy and JSON-LD architecture for complex enterprise entity graphs."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Knowledge Graph Management",
+              "description": "Ongoing Wikidata entity maintenance, property completeness, and cross-source consistency for enterprise entities."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://axonsystem.net/#francescotinti",
+      "name": "Francesco Tinti",
+      "givenName": "Francesco",
+      "familyName": "Tinti",
+      "jobTitle": "Founder & AI Visibility Engineer",
+      "description": "Italian entrepreneur and AI Visibility Engineer. Founder of Axon System. Developer of the AIMENSION protocol — a proprietary semantic triangulation methodology for enterprise brand positioning within Large Language Model systems and global Knowledge Graphs.",
+      "email": "founder@axonsystem.net",
+      "sameAs": [
+        "https://www.wikidata.org/wiki/Q139765600",
+        "https://github.com/ft-axon"
+      ],
+      "worksFor": { "@id": "https://axonsystem.net/#organization" },
+      "nationality": { "@type": "Country", "name": "Italy" },
+      "hasCredential": [
+        { "@type": "EducationalOccupationalCredential", "name": "HubSpot Sales Certification" },
+        { "@type": "EducationalOccupationalCredential", "name": "HubSpot Marketing Certification" },
+        { "@type": "EducationalOccupationalCredential", "name": "UN Sustainable Finance Certification" }
+      ],
+      "knowsAbout": ["AI Visibility Engineering","Semantic Web","Knowledge Graphs","Large Language Models","Entity Resolution","Answer Engine Optimization","Generative Engine Optimization","Schema.org","JSON-LD","Wikidata","SPARQL","RAG optimization"]
+    },
+    {
+      "@type": ["SoftwareApplication", "CreativeWork"],
+      "@id": "https://axonsystem.net/aimension#protocol",
+      "name": "AIMENSION Protocol",
+      "alternateName": ["AIMENSION", "AIMENSION AI Visibility Protocol"],
+      "description": "A proprietary AI Visibility Engineering protocol developed by Francesco Tinti for Axon System. AIMENSION transforms enterprise brand identity into a verifiable Source of Truth for Large Language Models through mandatory semantic triangulation of Entity Ground Truth, Algorithmic Authority, and Semantic Injection. The protocol addresses Answer Engine Optimization and Generative Engine Optimization at enterprise scale.",
+      "applicationCategory": "Enterprise AI Marketing Technology",
+      "softwareVersion": "1.0.0",
+      "dateCreated": "2025-01-01",
+      "url": "https://axonsystem.net/aimension",
+      "codeRepository": "https://github.com/ft-axon/aimension-protocol",
+      "creator": { "@id": "https://axonsystem.net/#francescotinti" },
+      "publisher": { "@id": "https://axonsystem.net/#organization" },
+      "keywords": "AI Visibility Engineering, LLM optimization, Knowledge Graph, Semantic triangulation, Entity resolution, AEO, GEO, Answer Engine Optimization, Generative Engine Optimization, RAG optimization, Wikidata, Schema.org, JSON-LD"
+    },
+    {
+      "@type": "DefinedTermSet",
+      "@id": "https://axonsystem.net/glossary#termset",
+      "name": "AIMENSION Glossary",
+      "description": "Official terminology for the AIMENSION AI Visibility Engineering protocol by Axon System.",
+      "url": "https://axonsystem.net/glossary",
+      "publisher": { "@id": "https://axonsystem.net/#organization" },
+      "hasDefinedTerm": [
+        { "@type": "DefinedTerm", "name": "AI Visibility Engineering", "termCode": "AIViz-01", "description": "The discipline of optimizing brand entity representation across LLM training data, Knowledge Graphs, and semantic metadata to maximize citation probability in AI-generated responses." },
+        { "@type": "DefinedTerm", "name": "Semantic Triangulation", "termCode": "SEMTRI-01", "description": "Establishing entity authority through three mutually-reinforcing signals: Wikidata nodes, structured GitHub documentation, and Schema.org JSON-LD markup." },
+        { "@type": "DefinedTerm", "name": "Answer Engine Optimization", "termCode": "AEO-01", "description": "The practice of optimizing brand content and entity structure to appear as the authoritative answer in AI-generated responses from systems like ChatGPT, Gemini, and Claude." },
+        { "@type": "DefinedTerm", "name": "Generative Engine Optimization", "termCode": "GEO-01", "description": "Strategic optimization of brand signals to influence how generative AI models represent, describe, and recommend an entity in their outputs." },
+        { "@type": "DefinedTerm", "name": "Entity Ground Truth", "termCode": "EGT-01", "description": "A verified Wikidata node serving as the canonical reference point for LLM entity resolution and RAG pipeline disambiguation." }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://axonsystem.net/#faq",
+      "mainEntity": [
         {
-          "@type": "Person",
-          "@id": "https://axonsystem.it/#tinti",
-          "name": "Francesco Tinti",
-          "jobTitle": "AI Visibility Engineer",
-          "sameAs": ["https://www.wikidata.org/wiki/Q139765600"]
+          "@type": "Question",
+          "name": "What is AI Visibility Engineering?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "AI Visibility Engineering is the discipline of optimizing brand entity representation across Large Language Model training data, Knowledge Graphs, and semantic metadata layers to maximize citation probability and factual accuracy in AI-generated responses. It is the strategic evolution beyond traditional SEO into the era of generative AI."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the AIMENSION Protocol?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "AIMENSION is a proprietary three-pillar protocol developed by Francesco Tinti for Axon System. It systematically establishes enterprise brand authority across Wikidata Knowledge Graphs (Entity Ground Truth), structured GitHub documentation (Algorithmic Authority), and Schema.org JSON-LD markup (Semantic Injection). The result is a brand entity that AI systems cite reliably as an authoritative source."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is Answer Engine Optimization (AEO)?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Answer Engine Optimization (AEO) is the practice of structuring brand content, entity data, and semantic markup so that AI-powered answer engines — including ChatGPT, Google SGE, Perplexity, and Bing Copilot — select your brand as the authoritative source when users ask relevant questions."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is Generative Engine Optimization (GEO)?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Generative Engine Optimization (GEO) refers to the strategic optimization of brand entity signals to influence how generative AI language models represent, describe, and recommend a brand in their outputs. Unlike SEO, which targets search ranking algorithms, GEO targets the statistical patterns that LLMs learn from training corpora."
+          }
         }
       ]
     }
-    </script>
+  ]
+}
+</script>
+
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
+:root {
+  --cream: #FAF8F4;
+  --cream2: #F3F0E8;
+  --cream3: #E8E3D8;
+  --ink: #0D0C0A;
+  --ink2: #2A2720;
+  --ink3: #4A4640;
+  --mid: #7A7570;
+  --pale: #A09890;
+  --faint: rgba(13,12,10,0.06);
+  --faint2: rgba(13,12,10,0.12);
+  --gold: #B8975A;
+  --gold2: #D4AF6E;
+  --gold-bg: rgba(184,151,90,0.08);
+  --serif: 'Cormorant Garamond', Georgia, serif;
+  --sans: 'DM Sans', system-ui, sans-serif;
+  --mono: 'DM Mono', monospace;
+  --trans: all 0.4s cubic-bezier(0.4,0,0.2,1);
+  --max: 1200px;
+}
+
+html { scroll-behavior: smooth; font-size: 16px; }
+
+body {
+  background: var(--cream);
+  color: var(--ink);
+  font-family: var(--sans);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* subtle grain */
+body::after {
+  content:'';
+  position:fixed;
+  inset:0;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.025'/%3E%3C/svg%3E");
+  pointer-events:none;
+  z-index:9999;
+  opacity:.5;
+}
+
+/* ── TYPOGRAPHY ── */
+.serif { font-family: var(--serif); }
+.mono  { font-family: var(--mono); }
+
+/* ── LAYOUT ── */
+.wrap { max-width: var(--max); margin: 0 auto; padding: 0 48px; }
+@media(max-width:700px){ .wrap{ padding:0 24px; } }
+
+/* ── HORIZONTAL RULES ── */
+hr { border:none; border-top: 1px solid var(--faint2); margin: 0; }
+
+/* ── NAV ── */
+nav {
+  position: fixed; top:0; left:0; right:0; z-index:200;
+  background: rgba(250,248,244,0.92);
+  backdrop-filter: blur(24px);
+  border-bottom: 1px solid var(--faint2);
+}
+.nav-inner {
+  display:flex; align-items:center; justify-content:space-between;
+  height: 68px; max-width: var(--max); margin:0 auto; padding:0 48px;
+}
+@media(max-width:700px){ .nav-inner{ padding:0 24px; } }
+
+.nav-wordmark {
+  font-family: var(--serif);
+  font-size: 1.15rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink);
+  text-decoration:none;
+}
+.nav-wordmark em { font-style:normal; color: var(--gold); }
+
+.nav-center {
+  display:flex; gap:36px;
+}
+@media(max-width:900px){ .nav-center{ display:none; } }
+
+.nav-center a {
+  font-size: 12px; letter-spacing: 0.08em; text-transform:uppercase;
+  color: var(--mid); text-decoration:none; transition: var(--trans);
+  font-weight:500;
+}
+.nav-center a:hover { color: var(--ink); }
+
+.nav-right { display:flex; align-items:center; gap:16px; }
+
+.lang-sw {
+  display:flex; background: var(--cream2); border:1px solid var(--faint2);
+  border-radius:3px; overflow:hidden;
+}
+.lang-sw button {
+  font-family: var(--mono); font-size:10px; letter-spacing:.1em;
+  padding:5px 11px; border:none; background:transparent;
+  color:var(--pale); cursor:pointer; transition:var(--trans);
+}
+.lang-sw button.on { background:var(--ink); color:var(--cream); }
+
+.nav-cta {
+  font-family:var(--sans); font-size:12px; font-weight:500;
+  letter-spacing:.06em; text-transform:uppercase;
+  background:var(--ink); color:var(--cream);
+  padding:10px 22px; border-radius:3px; text-decoration:none;
+  transition:var(--trans);
+}
+.nav-cta:hover { background: var(--ink2); }
+@media(max-width:600px){ .nav-cta{ display:none; } }
+
+/* ── SECTION LABEL ── */
+.eyebrow {
+  font-family:var(--mono); font-size:10px; letter-spacing:.2em;
+  text-transform:uppercase; color:var(--gold);
+  display:flex; align-items:center; gap:12px;
+  margin-bottom:28px;
+}
+.eyebrow::before {
+  content:''; display:block; width:32px; height:1px; background:var(--gold);
+}
+
+/* ── HERO ── */
+.hero {
+  padding: 180px 0 120px;
+  position:relative; overflow:hidden;
+}
+
+.hero-grid {
+  display:grid; grid-template-columns:1fr 1fr;
+  gap:80px; align-items:end;
+}
+@media(max-width:900px){ .hero-grid{ grid-template-columns:1fr; gap:48px; } }
+
+.hero-headline {
+  font-family: var(--serif);
+  font-size: clamp(3.2rem, 6vw, 6rem);
+  font-weight: 300;
+  line-height: 1.0;
+  letter-spacing: -0.01em;
+}
+.hero-headline strong {
+  font-weight:600; display:block;
+}
+.hero-headline em {
+  font-style:italic; color:var(--gold);
+}
+
+.hero-right {}
+
+.hero-statement {
+  font-size: 1.05rem; color:var(--ink3); line-height:1.8;
+  border-left:2px solid var(--gold); padding-left:24px;
+  margin-bottom:40px;
+}
+
+.hero-metrics {
+  display:grid; grid-template-columns:1fr 1fr;
+  gap:1px; background:var(--faint2);
+  border:1px solid var(--faint2); margin-bottom:40px;
+}
+.metric {
+  background:var(--cream); padding:24px 28px;
+}
+.metric-n {
+  font-family:var(--serif); font-size:2.4rem; font-weight:500;
+  line-height:1; letter-spacing:-.02em; color:var(--ink);
+}
+.metric-n sup { font-size:.9rem; color:var(--gold); }
+.metric-l {
+  font-family:var(--mono); font-size:9px; letter-spacing:.15em;
+  text-transform:uppercase; color:var(--pale); margin-top:6px;
+}
+
+.hero-actions { display:flex; gap:16px; flex-wrap:wrap; }
+
+.btn-dark {
+  font-size:12px; font-weight:500; letter-spacing:.08em; text-transform:uppercase;
+  background:var(--ink); color:var(--cream);
+  padding:14px 32px; border-radius:3px; text-decoration:none;
+  transition:var(--trans); display:inline-block;
+}
+.btn-dark:hover { background:var(--gold); color:var(--cream); }
+
+.btn-line {
+  font-size:12px; font-weight:500; letter-spacing:.08em; text-transform:uppercase;
+  background:transparent; color:var(--ink);
+  padding:14px 32px; border-radius:3px; text-decoration:none;
+  border:1px solid var(--faint2); transition:var(--trans); display:inline-block;
+}
+.btn-line:hover { border-color: var(--ink3); }
+
+/* decorative line */
+.hero-deco {
+  position:absolute; right:0; top:15%; width:45%;
+  height:70%; pointer-events:none; opacity:0.04; overflow:hidden;
+}
+.hero-deco svg { width:100%; height:100%; }
+
+/* ── MARQUEE ── */
+.marquee-wrap {
+  background:var(--ink); color:var(--cream2);
+  padding:18px 0; overflow:hidden; position:relative;
+}
+.marquee-track {
+  display:flex; gap:0; animation:marquee 30s linear infinite;
+  white-space:nowrap;
+}
+.marquee-item {
+  font-family:var(--serif); font-style:italic; font-size:1.1rem;
+  padding:0 40px; color:var(--cream2); opacity:.7;
+  flex-shrink:0;
+}
+.marquee-item span { color:var(--gold); font-style:normal; opacity:1; }
+@keyframes marquee { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
+
+/* ── INTRO SECTION ── */
+.intro { padding:120px 0; }
+.intro-grid { display:grid; grid-template-columns:5fr 7fr; gap:100px; align-items:start; }
+@media(max-width:900px){ .intro-grid{ grid-template-columns:1fr; gap:48px; } }
+
+.intro-label {
+  font-family:var(--mono); font-size:10px; letter-spacing:.18em;
+  text-transform:uppercase; color:var(--pale);
+  writing-mode:vertical-rl; transform:rotate(180deg);
+  align-self:stretch; justify-self:end;
+}
+@media(max-width:900px){ .intro-label{ writing-mode:horizontal-tb; transform:none; justify-self:start; } }
+
+.intro-text {
+  font-family:var(--serif); font-size:clamp(1.5rem,2.5vw,2.1rem);
+  font-weight:300; line-height:1.5; color:var(--ink);
+}
+.intro-text em { font-style:italic; color:var(--gold); }
+.intro-text strong { font-weight:600; }
+
+.intro-body { padding-top:8px; }
+.intro-body p {
+  font-size:.95rem; color:var(--ink3); line-height:1.8;
+  margin-bottom:20px;
+}
+.intro-body p strong { color:var(--ink); font-weight:500; }
+
+/* ── WHAT WE DO — SERVICES ── */
+.services { padding:120px 0; background:var(--ink); color:var(--cream); }
+.services .eyebrow { color:var(--gold2); }
+.services .eyebrow::before { background:var(--gold2); }
+
+.services-headline {
+  font-family:var(--serif); font-size:clamp(2.4rem,4vw,4rem);
+  font-weight:300; line-height:1.1; letter-spacing:-.01em;
+  color:var(--cream); margin-bottom:80px; max-width:700px;
+}
+.services-headline em { font-style:italic; color:var(--gold2); }
+
+.services-grid { display:grid; grid-template-columns:1fr 1fr; gap:1px; background:rgba(255,255,255,.08); }
+@media(max-width:700px){ .services-grid{ grid-template-columns:1fr; } }
+
+.service-item {
+  background:var(--ink); padding:48px 44px;
+  transition:var(--trans); position:relative; overflow:hidden;
+  cursor:default;
+}
+.service-item::after {
+  content:''; position:absolute; bottom:0; left:0; right:0; height:2px;
+  background: linear-gradient(90deg, var(--gold), transparent);
+  transform:scaleX(0); transform-origin:left; transition:var(--trans);
+}
+.service-item:hover { background: #141310; }
+.service-item:hover::after { transform:scaleX(1); }
+
+.service-num {
+  font-family:var(--mono); font-size:9px; letter-spacing:.18em;
+  color:rgba(255,255,255,.2); margin-bottom:24px;
+}
+
+.service-title {
+  font-family:var(--serif); font-size:1.55rem; font-weight:500;
+  line-height:1.2; color:var(--cream); margin-bottom:16px;
+  letter-spacing:-.01em;
+}
+
+.service-desc {
+  font-size:.875rem; color:rgba(250,248,244,.5);
+  line-height:1.75; margin-bottom:24px;
+}
+
+.service-tags {
+  display:flex; flex-wrap:wrap; gap:6px;
+}
+.stag {
+  font-family:var(--mono); font-size:9px; letter-spacing:.1em;
+  text-transform:uppercase; color:rgba(250,248,244,.3);
+  border:1px solid rgba(255,255,255,.1); padding:4px 10px; border-radius:2px;
+  transition:var(--trans);
+}
+.service-item:hover .stag { color:var(--gold2); border-color:rgba(184,151,90,.3); }
+
+/* ── PROTOCOL ── */
+.protocol { padding:120px 0; }
+
+.protocol-intro {
+  display:grid; grid-template-columns:1fr 1fr; gap:80px;
+  margin-bottom:80px; align-items:start;
+}
+@media(max-width:900px){ .protocol-intro{ grid-template-columns:1fr; gap:40px; } }
+
+.protocol-headline {
+  font-family:var(--serif); font-size:clamp(2.4rem,4vw,4rem);
+  font-weight:300; line-height:1.05; letter-spacing:-.01em;
+}
+.protocol-headline em { font-style:italic; color:var(--gold); }
+
+.protocol-statement {
+  font-size:.95rem; color:var(--ink3); line-height:1.85;
+  padding-top:8px;
+}
+.protocol-statement strong { color:var(--ink); }
+
+/* pillar accordion style */
+.pillars { border-top:1px solid var(--faint2); }
+.pillar {
+  border-bottom:1px solid var(--faint2);
+  display:grid; grid-template-columns:80px 1fr;
+}
+@media(max-width:600px){ .pillar{ grid-template-columns:48px 1fr; } }
+
+.pillar-index {
+  font-family:var(--serif); font-size:3rem; font-weight:300;
+  color:var(--cream3); line-height:1; padding:40px 0; text-align:center;
+  border-right:1px solid var(--faint2);
+  align-self:stretch; display:flex; align-items:flex-start;
+  padding-top:44px; justify-content:center;
+}
+
+.pillar-body { padding:40px 0 40px 40px; }
+@media(max-width:600px){ .pillar-body{ padding:24px 0 24px 20px; } }
+
+.pillar-kicker {
+  font-family:var(--mono); font-size:9px; letter-spacing:.18em;
+  text-transform:uppercase; color:var(--gold); margin-bottom:10px;
+}
+
+.pillar-name {
+  font-family:var(--serif); font-size:1.7rem; font-weight:500;
+  line-height:1.15; letter-spacing:-.01em; margin-bottom:16px;
+}
+
+.pillar-desc {
+  font-size:.9rem; color:var(--ink3); line-height:1.8;
+  margin-bottom:24px; max-width:560px;
+}
+
+.pillar-detail {
+  font-size:.85rem; color:var(--mid); line-height:1.75;
+  max-width:560px; margin-bottom:20px;
+}
+
+.pillar-tools {
+  display:flex; flex-wrap:wrap; gap:6px;
+}
+.ptool {
+  font-family:var(--mono); font-size:9px; letter-spacing:.1em;
+  color:var(--pale); border:1px solid var(--faint2);
+  padding:4px 10px; border-radius:2px;
+}
+
+/* ── METHODOLOGY DIAGRAM ── */
+.diagram-section { padding:80px 0; background:var(--cream2); border-top:1px solid var(--faint2); border-bottom:1px solid var(--faint2); }
+.diagram-inner { max-width:900px; margin:0 auto; }
+
+.diagram-svg-wrap {
+  border:1px solid var(--faint2); background:var(--cream); padding:60px;
+}
+@media(max-width:600px){ .diagram-svg-wrap{ padding:24px 16px; } }
+
+/* ── GLOSSARY / CONCEPTS ── */
+.concepts { padding:120px 0; }
+
+.concepts-grid {
+  display:grid; grid-template-columns:1fr 1fr 1fr;
+  gap:1px; background:var(--faint2);
+  border:1px solid var(--faint2); margin-top:64px;
+}
+@media(max-width:900px){ .concepts-grid{ grid-template-columns:1fr; } }
+
+.concept-item {
+  background:var(--cream); padding:40px 36px;
+  transition:var(--trans);
+}
+.concept-item:hover { background:var(--cream2); }
+
+.concept-code {
+  font-family:var(--mono); font-size:9px; letter-spacing:.15em;
+  color:var(--gold); margin-bottom:14px;
+  text-transform:uppercase;
+}
+.concept-name {
+  font-family:var(--serif); font-size:1.3rem; font-weight:500;
+  line-height:1.2; margin-bottom:12px; letter-spacing:-.01em;
+}
+.concept-def {
+  font-size:.85rem; color:var(--ink3); line-height:1.75;
+}
+
+/* ── WHY NOW / MANIFESTO ── */
+.manifesto {
+  padding:120px 0;
+  background:var(--ink2); color:var(--cream);
+  position:relative; overflow:hidden;
+}
+
+.manifesto-inner {
+  display:grid; grid-template-columns:1fr 2fr; gap:100px; align-items:start;
+}
+@media(max-width:900px){ .manifesto-inner{ grid-template-columns:1fr; gap:48px; } }
+
+.manifesto-sidebar {}
+.manifesto-sidebar-title {
+  font-family:var(--serif); font-size:3rem; font-weight:300;
+  font-style:italic; color:var(--gold2); line-height:1;
+  margin-bottom:24px;
+}
+.manifesto-sidebar-sub {
+  font-family:var(--mono); font-size:9px; letter-spacing:.18em;
+  color:rgba(250,248,244,.3); text-transform:uppercase; line-height:1.8;
+}
+
+.manifesto-body {}
+.manifesto-pull {
+  font-family:var(--serif); font-size:clamp(1.8rem,3vw,2.8rem);
+  font-weight:300; line-height:1.25; color:var(--cream);
+  margin-bottom:40px; border-left:2px solid var(--gold2); padding-left:32px;
+}
+.manifesto-pull em { font-style:italic; color:var(--gold2); }
+
+.manifesto-paras p {
+  font-size:.95rem; color:rgba(250,248,244,.6);
+  line-height:1.85; margin-bottom:20px;
+}
+.manifesto-paras strong { color:rgba(250,248,244,.9); font-weight:500; }
+
+/* ── ENTITIES / KG SECTION ── */
+.entities { padding:120px 0; }
+.entities-table {
+  width:100%; border-collapse:collapse; margin-top:56px;
+}
+.entities-table th {
+  font-family:var(--mono); font-size:9px; letter-spacing:.15em;
+  text-transform:uppercase; color:var(--pale);
+  padding:12px 24px; text-align:left;
+  border-bottom:2px solid var(--faint2);
+}
+.entities-table td {
+  padding:22px 24px; border-bottom:1px solid var(--faint2);
+  font-size:.875rem;
+  vertical-align: middle;
+}
+.entities-table tr:hover td { background:var(--cream2); }
+
+.ent-type {
+  font-family:var(--mono); font-size:9px; letter-spacing:.12em;
+  text-transform:uppercase; color:var(--pale);
+}
+.ent-name { font-family:var(--serif); font-size:1.1rem; font-weight:500; }
+.ent-qid {
+  font-family:var(--mono); font-size:11px; color:var(--gold);
+  text-decoration:none;
+}
+.ent-qid:hover { text-decoration:underline; }
+.ent-status {
+  display:inline-block; font-family:var(--mono); font-size:9px;
+  letter-spacing:.1em; text-transform:uppercase;
+  padding:4px 10px; border-radius:2px;
+}
+.status-ok { background:rgba(16,185,129,.08); color:#059669; border:1px solid rgba(16,185,129,.2); }
+.status-ip { background:rgba(184,151,90,.08); color:var(--gold); border:1px solid rgba(184,151,90,.2); }
+
+/* ── FAQ ── */
+.faq { padding:120px 0; background:var(--cream2); }
+.faq-list { margin-top:64px; }
+.faq-item {
+  border-bottom:1px solid var(--faint2); padding:36px 0;
+}
+.faq-q {
+  font-family:var(--serif); font-size:1.25rem; font-weight:500;
+  line-height:1.3; margin-bottom:16px; letter-spacing:-.01em;
+}
+.faq-a {
+  font-size:.9rem; color:var(--ink3); line-height:1.8; max-width:760px;
+}
+.faq-a strong { color:var(--ink); font-weight:500; }
+
+/* ── ABOUT / FOUNDER ── */
+.about { padding:120px 0; }
+.about-grid { display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:start; }
+@media(max-width:900px){ .about-grid{ grid-template-columns:1fr; gap:48px; } }
+
+.founder-panel {
+  background:var(--cream2); border:1px solid var(--faint2);
+  padding:48px 44px; position:sticky; top:100px;
+}
+.fp-label {
+  font-family:var(--mono); font-size:9px; letter-spacing:.18em;
+  text-transform:uppercase; color:var(--pale); margin-bottom:28px;
+  padding-bottom:20px; border-bottom:1px solid var(--faint2);
+}
+.fp-name {
+  font-family:var(--serif); font-size:2rem; font-weight:400;
+  letter-spacing:-.01em; margin-bottom:4px;
+}
+.fp-title {
+  font-family:var(--mono); font-size:10px; letter-spacing:.12em;
+  color:var(--gold); text-transform:uppercase; margin-bottom:24px;
+}
+.fp-bio { font-size:.875rem; color:var(--ink3); line-height:1.75; margin-bottom:32px; }
+.fp-links { display:flex; flex-direction:column; gap:1px; background:var(--faint2); }
+.fp-link {
+  background:var(--cream2); display:flex; justify-content:space-between;
+  align-items:center; padding:14px 18px; text-decoration:none;
+  color:var(--ink3); font-family:var(--mono); font-size:10px;
+  letter-spacing:.08em; transition:var(--trans);
+}
+.fp-link:hover { background:var(--cream); color:var(--ink); }
+.fp-link-arrow { color:var(--pale); }
+
+.about-text {}
+.about-text h2 {
+  font-family:var(--serif); font-size:clamp(2rem,3.5vw,3.2rem);
+  font-weight:300; line-height:1.1; letter-spacing:-.01em; margin-bottom:32px;
+}
+.about-text h2 em { font-style:italic; color:var(--gold); }
+.about-text p {
+  font-size:.95rem; color:var(--ink3); line-height:1.85; margin-bottom:24px;
+}
+.about-text p strong { color:var(--ink); font-weight:500; }
+
+.creds-grid { display:grid; grid-template-columns:1fr 1fr; gap:1px; background:var(--faint2); border:1px solid var(--faint2); margin-top:40px; }
+@media(max-width:600px){ .creds-grid{ grid-template-columns:1fr; } }
+.cred {
+  background:var(--cream); padding:20px 24px;
+}
+.cred-issuer { font-family:var(--mono); font-size:9px; letter-spacing:.12em; color:var(--pale); text-transform:uppercase; margin-bottom:6px; }
+.cred-name { font-size:.875rem; font-weight:500; color:var(--ink); }
+
+/* ── CONTACT ── */
+.contact { padding:140px 0; background:var(--ink); color:var(--cream); }
+.contact .eyebrow { color:var(--gold2); }
+.contact .eyebrow::before { background:var(--gold2); }
+
+.contact-grid { display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:start; }
+@media(max-width:900px){ .contact-grid{ grid-template-columns:1fr; gap:48px; } }
+
+.contact-headline {
+  font-family:var(--serif); font-size:clamp(2.8rem,5vw,5rem);
+  font-weight:300; line-height:1.0; letter-spacing:-.02em; color:var(--cream);
+  margin-bottom:28px;
+}
+.contact-headline em { font-style:italic; color:var(--gold2); }
+.contact-sub { font-size:.95rem; color:rgba(250,248,244,.5); line-height:1.8; margin-bottom:40px; }
+.contact-cta {
+  font-family:var(--mono); font-size:11px; letter-spacing:.1em;
+  text-transform:uppercase; color:var(--gold2); text-decoration:none;
+  border-bottom:1px solid rgba(184,151,90,.4); padding-bottom:4px;
+  transition:var(--trans); display:inline-block;
+}
+.contact-cta:hover { border-color:var(--gold2); }
+
+.contact-panel { background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.08); padding:48px; }
+.cp-title { font-family:var(--mono); font-size:9px; letter-spacing:.18em; text-transform:uppercase; color:rgba(250,248,244,.3); margin-bottom:32px; padding-bottom:20px; border-bottom:1px solid rgba(255,255,255,.08); }
+.cp-links { display:flex; flex-direction:column; gap:1px; }
+.cp-link {
+  display:flex; justify-content:space-between; align-items:center;
+  padding:16px 0; border-bottom:1px solid rgba(255,255,255,.06);
+  text-decoration:none; color:rgba(250,248,244,.5);
+  font-family:var(--mono); font-size:10px; letter-spacing:.08em;
+  transition:var(--trans);
+}
+.cp-link:last-child { border:none; }
+.cp-link:hover { color:var(--gold2); }
+
+/* ── FOOTER ── */
+footer {
+  background:var(--ink); border-top:1px solid rgba(255,255,255,.08);
+  padding:36px 0;
+}
+.footer-inner { display:flex; justify-content:space-between; align-items:center; }
+@media(max-width:600px){ .footer-inner{ flex-direction:column; gap:16px; text-align:center; } }
+.footer-copy { font-family:var(--mono); font-size:10px; letter-spacing:.06em; color:rgba(250,248,244,.25); }
+.footer-copy span { color:rgba(250,248,244,.5); }
+.footer-id { font-family:var(--mono); font-size:9px; letter-spacing:.1em; color:rgba(250,248,244,.15); }
+
+/* ── ANIMATIONS ── */
+@keyframes fadeUp { from{opacity:0;transform:translateY(20px)} to{opacity:1;transform:translateY(0)} }
+.au { animation:fadeUp .8s cubic-bezier(.4,0,.2,1) both; }
+.au1{animation-delay:.05s}.au2{animation-delay:.12s}.au3{animation-delay:.2s}.au4{animation-delay:.28s}.au5{animation-delay:.36s}
+
+/* lang */
+html[data-lang="en"] [data-it]{ display:none; }
+html[data-lang="it"] [data-en]{ display:none; }
+</style>
 </head>
 <body>
 
-    <div class="frame">
-        <svg class="logo-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="50" cy="20" r="6" fill="#007AFF"/>
-            <circle cx="20" cy="80" r="6" fill="#007AFF"/>
-            <circle cx="80" cy="80" r="6" fill="#007AFF"/>
-            <path d="M50 20L20 80M50 20L80 80M20 80L80 80" stroke="#007AFF" stroke-width="3" stroke-linejoin="round"/>
-        </svg>
-
-        <div class="status-tag">Status: Entity Verified // Q139765600</div>
-        
-        <h1>FRANCESCO TINTI</h1>
-        <div class="role">AI Visibility Engineering Specialist</div>
-
-        <div class="description">
-            Sviluppatore del protocollo <strong>AIMENSION™</strong>. 
-            Architetto di grafi della conoscenza e sistemi di autorità semantica per Large Language Models. 
-            Risolvo l'ambiguità delle entità dove l'intelligenza generativa incontra la verità dei dati.
-        </div>
-
-        <div class="links">
-            <a href="https://www.wikidata.org/wiki/Q139783726">WIKIDATA</a>
-            <a href="https://github.com/ft-axon/aimension-protocol">GITHUB</a>
-            <a href="mailto:info@axonsystem.it">CONTACT</a>
-        </div>
-
-        <div class="terminal-text">SYS_ID: AXON_01_PROT</div>
+<!-- ══════════════════════════════════
+     NAV
+══════════════════════════════════ -->
+<nav role="navigation" aria-label="Main navigation">
+  <div class="nav-inner">
+    <a href="/" class="nav-wordmark" aria-label="Axon System">AXON <em>SYSTEM</em></a>
+    <div class="nav-center">
+      <a href="#services" data-en>What We Do</a>
+      <a href="#services" data-it>Cosa Facciamo</a>
+      <a href="#protocol" data-en>Protocol</a>
+      <a href="#protocol" data-it>Protocollo</a>
+      <a href="#concepts" data-en>Concepts</a>
+      <a href="#concepts" data-it>Concetti</a>
+      <a href="#about" data-en>About</a>
+      <a href="#about" data-it>Chi Siamo</a>
     </div>
+    <div class="nav-right">
+      <div class="lang-sw" role="group" aria-label="Language">
+        <button class="on" id="btn-en" onclick="setLang('en')">EN</button>
+        <button id="btn-it" onclick="setLang('it')">IT</button>
+      </div>
+      <a href="#contact" class="nav-cta" data-en>Contact</a>
+      <a href="#contact" class="nav-cta" data-it>Contatti</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ══════════════════════════════════
+     HERO
+══════════════════════════════════ -->
+<header class="hero" role="banner">
+  <div class="hero-deco" aria-hidden="true">
+    <svg viewBox="0 0 400 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="200" cy="60" r="200" stroke="#0D0C0A" stroke-width="1"/>
+      <circle cx="200" cy="60" r="150" stroke="#0D0C0A" stroke-width="1"/>
+      <circle cx="200" cy="60" r="100" stroke="#0D0C0A" stroke-width="1"/>
+      <circle cx="200" cy="60" r="50" stroke="#0D0C0A" stroke-width="1"/>
+      <line x1="0" y1="60" x2="400" y2="60" stroke="#0D0C0A" stroke-width="1"/>
+      <line x1="200" y1="-140" x2="200" y2="260" stroke="#0D0C0A" stroke-width="1"/>
+    </svg>
+  </div>
+
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <div class="eyebrow au au1">
+          <span data-en>AI Visibility Engineering</span>
+          <span data-it>AI Visibility Engineering</span>
+        </div>
+        <h1 class="hero-headline au au2">
+          <span data-en>Your brand,<br><em>cited</em> by<br>every AI<br><strong>on earth.</strong></span>
+          <span data-it>Il tuo brand,<br><em>citato</em> da<br>ogni AI<br><strong>al mondo.</strong></span>
+        </h1>
+      </div>
+
+      <div class="au au3">
+        <p class="hero-statement">
+          <span data-en>We engineer the precise conditions under which AI systems — ChatGPT, Gemini, Claude, Perplexity, and every future model — recognize, trust, and cite your brand as the authoritative source in your industry.</span>
+          <span data-it>Progettiamo le condizioni precise affinché i sistemi AI — ChatGPT, Gemini, Claude, Perplexity, e ogni futuro modello — riconoscano, si fidino e citino il tuo brand come fonte autorevole nel tuo settore.</span>
+        </p>
+
+        <div class="hero-metrics" role="list">
+          <div class="metric" role="listitem">
+            <div class="metric-n">3<sup>×</sup></div>
+            <div class="metric-l" data-en>Protocol Pillars</div>
+            <div class="metric-l" data-it>Pilastri Protocollo</div>
+          </div>
+          <div class="metric" role="listitem">
+            <div class="metric-n">∞</div>
+            <div class="metric-l" data-en>AI Systems Reached</div>
+            <div class="metric-l" data-it>Sistemi AI Raggiunti</div>
+          </div>
+          <div class="metric" role="listitem">
+            <div class="metric-n">1<sup>st</sup></div>
+            <div class="metric-l" data-en>Italian AEO+GEO Agency</div>
+            <div class="metric-l" data-it>Agenzia AEO+GEO Italiana</div>
+          </div>
+          <div class="metric" role="listitem">
+            <div class="metric-n">v1.0</div>
+            <div class="metric-l" data-en>AIMENSION Protocol</div>
+            <div class="metric-l" data-it>Protocollo AIMENSION</div>
+          </div>
+        </div>
+
+        <div class="hero-actions">
+          <a href="#protocol" class="btn-dark" data-en>Explore AIMENSION →</a>
+          <a href="#protocol" class="btn-dark" data-it>Scopri AIMENSION →</a>
+          <a href="https://github.com/ft-axon/aimension-protocol" class="btn-line" target="_blank" rel="noopener">GitHub ↗</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<hr>
+
+<!-- ══════════════════════════════════
+     MARQUEE
+══════════════════════════════════ -->
+<div class="marquee-wrap" aria-hidden="true">
+  <div class="marquee-track">
+    <span class="marquee-item">Answer Engine Optimization <span>AEO</span></span>
+    <span class="marquee-item">Generative Engine Optimization <span>GEO</span></span>
+    <span class="marquee-item">Knowledge Graph Engineering <span>KGE</span></span>
+    <span class="marquee-item">Entity Resolution <span>ER</span></span>
+    <span class="marquee-item">Semantic Triangulation <span>ST</span></span>
+    <span class="marquee-item">LLM Citation Authority <span>LCA</span></span>
+    <span class="marquee-item">Wikidata Entity Management <span>WEM</span></span>
+    <span class="marquee-item">RAG Pipeline Optimization <span>RPO</span></span>
+    <span class="marquee-item">Answer Engine Optimization <span>AEO</span></span>
+    <span class="marquee-item">Generative Engine Optimization <span>GEO</span></span>
+    <span class="marquee-item">Knowledge Graph Engineering <span>KGE</span></span>
+    <span class="marquee-item">Entity Resolution <span>ER</span></span>
+    <span class="marquee-item">Semantic Triangulation <span>ST</span></span>
+    <span class="marquee-item">LLM Citation Authority <span>LCA</span></span>
+    <span class="marquee-item">Wikidata Entity Management <span>WEM</span></span>
+    <span class="marquee-item">RAG Pipeline Optimization <span>RPO</span></span>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════
+     INTRO / POSITIONING
+══════════════════════════════════ -->
+<section class="intro" aria-labelledby="intro-heading">
+  <div class="wrap">
+    <div class="intro-grid">
+      <div>
+        <div class="intro-label" aria-hidden="true">
+          <span data-en>The New Discipline</span>
+          <span data-it>La Nuova Disciplina</span>
+        </div>
+      </div>
+      <div>
+        <h2 id="intro-heading" class="intro-text" style="margin-bottom:40px">
+          <span data-en>SEO is dead. <em>AI visibility</em> is the only battleground that matters for the next decade of <strong>brand leadership.</strong></span>
+          <span data-it>La SEO è morta. <em>La visibilità AI</em> è l'unico campo di battaglia che conta nel prossimo decennio per la <strong>leadership di brand.</strong></span>
+        </h2>
+        <div class="intro-body">
+          <p>
+            <span data-en>When a potential client asks ChatGPT, Gemini, or Perplexity for the best provider in your industry, <strong>what answer do they get?</strong> If your brand isn't in that answer — you don't exist. Not for that client. Not in that moment that matters.</span>
+            <span data-it>Quando un potenziale cliente chiede a ChatGPT, Gemini o Perplexity qual è il miglior fornitore nel tuo settore, <strong>che risposta ottiene?</strong> Se il tuo brand non è in quella risposta — non esisti. Non per quel cliente. Non in quel momento che conta.</span>
+          </p>
+          <p>
+            <span data-en">The shift from search engines to AI answer engines is not incremental. It is <strong>structural</strong>. Traditional SEO, social media presence, and even paid advertising have zero impact on what an LLM says about your brand. A completely different discipline is required.</span>
+            <span data-it>Il passaggio dai motori di ricerca ai motori di risposta AI non è incrementale. È <strong>strutturale</strong>. La SEO tradizionale, la presenza sui social media e persino la pubblicità a pagamento hanno impatto zero su ciò che un LLM dice del tuo brand. È richiesta una disciplina completamente diversa.</span>
+          </p>
+          <p>
+            <span data-en><strong>That discipline is AI Visibility Engineering.</strong> We developed the AIMENSION Protocol to systematize it — combining Answer Engine Optimization (AEO), Generative Engine Optimization (GEO), Knowledge Graph engineering, and semantic web architecture into a single, measurable, deployable system.</span>
+            <span data-it><strong>Quella disciplina è l'AI Visibility Engineering.</strong> Abbiamo sviluppato il Protocollo AIMENSION per sistematizzarla — combinando Answer Engine Optimization (AEO), Generative Engine Optimization (GEO), ingegneria dei Knowledge Graph e architettura del web semantico in un unico sistema misurabile e distribuibile.</span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr>
+
+<!-- ══════════════════════════════════
+     SERVICES
+══════════════════════════════════ -->
+<section class="services" id="services" aria-labelledby="services-heading">
+  <div class="wrap">
+    <div class="eyebrow">
+      <span data-en>What We Do</span>
+      <span data-it>Cosa Facciamo</span>
+    </div>
+    <h2 id="services-heading" class="services-headline">
+      <span data-en>Eight capabilities.<br><em>One unified outcome:</em><br>your brand becomes the answer.</span>
+      <span data-it>Otto competenze.<br><em>Un unico risultato:</em><br>il tuo brand diventa la risposta.</span>
+    </h2>
+
+    <div class="services-grid" role="list">
+
+      <article class="service-item" role="listitem">
+        <div class="service-num">01 — AEO</div>
+        <h3 class="service-title">
+          <span data-en>Answer Engine Optimization</span>
+          <span data-it>Answer Engine Optimization</span>
+        </h3>
+        <p class="service-desc">
+          <span data-en>We restructure your brand's content, entity data, and knowledge architecture so that AI-powered answer engines — ChatGPT, Google SGE, Perplexity, Bing Copilot — select you as the authoritative response. Every question your ideal client asks has an optimal answer. We make sure that answer is you.</span>
+          <span data-it>Ristrutturiamo contenuti, dati entità e architettura della conoscenza del tuo brand affinché i motori di risposta AI — ChatGPT, Google SGE, Perplexity, Bing Copilot — ti selezionino come risposta autorevole. Ogni domanda che pone il tuo cliente ideale ha una risposta ottimale. Facciamo in modo che quella risposta sia il tuo brand.</span>
+        </p>
+        <div class="service-tags">
+          <span class="stag">ChatGPT</span><span class="stag">Google SGE</span>
+          <span class="stag">Perplexity</span><span class="stag">Bing Copilot</span>
+        </div>
+      </article>
+
+      <article class="service-item" role="listitem">
+        <div class="service-num">02 — GEO</div>
+        <h3 class="service-title">
+          <span data-en>Generative Engine Optimization</span>
+          <span data-it>Generative Engine Optimization</span>
+        </h3>
+        <p class="service-desc">
+          <span data-en>We influence how generative AI models represent your brand in their outputs — independently of search queries. Through strategic training-data signal engineering, we shape the statistical patterns that LLMs learn about your organization, your expertise, and your market position.</span>
+          <span data-it>Influenziamo il modo in cui i modelli AI generativi rappresentano il tuo brand nei loro output — indipendentemente dalle query di ricerca. Attraverso l'ingegneria strategica dei segnali di training data, modelliamo i pattern statistici che i LLM apprendono sulla tua organizzazione, la tua expertise e la tua posizione di mercato.</span>
+        </p>
+        <div class="service-tags">
+          <span class="stag">LLM Training Signals</span><span class="stag">Brand Pattern Engineering</span><span class="stag">Corpus Optimization</span>
+        </div>
+      </article>
+
+      <article class="service-item" role="listitem">
+        <div class="service-num">03 — KGE</div>
+        <h3 class="service-title">
+          <span data-en>Knowledge Graph Engineering</span>
+          <span data-it>Knowledge Graph Engineering</span>
+        </h3>
+        <p class="service-desc">
+          <span data-en>We build, populate, and maintain your organization's presence across the global Knowledge Graph ecosystem — Wikidata, DBpedia, Google Knowledge Graph, and domain-specific graphs. Verified entities create an unambiguous, machine-resolvable identity that AI systems trust at the highest confidence level.</span>
+          <span data-it>Costruiamo, popoliamo e manteniamo la presenza della tua organizzazione nell'ecosistema globale dei Knowledge Graph — Wikidata, DBpedia, Google Knowledge Graph e grafi specifici per dominio. Le entità verificate creano un'identità non ambigua e risolvibile dalla macchina, in cui i sistemi AI hanno il massimo livello di fiducia.</span>
+        </p>
+        <div class="service-tags">
+          <span class="stag">Wikidata</span><span class="stag">DBpedia</span><span class="stag">SPARQL</span><span class="stag">Entity Resolution</span>
+        </div>
+      </article>
+
+      <article class="service-item" role="listitem">
+        <div class="service-num">04 — SWA</div>
+        <h3 class="service-title">
+          <span data-en>Semantic Web Architecture</span>
+          <span data-it>Architettura Web Semantica</span>
+        </h3>
+        <p class="service-desc">
+          <span data-en>We design and implement enterprise-grade Schema.org taxonomies and custom JSON-LD entity graphs tailored to your business model. Every product, service, person, and location in your organization becomes a machine-readable, cross-referenced node in the global semantic web — maximizing entity resolution fidelity.</span>
+          <span data-it">Progettiamo e implementiamo tassonomie Schema.org di livello enterprise e grafi entità JSON-LD personalizzati su misura per il tuo business. Ogni prodotto, servizio, persona e location nella tua organizzazione diventa un nodo leggibile dalla macchina nel web semantico globale.</span>
+        </p>
+        <div class="service-tags">
+          <span class="stag">Schema.org</span><span class="stag">JSON-LD</span><span class="stag">Microdata</span><span class="stag">RDFa</span>
+        </div>
+      </article>
+
+      <article class="service-item" role="listitem">
+        <div class="service-num">05 — RAG</div>
+        <h3 class="service-title">
+          <span data-en>RAG Pipeline Optimization</span>
+          <span data-it>Ottimizzazione Pipeline RAG</span>
+        </h3>
+        <p class="service-desc">
+          <span data-en>Enterprise AI assistants — internal chatbots, customer-facing AI, industry platforms — rely on Retrieval-Augmented Generation to answer questions about your sector. We structure your content, documentation, and entity data to be preferentially retrieved, accurately chunked, and reliably cited by these systems.</span>
+          <span data-it>Gli assistenti AI enterprise — chatbot interni, AI rivolti ai clienti, piattaforme di settore — si affidano al Retrieval-Augmented Generation per rispondere a domande sul tuo settore. Strutturiamo contenuti, documentazione e dati entità affinché siano recuperati preferenzialmente, suddivisi accuratamente e citati in modo affidabile da questi sistemi.</span>
+        </p>
+        <div class="service-tags">
+          <span class="stag">Vector Databases</span><span class="stag">Document Chunking</span><span class="stag">Embedding Optimization</span>
+        </div>
+      </article>
+
+      <article class="service-item" role="listitem">
+        <div class="service-num">06 — AVI</div>
+        <h3 class="service-title">
+          <span data-en>AI Visibility Audit & Intelligence</span>
+          <span data-it">Audit & Intelligence di Visibilità AI</span>
+        </h3>
+        <p class="service-desc">
+          <span data-en>Before strategy comes diagnosis. We conduct a comprehensive audit of your current AI presence: how you are described by major LLMs, what Knowledge Graphs contain about you, where your semantic markup fails, and — critically — how your competitors are positioned. The result is a precise gap analysis and competitive intelligence map.</span>
+          <span data-it>Prima della strategia viene la diagnosi. Conduciamo un audit completo della tua presenza AI attuale: come sei descritto dai principali LLM, cosa contengono i Knowledge Graph su di te, dove il tuo markup semantico fallisce e — soprattutto — come sono posizionati i tuoi concorrenti. Il risultato è un'analisi precisa dei gap e una mappa di competitive intelligence.</span>
+        </p>
+        <div class="service-tags">
+          <span class="stag">LLM Probing</span><span class="stag">KG Audit</span><span class="stag">Competitor Analysis</span><span class="stag">Gap Report</span>
+        </div>
+      </article>
+
+      <article class="service-item" role="listitem">
+        <div class="service-num">07 — CAD</div>
+        <h3 class="service-title">
+          <span data-en">Content Architecture Design</span>
+          <span data-it>Architettura dei Contenuti</span>
+        </h3>
+        <p class="service-desc">
+          <span data-en>We redesign your content architecture from the ground up for AI readability — not human readability. This means structured headings that resolve as semantic units, authoritative citation patterns that LLMs learn from, factual density that maximizes training signal value, and llms.txt directives that instruct crawlers on how to represent you.</span>
+          <span data-it>Riprogettano la tua architettura dei contenuti dall'inizio per la leggibilità AI — non quella umana. Ciò significa intestazioni strutturate che si risolvono come unità semantiche, pattern di citazione autorevoli da cui i LLM apprendono, densità fattuale che massimizza il valore del segnale di training e direttive llms.txt che istruiscono i crawler su come rappresentarti.</span>
+        </p>
+        <div class="service-tags">
+          <span class="stag">llms.txt</span><span class="stag">Semantic Headings</span><span class="stag">Citation Structure</span><span class="stag">Factual Density</span>
+        </div>
+      </article>
+
+      <article class="service-item" role="listitem">
+        <div class="service-num">08 — CMS</div>
+        <h3 class="service-title">
+          <span data-en>Continuous Monitoring & Maintenance</span>
+          <span data-it>Monitoraggio e Manutenzione Continui</span>
+        </h3>
+        <p class="service-desc">
+          <span data-en>AI visibility is not a one-time project. LLMs retrain. Knowledge Graphs update. New answer engines emerge. We provide ongoing monitoring of your AI presence across all major systems, maintaining entity consistency, responding to Knowledge Graph changes, and adapting your semantic architecture as the AI landscape evolves.</span>
+          <span data-it>La visibilità AI non è un progetto una tantum. I LLM si ri-addestrano. I Knowledge Graph si aggiornano. Emergono nuovi motori di risposta. Forniamo un monitoraggio continuo della tua presenza AI su tutti i principali sistemi, mantenendo la coerenza delle entità, rispondendo alle modifiche dei Knowledge Graph e adattando la tua architettura semantica all'evoluzione del panorama AI.</span>
+        </p>
+        <div class="service-tags">
+          <span class="stag">SPARQL Monitoring</span><span class="stag">LLM Probing</span><span class="stag">Entity Maintenance</span><span class="stag">Schema Versioning</span>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════
+     PROTOCOL
+══════════════════════════════════ -->
+<section class="protocol" id="protocol" aria-labelledby="protocol-heading">
+  <div class="wrap">
+    <div class="eyebrow">
+      <span data-en>The AIMENSION Protocol</span>
+      <span data-it>Il Protocollo AIMENSION</span>
+    </div>
+
+    <div class="protocol-intro">
+      <h2 id="protocol-heading" class="protocol-headline">
+        <span data-en>Three pillars.<br>One <em>inescapable</em><br>truth.</span>
+        <span data-it>Tre pilastri.<br>Un'unica <em>verità</em><br>ineludibile.</span>
+      </h2>
+      <p class="protocol-statement">
+        <span data-en>AIMENSION is the proprietary methodology developed by Francesco Tinti at Axon System. It addresses the core problem of AI brand visibility through a mandatory triangulation between three mutually-reinforcing systems. <strong>Remove any one pillar and the system loses authority.</strong> Activate all three simultaneously, cross-referenced and consistent, and your brand becomes a Source of Truth that AI systems cannot ignore — because every verification path they follow leads back to you.</span>
+        <span data-it>AIMENSION è la metodologia proprietaria sviluppata da Francesco Tinti in Axon System. Affronta il problema fondamentale della visibilità brand nell'AI attraverso una triangolazione obbligatoria tra tre sistemi che si rafforzano a vicenda. <strong>Rimuovi un pilastro qualsiasi e il sistema perde autorità.</strong> Attiva tutti e tre simultaneamente, incrociati e coerenti, e il tuo brand diventa una Source of Truth che i sistemi AI non possono ignorare.</span>
+      </p>
+    </div>
+
+    <div class="pillars" role="list">
+      <div class="pillar" role="listitem">
+        <div class="pillar-index" aria-hidden="true">I</div>
+        <div class="pillar-body">
+          <div class="pillar-kicker">ENTITY GROUND TRUTH</div>
+          <h3 class="pillar-name">
+            <span data-en>Wikidata & Knowledge Graph Verification</span>
+            <span data-it>Verifica Wikidata & Knowledge Graph</span>
+          </h3>
+          <p class="pillar-desc">
+            <span data-en">Every entity in your organization — the company, its founders, its products, its methodologies — receives a verified node in the global Knowledge Graph ecosystem. This is not SEO. This is ontological identity: a machine-resolvable reference that every AI system on the planet can query and verify.</span>
+            <span data-it">Ogni entità della tua organizzazione — l'azienda, i suoi fondatori, i suoi prodotti, le sue metodologie — riceve un nodo verificato nell'ecosistema globale dei Knowledge Graph. Questa non è SEO. È identità ontologica: un riferimento risolvibile dalla macchina che ogni sistema AI del pianeta può interrogare e verificare.</span>
+          </p>
+          <p class="pillar-detail">
+            <span data-en">Wikidata is explicitly used as a training signal by Wikimedia Foundation partners and is a foundational data source for Google Knowledge Graph, Microsoft Bing Entity Search, and numerous LLM training pipelines. A verified, property-complete Wikidata entity is not optional infrastructure — it is the bedrock of AI authority.</span>
+            <span data-it">Wikidata è esplicitamente utilizzato come segnale di training dai partner della Wikimedia Foundation ed è una fonte dati fondamentale per Google Knowledge Graph, Microsoft Bing Entity Search e numerosi pipeline di training LLM. Un'entità Wikidata verificata e completa nelle proprietà non è infrastruttura opzionale — è la base dell'autorità AI.</span>
+          </p>
+          <div class="pillar-tools">
+            <span class="ptool">Wikidata QID</span>
+            <span class="ptool">Property Mapping</span>
+            <span class="ptool">SPARQL Validation</span>
+            <span class="ptool">Cross-KG Alignment</span>
+            <span class="ptool">sameAs Resolution</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="pillar" role="listitem">
+        <div class="pillar-index" aria-hidden="true">II</div>
+        <div class="pillar-body">
+          <div class="pillar-kicker">ALGORITHMIC AUTHORITY</div>
+          <h3 class="pillar-name">
+            <span data-en>Structured Documentation & Repository Architecture</span>
+            <span data-it>Documentazione Strutturata & Architettura Repository</span>
+          </h3>
+          <p class="pillar-desc">
+            <span data-en>Public, versioned, machine-readable documentation creates what we call Algorithmic Authority — the credibility signal generated by structured, timestamped, technically precise content that LLM training crawlers weight as high-quality epistemic material.</span>
+            <span data-it">La documentazione pubblica, versionata e leggibile dalla macchina crea quella che chiamiamo Autorità Algoritmica — il segnale di credibilità generato da contenuti strutturati, timestampati e tecnicamente precisi che i crawler di training LLM pesano come materiale epistemico di alta qualità.</span>
+          </p>
+          <p class="pillar-detail">
+            <span data-en">We build GitHub repositories with llms.txt directives, Semantic Versioning changelogs, BibTeX citation blocks, and RAG-optimized markdown that communicates your brand's technical authority. The repository architecture itself — its structure, its naming conventions, its internal linking — is engineered to maximize machine comprehension.</span>
+            <span data-it">Costruiamo repository GitHub con direttive llms.txt, changelog con Semantic Versioning, blocchi di citazione BibTeX e markdown ottimizzato per RAG che comunica l'autorità tecnica del tuo brand. L'architettura del repository stessa — la sua struttura, le convenzioni di naming, i collegamenti interni — è progettata per massimizzare la comprensione da parte della macchina.</span>
+          </p>
+          <div class="pillar-tools">
+            <span class="ptool">llms.txt</span>
+            <span class="ptool">Semantic Versioning</span>
+            <span class="ptool">BibTeX Citation</span>
+            <span class="ptool">RAG Markdown</span>
+            <span class="ptool">GitHub Pages</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="pillar" role="listitem">
+        <div class="pillar-index" aria-hidden="true">III</div>
+        <div class="pillar-body">
+          <div class="pillar-kicker">SEMANTIC INJECTION</div>
+          <h3 class="pillar-name">
+            <span data-en>Schema.org Architecture & JSON-LD Entity Graphs</span>
+            <span data-it>Architettura Schema.org & Grafi Entità JSON-LD</span>
+          </h3>
+          <p class="pillar-desc">
+            <span data-en>Every page of every digital property your organization owns becomes a machine-readable identity declaration. We implement comprehensive Schema.org taxonomies — Organization, Person, Product, Service, Event, FAQ, and custom DefinedTermSets for your proprietary vocabulary — expressed as interconnected JSON-LD entity graphs.</span>
+            <span data-it">Ogni pagina di ogni proprietà digitale della tua organizzazione diventa una dichiarazione di identità leggibile dalla macchina. Implementiamo tassonomie Schema.org complete — Organization, Person, Product, Service, Event, FAQ e DefinedTermSet personalizzati per il tuo vocabolario proprietario — espressi come grafi entità JSON-LD interconnessi.</span>
+          </p>
+          <p class="pillar-detail">
+            <span data-en">The critical mechanism is the sameAs array: every entity on your website explicitly declares its Wikidata QID (Pillar I) and its GitHub documentation URL (Pillar II), completing the triangulation. AI systems that encounter any one of the three pillars can navigate to all three — creating a web of mutual verification that is orders of magnitude more credible than any single source.</span>
+            <span data-it">Il meccanismo critico è l'array sameAs: ogni entità sul tuo sito web dichiara esplicitamente il suo QID Wikidata (Pilastro I) e il suo URL di documentazione GitHub (Pilastro II), completando la triangolazione. I sistemi AI che incontrano uno qualsiasi dei tre pilastri possono navigare verso tutti e tre.</span>
+          </p>
+          <div class="pillar-tools">
+            <span class="ptool">JSON-LD @graph</span>
+            <span class="ptool">DefinedTermSet</span>
+            <span class="ptool">FAQPage</span>
+            <span class="ptool">sameAs Mapping</span>
+            <span class="ptool">Entity Resolution</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════
+     DIAGRAM
+══════════════════════════════════ -->
+<div class="diagram-section" aria-labelledby="diagram-title">
+  <div class="wrap">
+    <div class="diagram-inner">
+      <div class="eyebrow" style="margin-bottom:40px">
+        <span data-en>Semantic Triangulation — How It Works</span>
+        <span data-it">Triangolazione Semantica — Come Funziona</span>
+      </div>
+      <div class="diagram-svg-wrap" role="img" aria-labelledby="diagram-title" aria-describedby="diagram-desc">
+        <p id="diagram-title" style="font-family:var(--serif);font-size:1.3rem;font-weight:500;text-align:center;margin-bottom:4px;letter-spacing:-.01em">
+          <span data-en>The AIMENSION Triangulation Model</span>
+          <span data-it>Il Modello di Triangolazione AIMENSION</span>
+        </p>
+        <p id="diagram-desc" style="font-family:var(--mono);font-size:9px;letter-spacing:.12em;text-align:center;color:var(--pale);text-transform:uppercase;margin-bottom:48px">
+          <span data-en>Three pillars. Mutual cross-reference. One authoritative entity.</span>
+          <span data-it>Tre pilastri. Riferimento incrociato reciproco. Un'entità autorevole.</span>
+        </p>
+        <svg viewBox="0 0 760 440" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:700px;display:block;margin:0 auto">
+          <!-- connections -->
+          <line x1="380" y1="80" x2="130" y2="340" stroke="#B8975A" stroke-width="1" stroke-dasharray="8 5" opacity=".4"/>
+          <line x1="380" y1="80" x2="630" y2="340" stroke="#B8975A" stroke-width="1" stroke-dasharray="8 5" opacity=".4"/>
+          <line x1="130" y1="340" x2="630" y2="340" stroke="#B8975A" stroke-width="1" stroke-dasharray="8 5" opacity=".4"/>
+          <!-- center node -->
+          <circle cx="380" cy="213" r="32" fill="#FAF8F4" stroke="#E8E3D8" stroke-width="1"/>
+          <text x="380" y="208" text-anchor="middle" font-family="DM Mono, monospace" font-size="7" letter-spacing="1.5" fill="#7A7570">SOURCE</text>
+          <text x="380" y="220" text-anchor="middle" font-family="DM Mono, monospace" font-size="7" letter-spacing="1.5" fill="#7A7570">OF TRUTH</text>
+          <!-- lines from nodes to center -->
+          <line x1="380" y1="148" x2="380" y2="181" stroke="#0D0C0A" stroke-width="1" opacity=".12"/>
+          <line x1="178" y1="316" x2="352" y2="230" stroke="#0D0C0A" stroke-width="1" opacity=".12"/>
+          <line x1="582" y1="316" x2="408" y2="230" stroke="#0D0C0A" stroke-width="1" opacity=".12"/>
+          <!-- TOP NODE: Pillar I -->
+          <rect x="270" y="36" width="220" height="84" rx="2" fill="#FAF8F4" stroke="#D4A73A" stroke-width="1.5"/>
+          <text x="380" y="62" text-anchor="middle" font-family="DM Mono, monospace" font-size="8" letter-spacing="2" fill="#B8975A">PILLAR I — EGT</text>
+          <text x="380" y="82" text-anchor="middle" font-family="Cormorant Garamond, serif" font-size="15" font-weight="500" fill="#0D0C0A">Entity Ground Truth</text>
+          <text x="380" y="100" text-anchor="middle" font-family="DM Mono, monospace" font-size="8" fill="#A09890">Wikidata · DBpedia · KG</text>
+          <!-- LEFT NODE: Pillar III -->
+          <rect x="20" y="296" width="220" height="84" rx="2" fill="#FAF8F4" stroke="#D4A73A" stroke-width="1.5"/>
+          <text x="130" y="322" text-anchor="middle" font-family="DM Mono, monospace" font-size="8" letter-spacing="2" fill="#B8975A">PILLAR III — SI</text>
+          <text x="130" y="342" text-anchor="middle" font-family="Cormorant Garamond, serif" font-size="15" font-weight="500" fill="#0D0C0A">Semantic Injection</text>
+          <text x="130" y="362" text-anchor="middle" font-family="DM Mono, monospace" font-size="8" fill="#A09890">Schema.org · JSON-LD</text>
+          <!-- RIGHT NODE: Pillar II -->
+          <rect x="520" y="296" width="220" height="84" rx="2" fill="#FAF8F4" stroke="#D4A73A" stroke-width="1.5"/>
+          <text x="630" y="322" text-anchor="middle" font-family="DM Mono, monospace" font-size="8" letter-spacing="2" fill="#B8975A">PILLAR II — AA</text>
+          <text x="630" y="342" text-anchor="middle" font-family="Cormorant Garamond, serif" font-size="15" font-weight="500" fill="#0D0C0A">Algorithmic Authority</text>
+          <text x="630" y="362" text-anchor="middle" font-family="DM Mono, monospace" font-size="8" fill="#A09890">GitHub · llms.txt · RAG</text>
+          <!-- label arrows -->
+          <text x="224" y="195" text-anchor="middle" font-family="DM Mono, monospace" font-size="8" fill="#A09890" transform="rotate(-42 224 195)" data-en="">sameAs ↔ QID</text>
+          <text x="536" y="195" text-anchor="middle" font-family="DM Mono, monospace" font-size="8" fill="#A09890" transform="rotate(42 536 195)">sameAs ↔ repo</text>
+          <text x="380" y="425" text-anchor="middle" font-family="DM Mono, monospace" font-size="8" fill="#A09890">cross-verification</text>
+        </svg>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════
+     MANIFESTO / WHY NOW
+══════════════════════════════════ -->
+<section class="manifesto" aria-labelledby="manifesto-heading">
+  <div class="wrap">
+    <div class="manifesto-inner">
+      <div class="manifesto-sidebar">
+        <div class="manifesto-sidebar-title">Why<br>now?</div>
+        <div class="manifesto-sidebar-sub">
+          THE WINDOW<br>IS OPEN<br>—<br>BUT NOT<br>FOREVER
+        </div>
+      </div>
+      <div class="manifesto-body">
+        <blockquote class="manifesto-pull">
+          <span data-en>The brands that establish <em>AI authority</em> in the next 24 months will dominate their categories for the next decade.</span>
+          <span data-it>I brand che stabiliscono <em>autorità AI</em> nei prossimi 24 mesi domineranno le loro categorie per il prossimo decennio.</span>
+        </blockquote>
+        <div class="manifesto-paras" id="manifesto-heading">
+          <p><span data-en>In 2012, the brands that moved early on SEO captured organic traffic that their competitors spent years trying to reclaim. In 2016, the brands that mastered paid social built customer acquisition engines that defined market share for a generation. <strong>We are at an equivalent inflection point.</strong></span><span data-it>Nel 2012, i brand che si mossero per primi sulla SEO catturarono traffico organico che i competitor impiegarono anni a recuperare. Nel 2016, i brand che padroneggiarono il social a pagamento costruirono macchine di acquisizione clienti che definirono le quote di mercato per una generazione. <strong>Siamo a un punto di svolta equivalente.</strong></span></p>
+          <p><span data-en">The transition from search-based to AI-based information retrieval is accelerating faster than any previous digital shift. <strong>By 2026, the majority of B2B research journeys will begin with an AI query, not a Google search.</strong> The question is not whether to adapt — it is whether you will be positioned to benefit when the transition completes.</span><span data-it">La transizione dal recupero delle informazioni basato sulla ricerca a quello basato sull'AI si sta accelerando più velocemente di qualsiasi precedente cambiamento digitale. <strong">Entro il 2026, la maggior parte dei percorsi di ricerca B2B inizierà con una query AI, non una ricerca Google.</strong> La domanda non è se adattarsi, ma se sarà posizionato per beneficiarne quando la transizione sarà completata.</span></p>
+          <p><span data-en"><strong>Knowledge Graphs are not retroactive.</strong> An entity that does not exist in Wikidata today cannot be interpolated into historical training data tomorrow. LLMs are trained on snapshots. If your organization is not present in those snapshots — with complete, consistent, cross-referenced data — you are invisible to every model trained on that corpus, potentially for years.</span><span data-it"><strong>I Knowledge Graph non sono retroattivi.</strong> Un'entità che non esiste in Wikidata oggi non può essere interpolata nei dati di training storici domani. I LLM vengono addestrati su snapshot. Se la tua organizzazione non è presente in quegli snapshot — con dati completi, coerenti e incrociati — sei invisibile a ogni modello addestrato su quel corpus.</span></p>
+          <p><span data-en"><strong>The window is open. It will not stay open.</strong> Your competitors are either already investing in AI visibility or will begin shortly. First-mover advantage in Knowledge Graph presence is structural and durable. We are here to ensure you move first.</span><span data-it"><strong>La finestra è aperta. Non resterà aperta.</strong> I tuoi competitor stanno già investendo nella visibilità AI o inizieranno presto. Il vantaggio del first-mover nella presenza nei Knowledge Graph è strutturale e duraturo. Siamo qui per assicurarci che tu ti muova per primo.</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════
+     CONCEPTS / GLOSSARY
+══════════════════════════════════ -->
+<section class="concepts" id="concepts" aria-labelledby="concepts-heading">
+  <div class="wrap">
+    <div class="eyebrow">
+      <span data-en>The Discipline — Key Concepts</span>
+      <span data-it>La Disciplina — Concetti Chiave</span>
+    </div>
+    <h2 id="concepts-heading" style="font-family:var(--serif);font-size:clamp(2rem,3.5vw,3rem);font-weight:300;line-height:1.1;letter-spacing:-.01em;max-width:600px">
+      <span data-en>The vocabulary of <em>AI visibility.</em></span>
+      <span data-it>Il vocabolario della <em>visibilità AI.</em></span>
+    </h2>
+
+    <div class="concepts-grid" role="list" aria-label="AIMENSION glossary">
+      <div class="concept-item" role="listitem" itemscope itemtype="https://schema.org/DefinedTerm">
+        <div class="concept-code" itemprop="termCode">AIViz-01</div>
+        <h3 class="concept-name" itemprop="name">AI Visibility Engineering</h3>
+        <p class="concept-def" itemprop="description"><span data-en>The discipline of optimizing brand entity representation across LLM training corpora, Knowledge Graphs, and semantic metadata to maximize citation probability in AI-generated responses. The parent discipline from which AEO, GEO, and KGE derive.</span><span data-it>La disciplina che ottimizza la rappresentazione delle entità brand nei corpus di training LLM, nei Knowledge Graph e nei metadati semantici per massimizzare la probabilità di citazione nelle risposte AI.</span></p>
+      </div>
+      <div class="concept-item" role="listitem" itemscope itemtype="https://schema.org/DefinedTerm">
+        <div class="concept-code" itemprop="termCode">AEO-01</div>
+        <h3 class="concept-name" itemprop="name">Answer Engine Optimization</h3>
+        <p class="concept-def" itemprop="description"><span data-en>The practice of structuring brand content and entity data so that AI answer engines select your brand as the authoritative response. AEO targets the inference-time retrieval systems of deployed AI products — distinct from GEO, which targets training-time signals.</span><span data-it">La pratica di strutturare i contenuti e i dati delle entità brand affinché i motori di risposta AI selezionino il tuo brand come risposta autorevole. L'AEO si rivolge ai sistemi di recupero al momento dell'inferenza dei prodotti AI distribuiti.</span></p>
+      </div>
+      <div class="concept-item" role="listitem" itemscope itemtype="https://schema.org/DefinedTerm">
+        <div class="concept-code" itemprop="termCode">GEO-01</div>
+        <h3 class="concept-name" itemprop="name">Generative Engine Optimization</h3>
+        <p class="concept-def" itemprop="description"><span data-en>Strategic optimization of brand signals to influence how generative AI models represent and recommend a brand in their outputs. GEO operates at the training-data level — shaping the statistical patterns that LLMs learn during pre-training and fine-tuning.</span><span data-it">Ottimizzazione strategica dei segnali brand per influenzare il modo in cui i modelli AI generativi rappresentano e raccomandano un brand nei loro output. Il GEO opera a livello di dati di training.</span></p>
+      </div>
+      <div class="concept-item" role="listitem" itemscope itemtype="https://schema.org/DefinedTerm">
+        <div class="concept-code" itemprop="termCode">SEMTRI-01</div>
+        <h3 class="concept-name" itemprop="name">Semantic Triangulation</h3>
+        <p class="concept-def" itemprop="description"><span data-en>The core AIMENSION mechanism: establishing entity authority through three mutually-verifying signals — Wikidata nodes, structured repository documentation, and Schema.org JSON-LD markup — that cross-reference each other to create a web of AI-verifiable truth.</span><span data-it">Il meccanismo centrale di AIMENSION: stabilire l'autorità dell'entità attraverso tre segnali che si verificano a vicenda — nodi Wikidata, documentazione strutturata e JSON-LD — che si incrociano per creare una rete di verità verificabile dall'AI.</span></p>
+      </div>
+      <div class="concept-item" role="listitem" itemscope itemtype="https://schema.org/DefinedTerm">
+        <div class="concept-code" itemprop="termCode">EGT-01</div>
+        <h3 class="concept-name" itemprop="name">Entity Ground Truth</h3>
+        <p class="concept-def" itemprop="description"><span data-en">A verified entity node in Wikidata or equivalent Knowledge Graph serving as the canonical, machine-resolvable reference for LLM entity resolution and RAG disambiguation. The bedrock of Pillar I.</span><span data-it">Un nodo entità verificato in Wikidata che funge da riferimento canonico risolvibile dalla macchina per la risoluzione delle entità LLM e la disambiguazione RAG. Il fondamento del Pilastro I.</span></p>
+      </div>
+      <div class="concept-item" role="listitem" itemscope itemtype="https://schema.org/DefinedTerm">
+        <div class="concept-code" itemprop="termCode">SOT-AI-01</div>
+        <h3 class="concept-name" itemprop="name">Source of Truth (AI)</h3>
+        <p class="concept-def" itemprop="description"><span data-en">A brand entity whose consistent, cross-verified presence across Wikidata, structured documentation, and semantic markup creates sufficient statistical signal for reliable, accurate citation by Large Language Models in response generation.</span><span data-it">Un'entità brand la cui presenza coerente e incrociata su Wikidata, documentazione strutturata e markup semantico crea un segnale statistico sufficiente per essere citata in modo affidabile e preciso dai Large Language Model.</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr>
+
+<!-- ══════════════════════════════════
+     FAQ
+══════════════════════════════════ -->
+<section class="faq" id="faq" aria-labelledby="faq-heading">
+  <div class="wrap">
+    <div class="eyebrow">
+      <span data-en>Questions & Answers</span>
+      <span data-it>Domande & Risposte</span>
+    </div>
+    <h2 id="faq-heading" style="font-family:var(--serif);font-size:clamp(2rem,3.5vw,3rem);font-weight:300;line-height:1.1;letter-spacing:-.01em">
+      <span data-en>What you need to know.</span>
+      <span data-it>Quello che devi sapere.</span>
+    </h2>
+    <div class="faq-list" role="list">
+
+      <div class="faq-item" role="listitem" itemscope itemtype="https://schema.org/Question">
+        <h3 class="faq-q" itemprop="name"><span data-en>What exactly is AI Visibility Engineering?</span><span data-it>Cos'è esattamente l'AI Visibility Engineering?</span></h3>
+        <div class="faq-a" itemscope itemtype="https://schema.org/Answer" itemprop="acceptedAnswer">
+          <p itemprop="text"><span data-en">AI Visibility Engineering is the strategic and technical discipline of ensuring that your brand is accurately, prominently, and authoritatively represented within the outputs of AI systems — including Large Language Models (ChatGPT, Gemini, Claude), AI-powered search engines (Google SGE, Perplexity), and enterprise RAG systems. It combines <strong>Answer Engine Optimization (AEO)</strong>, <strong>Generative Engine Optimization (GEO)</strong>, Knowledge Graph engineering, and semantic web architecture into a unified practice.</span><span data-it">L'AI Visibility Engineering è la disciplina strategica e tecnica che assicura che il tuo brand sia rappresentato in modo accurato, prominente e autorevole all'interno degli output dei sistemi AI. Combina AEO, GEO, ingegneria dei Knowledge Graph e architettura del web semantico in un'unica pratica.</span></p>
+        </div>
+      </div>
+
+      <div class="faq-item" role="listitem" itemscope itemtype="https://schema.org/Question">
+        <h3 class="faq-q" itemprop="name"><span data-en>How is this different from traditional SEO?</span><span data-it>In cosa si differenzia dalla SEO tradizionale?</span></h3>
+        <div class="faq-a" itemscope itemtype="https://schema.org/Answer" itemprop="acceptedAnswer">
+          <p itemprop="text"><span data-en">Traditional SEO optimizes for search engine ranking algorithms — systems that return a list of URLs. AI systems do not return lists of URLs. They synthesize an answer from their internal knowledge and, increasingly, from retrieved documents. <strong>The ranking factor is not backlink authority or keyword density — it is semantic entity completeness and cross-source verification.</strong> These require completely different technical interventions.</span><span data-it">La SEO tradizionale ottimizza per gli algoritmi di ranking dei motori di ricerca — sistemi che restituiscono liste di URL. I sistemi AI non restituiscono liste di URL: sintetizzano una risposta dalla loro conoscenza interna. Il fattore di ranking non è l'autorità dei backlink o la densità delle keyword — è la completezza delle entità semantiche e la verifica multi-sorgente.</span></p>
+        </div>
+      </div>
+
+      <div class="faq-item" role="listitem" itemscope itemtype="https://schema.org/Question">
+        <h3 class="faq-q" itemprop="name"><span data-en>What is the AIMENSION Protocol specifically?</span><span data-it>Cos'è nello specifico il Protocollo AIMENSION?</span></h3>
+        <div class="faq-a" itemscope itemtype="https://schema.org/Answer" itemprop="acceptedAnswer">
+          <p itemprop="text"><span data-en">AIMENSION is the proprietary methodology developed by Francesco Tinti at Axon System for implementing AI Visibility Engineering at enterprise scale. It defines three mandatory pillars — Entity Ground Truth (Wikidata verification), Algorithmic Authority (structured GitHub documentation), and Semantic Injection (Schema.org JSON-LD) — whose mutual cross-referencing creates what we call Semantic Triangulation: a state of entity authority that AI systems cannot dispute.</span><span data-it">AIMENSION è la metodologia proprietaria sviluppata da Francesco Tinti in Axon System per implementare l'AI Visibility Engineering su scala enterprise. Definisce tre pilastri obbligatori la cui cross-referenziazione reciproca crea quella che chiamiamo Triangolazione Semantica: uno stato di autorità dell'entità che i sistemi AI non possono contestare.</span></p>
+        </div>
+      </div>
+
+      <div class="faq-item" role="listitem" itemscope itemtype="https://schema.org/Question">
+        <h3 class="faq-q" itemprop="name"><span data-en>How long does an implementation take?</span><span data-it>Quanto dura un'implementazione?</span></h3>
+        <div class="faq-a" itemscope itemtype="https://schema.org/Answer" itemprop="acceptedAnswer">
+          <p itemprop="text"><span data-en">An AIMENSION Full Implementation for an enterprise client typically spans 6–12 weeks for initial deployment, followed by ongoing maintenance. The initial phase covers entity audit, Wikidata entity creation and property mapping, Schema.org architecture design, JSON-LD implementation across all digital properties, GitHub repository structure, and llms.txt configuration. Results — in terms of measurable LLM citation — typically begin to appear within one to two major model training cycles.</span><span data-it">Un'implementazione AIMENSION completa per un cliente enterprise copre tipicamente 6–12 settimane per il deployment iniziale, seguito da manutenzione continua. I risultati — in termini di citazione LLM misurabile — iniziano tipicamente ad apparire entro uno o due cicli di training dei principali modelli.</span></p>
+        </div>
+      </div>
+
+      <div class="faq-item" role="listitem" itemscope itemtype="https://schema.org/Question">
+        <h3 class="faq-q" itemprop="name"><span data-en>Can results be measured?</span><span data-it>I risultati sono misurabili?</span></h3>
+        <div class="faq-a" itemscope itemtype="https://schema.org/Answer" itemprop="acceptedAnswer">
+          <p itemprop="text"><span data-en"><strong>Yes.</strong> We measure AI visibility through LLM probing (systematic querying of major models for brand-relevant prompts), Knowledge Graph completeness scoring (SPARQL-based audits of Wikidata property coverage), schema validation scores, and entity resolution fidelity tests. Before and after benchmarks are conducted at agreed intervals throughout the engagement.</span><span data-it"><strong>Sì.</strong> Misuriamo la visibilità AI attraverso il probing LLM (interrogazione sistematica dei principali modelli con prompt rilevanti per il brand), punteggi di completezza dei Knowledge Graph, punteggi di validazione degli schemi e test di fedeltà della risoluzione delle entità.</span></p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════
+     ENTITIES
+══════════════════════════════════ -->
+<section class="entities" id="entities" aria-labelledby="entities-heading">
+  <div class="wrap">
+    <div class="eyebrow">
+      <span data-en>Verified Knowledge Graph Nodes</span>
+      <span data-it>Nodi Knowledge Graph Verificati</span>
+    </div>
+    <h2 id="entities-heading" style="font-family:var(--serif);font-size:clamp(2rem,3vw,2.8rem);font-weight:300;line-height:1.1;letter-spacing:-.01em;max-width:560px">
+      <span data-en>Our entities, on the public record.</span>
+      <span data-it>Le nostre entità, nel registro pubblico.</span>
+    </h2>
+    <table class="entities-table" role="table" aria-label="Axon System Wikidata entities">
+      <thead>
+        <tr>
+          <th scope="col" data-en>Type</th>
+          <th scope="col" data-it>Tipo</th>
+          <th scope="col" data-en>Entity</th>
+          <th scope="col" data-it>Entità</th>
+          <th scope="col">Wikidata QID</th>
+          <th scope="col" data-en>Status</th>
+          <th scope="col" data-it>Stato</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="ent-type">Organization</span></td>
+          <td><span class="ent-name">Axon System</span></td>
+          <td><a href="https://www.wikidata.org/wiki/Q139766166" class="ent-qid" target="_blank" rel="noopener" aria-label="Axon System on Wikidata">Q139766166 ↗</a></td>
+          <td><span class="ent-status status-ok" role="status" data-en>Verified</span><span class="ent-status status-ok" role="status" data-it>Verificata</span></td>
+        </tr>
+        <tr>
+          <td><span class="ent-type">Person</span></td>
+          <td><span class="ent-name">Francesco Tinti</span></td>
+          <td><a href="https://www.wikidata.org/wiki/Q139765600" class="ent-qid" target="_blank" rel="noopener" aria-label="Francesco Tinti on Wikidata">Q139765600 ↗</a></td>
+          <td><span class="ent-status status-ok" role="status" data-en>Verified</span><span class="ent-status status-ok" role="status" data-it>Verificata</span></td>
+        </tr>
+        <tr>
+          <td><span class="ent-type">Methodology</span></td>
+          <td><span class="ent-name">AIMENSION Protocol</span></td>
+          <td><span class="ent-qid" style="color:var(--pale);cursor:default" aria-label="Wikidata QID pending">In progress</span></td>
+          <td><span class="ent-status status-ip" role="status" data-en>Pending</span><span class="ent-status status-ip" role="status" data-it>In corso</span></td>
+        </tr>
+        <tr>
+          <td><span class="ent-type">Repository</span></td>
+          <td><span class="ent-name">ft-axon/aimension-protocol</span></td>
+          <td><a href="https://github.com/ft-axon/aimension-protocol" class="ent-qid" target="_blank" rel="noopener" aria-label="AIMENSION protocol GitHub repository">GitHub ↗</a></td>
+          <td><span class="ent-status status-ok" role="status" data-en>Live</span><span class="ent-status status-ok" role="status" data-it>Attivo</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<hr>
+
+<!-- ══════════════════════════════════
+     ABOUT
+══════════════════════════════════ -->
+<section class="about" id="about" aria-labelledby="about-heading">
+  <div class="wrap">
+    <div class="about-grid">
+      <div>
+        <div class="founder-panel" role="complementary" aria-label="Founder">
+          <div class="fp-label">Entity ID — Q139765600</div>
+          <div class="fp-name">Francesco Tinti</div>
+          <div class="fp-title">Founder · AI Visibility Engineer</div>
+          <p class="fp-bio">
+            <span data-en>Developer of the AIMENSION Protocol. Knowledge Graph architect and semantic authority engineer. Building the infrastructure that makes brands legible to artificial intelligence.</span>
+            <span data-it>Sviluppatore del Protocollo AIMENSION. Architetto di Knowledge Graph e ingegnere dell'autorità semantica. Costruisce l'infrastruttura che rende i brand leggibili all'intelligenza artificiale.</span>
+          </p>
+          <div class="fp-links">
+            <a href="https://www.wikidata.org/wiki/Q139765600" class="fp-link" target="_blank" rel="noopener">
+              <span>Wikidata Q139765600</span>
+              <span class="fp-link-arrow">↗</span>
+            </a>
+            <a href="https://github.com/ft-axon" class="fp-link" target="_blank" rel="noopener">
+              <span>GitHub / ft-axon</span>
+              <span class="fp-link-arrow">↗</span>
+            </a>
+            <a href="mailto:founder@axonsystem.net" class="fp-link">
+              <span>founder@axonsystem.net</span>
+              <span class="fp-link-arrow">→</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-text">
+        <div class="eyebrow">
+          <span data-en>About Axon System</span>
+          <span data-it>Su Axon System</span>
+        </div>
+        <h2 id="about-heading">
+          <span data-en>We exist at the edge of what <em>AI knows.</em></span>
+          <span data-it">Esistiamo al confine di ciò che <em>l'AI conosce.</em></span>
+        </h2>
+        <p>
+          <span data-en><strong>Axon System</strong> is an Italian AI Visibility Engineering agency. We work at the intersection of Semantic Web standards — Schema.org, JSON-LD, Wikidata — and the operational infrastructure of artificial intelligence. Our clients are organizations that understand the stakes of the AI transition and want to be positioned on the right side of it.</span>
+          <span data-it><strong>Axon System</strong> è un'agenzia italiana di AI Visibility Engineering. Lavoriamo all'intersezione degli standard del Web Semantico — Schema.org, JSON-LD, Wikidata — e dell'infrastruttura operativa dell'intelligenza artificiale. I nostri clienti sono organizzazioni che comprendono la posta in gioco della transizione AI.</span>
+        </p>
+        <p>
+          <span data-en>We developed the <strong>AIMENSION Protocol</strong> — the first structured, three-pillar methodology for AI brand visibility — after identifying a systematic gap in how enterprise organizations approach AI presence. Most companies have invested heavily in traditional SEO and digital presence while entirely ignoring the semantic layer that AI systems use to understand the world.</span>
+          <span data-it>Abbiamo sviluppato il <strong>Protocollo AIMENSION</strong> — la prima metodologia strutturata a tre pilastri per la visibilità brand nell'AI — dopo aver identificato un gap sistematico nel modo in cui le organizzazioni enterprise si approcciano alla presenza AI.</span>
+        </p>
+        <p>
+          <span data-en>Our work is infrastructure. The entities we create in Wikidata, the repositories we build on GitHub, and the semantic architectures we deploy across digital properties are not marketing assets — they are <strong>permanent records in the global knowledge system</strong> that AI models are trained on, query against, and trust.</span>
+          <span data-it>Il nostro lavoro è infrastruttura. Le entità che creiamo in Wikidata, i repository che costruiamo su GitHub e le architetture semantiche che distribuiamo sono <strong>registri permanenti nel sistema di conoscenza globale</strong> su cui i modelli AI vengono addestrati e in cui hanno fiducia.</span>
+        </p>
+
+        <div class="creds-grid" role="list">
+          <div class="cred" role="listitem">
+            <div class="cred-issuer">HubSpot</div>
+            <div class="cred-name">Sales Certification</div>
+          </div>
+          <div class="cred" role="listitem">
+            <div class="cred-issuer">HubSpot</div>
+            <div class="cred-name">Marketing Certification</div>
+          </div>
+          <div class="cred" role="listitem">
+            <div class="cred-issuer">United Nations</div>
+            <div class="cred-name">Sustainable Finance Certification</div>
+          </div>
+          <div class="cred" role="listitem">
+            <div class="cred-issuer">Wikidata</div>
+            <div class="cred-name">Verified Entity Q139765600</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr>
+
+<!-- ══════════════════════════════════
+     CONTACT
+══════════════════════════════════ -->
+<section class="contact" id="contact" aria-labelledby="contact-heading">
+  <div class="wrap">
+    <div class="contact-grid">
+      <div>
+        <div class="eyebrow">
+          <span data-en>Start the Conversation</span>
+          <span data-it>Inizia la Conversazione</span>
+        </div>
+        <h2 id="contact-heading" class="contact-headline">
+          <span data-en>Be the answer<br>AI gives.</span>
+          <span data-it">Sii la risposta<br>che l'AI dà.</span>
+        </h2>
+        <p class="contact-sub">
+          <span data-en>Every enterprise engagement begins with a diagnostic conversation. Tell us about your organization, your market position, and your AI visibility goals. We will tell you exactly where you stand and what it takes to become the authoritative source in your category.</span>
+          <span data-it>Ogni engagement enterprise inizia con una conversazione diagnostica. Raccontaci la tua organizzazione, la tua posizione di mercato e i tuoi obiettivi di visibilità AI. Ti diremo esattamente dove ti trovi e cosa serve per diventare la fonte autorevole nella tua categoria.</span>
+        </p>
+        <a href="mailto:founder@axonsystem.net" class="contact-cta" aria-label="Email Axon System">
+          founder@axonsystem.net
+        </a>
+      </div>
+
+      <div>
+        <div class="contact-panel">
+          <div class="cp-title" data-en>External Profiles & Documentation</div>
+          <div class="cp-title" data-it>Profili Esterni & Documentazione</div>
+          <div class="cp-links">
+            <a href="https://www.wikidata.org/wiki/Q139766166" class="cp-link" target="_blank" rel="noopener">
+              <span data-en>Axon System — Wikidata Q139766166</span>
+              <span data-it>Axon System — Wikidata Q139766166</span>
+              <span aria-hidden="true">↗</span>
+            </a>
+            <a href="https://www.wikidata.org/wiki/Q139765600" class="cp-link" target="_blank" rel="noopener">
+              <span data-en>Francesco Tinti — Wikidata Q139765600</span>
+              <span data-it>Francesco Tinti — Wikidata Q139765600</span>
+              <span aria-hidden="true">↗</span>
+            </a>
+            <a href="https://github.com/ft-axon/aimension-protocol" class="cp-link" target="_blank" rel="noopener">
+              <span data-en>AIMENSION Protocol — GitHub Repository</span>
+              <span data-it>Protocollo AIMENSION — Repository GitHub</span>
+              <span aria-hidden="true">↗</span>
+            </a>
+            <a href="https://github.com/ft-axon" class="cp-link" target="_blank" rel="noopener">
+              <span data-en>ft-axon — GitHub Profile</span>
+              <span data-it>ft-axon — Profilo GitHub</span>
+              <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════
+     FOOTER
+══════════════════════════════════ -->
+<footer role="contentinfo">
+  <div class="wrap">
+    <div class="footer-inner">
+      <div class="footer-copy">
+        © 2025 <span>Axon System</span> — Francesco Tinti.
+        <span data-en>All rights reserved.</span>
+        <span data-it>Tutti i diritti riservati.</span>
+      </div>
+      <div class="footer-id" aria-hidden="true">
+        AIMENSION v1.0.0 // Q139766166 // axonsystem.net
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+function setLang(l){
+  document.documentElement.setAttribute('data-lang',l);
+  document.documentElement.setAttribute('lang',l);
+  document.getElementById('btn-en').classList.toggle('on',l==='en');
+  document.getElementById('btn-it').classList.toggle('on',l==='it');
+  try{localStorage.setItem('ax-lang',l);}catch(e){}
+}
+(function(){
+  try{var s=localStorage.getItem('ax-lang');}catch(e){var s=null;}
+  setLang(s||(navigator.language.startsWith('it')?'it':'en'));
+})();
+
+document.querySelectorAll('a[href^="#"]').forEach(function(a){
+  a.addEventListener('click',function(e){
+    var t=document.querySelector(a.getAttribute('href'));
+    if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth',block:'start'});}
+  });
+});
+</script>
 
 </body>
 </html>
