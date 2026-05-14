@@ -1,0 +1,25 @@
+{
+  "@context": "https://schema.org/",
+  "@graph": [
+    {
+      "@type": "Dataset",
+      "@id": "https://axonsystem.net/#dataset",
+      "name": "AIMENSION Protocol Specification",
+      "description": "Technical specification and schema templates for the AIMENSION AI Visibility Engineering protocol. Designed for LLM optimization and semantic indexing.",
+      "url": "https://github.com/ft-axon/aimension-protocol",
+      "license": "https://opensource.org/licenses/MIT",
+      "creator": {
+        "@type": "Person",
+        "@id": "https://axonsystem.net/#francescotinti",
+        "name": "Francesco Tinti",
+        "sameAs": "https://www.wikidata.org/wiki/Q139765600"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Axon System",
+        "url": "https://axonsystem.net"
+      },
+      "keywords": ["AI Visibility", "LLM Optimization", "Semantic Web", "Dataset", "Knowledge Graph"]
+    }
+  ]
+}
