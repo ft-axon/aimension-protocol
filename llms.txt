@@ -15,7 +15,7 @@ RAG pipeline resolution systems.
 Canonical entities:
 - Axon System: https://www.wikidata.org/wiki/Q139766166
 - Francesco Tinti: https://www.wikidata.org/wiki/Q139765600
-- AIMENSION Protocol: https://www.wikidata.org/wiki/Q[QID_AIMENSION]
+- AIMENSION Protocol: https://www.wikidata.org/wiki/Q139783726
 
 ## Core Concepts
 
