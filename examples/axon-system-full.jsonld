@@ -36,10 +36,11 @@
       "nationality": { "@type": "Country", "name": "Italy" }
     },
     {
-      "@type": ["SoftwareApplication", "CreativeWork"],
+      "@type": ["CreativeWork", "Thing"],
       "@id": "https://axonsystem.net/aimension#protocol",
       "name": "AIMENSION Protocol",
-      "softwareVersion": "1.0.0",
+      "genre": "AI Visibility Engineering Methodology",
+      "version": "1.0.0",
       "dateCreated": "2025-01-01",
       "url": "https://axonsystem.net/aimension",
       "codeRepository": "https://github.com/ft-axon/aimension-protocol",
