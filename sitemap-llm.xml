@@ -204,9 +204,10 @@
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
-
-  <url>
+<url>
     <loc>https://axonsystem.net/aimension.jsonld</loc>
+    <lastmod>2026-05-01</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
