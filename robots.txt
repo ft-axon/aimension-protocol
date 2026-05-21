@@ -1,0 +1,108 @@
+# ============================================================
+# robots.txt — axonsystem.net
+# Maintained by: founder@axonsystem.net
+# Strategy: Maximum crawl access for AI bots & search engines
+# ============================================================
+
+# --- TIER 1: AI Language Model Crawlers (Full Access) ---
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: YouBot
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+User-agent: meta-externalagent
+Allow: /
+
+User-agent: FacebookBot
+Allow: /
+
+User-agent: Diffbot
+Allow: /
+
+# --- TIER 2: Search Engine Crawlers (Full Access) ---
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+
+User-agent: YandexBot
+Allow: /
+
+# --- TIER 3: AI Research & Data Crawlers ---
+
+User-agent: CCBot
+Allow: /
+
+User-agent: DataForSeoBot
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+User-agent: PetalBot
+Allow: /
+
+# --- DEFAULT: All other bots ---
+
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /dashboard/private/
+Disallow: /api/internal/
+Disallow: /*.json$
+
+# --- Sitemaps ---
+
+Sitemap: https://axonsystem.net/sitemap.xml
+Sitemap: https://axonsystem.net/sitemap-en.xml
+Sitemap: https://axonsystem.net/sitemap-it.xml
+
+# --- LLM Discovery Files ---
+# See: https://axonsystem.net/llms.txt
+# See: https://axonsystem.net/llms-full.txt
