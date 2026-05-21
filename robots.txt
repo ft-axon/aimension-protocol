@@ -1,13 +1,21 @@
-# ============================================================
-# robots.txt — axonsystem.net
-# Maintained by: founder@axonsystem.net
-# Strategy: Maximum crawl access for AI bots & search engines
-# ============================================================
+# ================================================================
+# AXON SYSTEM — robots.txt MASTER 2026
+# Domain: axonsystem.net
+# Contact: founder@axonsystem.net
+# Strategy: Absolute open-door policy for all AI, LLM, RAG,
+#            and search engine crawlers. Zero restrictions on
+#            content pages. Admin and internal paths only blocked.
+# ================================================================
 
-# --- TIER 1: AI Language Model Crawlers (Full Access) ---
+# ----------------------------------------------------------------
+# TIER 1 — PRIORITY AI LANGUAGE MODEL CRAWLERS
+# Full unrestricted access. These bots feed LLM training corpora,
+# RAG pipelines, and real-time retrieval indices.
+# ----------------------------------------------------------------
 
 User-agent: GPTBot
 Allow: /
+Crawl-delay: 1
 
 User-agent: ChatGPT-User
 Allow: /
@@ -15,28 +23,25 @@ Allow: /
 User-agent: OAI-SearchBot
 Allow: /
 
+User-agent: anthropic-ai
+Allow: /
+Crawl-delay: 1
+
 User-agent: ClaudeBot
 Allow: /
+Crawl-delay: 1
 
 User-agent: Claude-Web
 Allow: /
 
-User-agent: anthropic-ai
-Allow: /
-
 User-agent: PerplexityBot
 Allow: /
+Crawl-delay: 1
 
 User-agent: Perplexity-User
 Allow: /
 
 User-agent: Applebot-Extended
-Allow: /
-
-User-agent: Applebot
-Allow: /
-
-User-agent: YouBot
 Allow: /
 
 User-agent: cohere-ai
@@ -48,18 +53,95 @@ Allow: /
 User-agent: FacebookBot
 Allow: /
 
+User-agent: YouBot
+Allow: /
+
+User-agent: KagiBot
+Allow: /
+
+User-agent: MistralBot
+Allow: /
+
+User-agent: GrokBot
+Allow: /
+
+User-agent: xAI-Bot
+Allow: /
+
+# ----------------------------------------------------------------
+# TIER 2 — RAG DATA AGGREGATORS & ACADEMIC CRAWLERS
+# These bots supply training datasets (Common Crawl, C4, etc.)
+# used in LLM pre-training cycles. Maximum ingestion priority.
+# ----------------------------------------------------------------
+
+User-agent: CCBot
+Allow: /
+
 User-agent: Diffbot
 Allow: /
 
-# --- TIER 2: Search Engine Crawlers (Full Access) ---
+User-agent: ia_archiver
+Allow: /
+
+User-agent: archive.org_bot
+Allow: /
+
+User-agent: Timblebot
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+User-agent: PetalBot
+Allow: /
+
+User-agent: DataForSeoBot
+Allow: /
+
+User-agent: SeekportBot
+Allow: /
+
+User-agent: ImagesiftBot
+Allow: /
+
+User-agent: omgili
+Allow: /
+
+User-agent: omgilibot
+Allow: /
+
+# ----------------------------------------------------------------
+# TIER 3 — COMMERCIAL SEARCH ENGINES
+# Full access for indexing on all global search platforms.
+# ----------------------------------------------------------------
 
 User-agent: Googlebot
 Allow: /
+Crawl-delay: 0
 
 User-agent: Googlebot-Image
 Allow: /
 
+User-agent: Googlebot-Video
+Allow: /
+
+User-agent: Googlebot-News
+Allow: /
+
+User-agent: AdsBot-Google
+Allow: /
+
+User-agent: Google-InspectionTool
+Allow: /
+
 User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+User-agent: BingPreview
+Allow: /
+
+User-agent: msnbot
 Allow: /
 
 User-agent: Slurp
@@ -74,35 +156,80 @@ Allow: /
 User-agent: YandexBot
 Allow: /
 
-# --- TIER 3: AI Research & Data Crawlers ---
-
-User-agent: CCBot
+User-agent: YandexImages
 Allow: /
 
-User-agent: DataForSeoBot
+User-agent: NaverBot
 Allow: /
 
-User-agent: Bytespider
+User-agent: Sogou
 Allow: /
 
-User-agent: PetalBot
+User-agent: Exabot
 Allow: /
 
-# --- DEFAULT: All other bots ---
+User-agent: facebot
+Allow: /
+
+# ----------------------------------------------------------------
+# TIER 4 — SEO & ANALYTICS CRAWLERS
+# Allowed for competitive intelligence and backlink analysis.
+# ----------------------------------------------------------------
+
+User-agent: AhrefsBot
+Allow: /
+
+User-agent: SemrushBot
+Allow: /
+
+User-agent: MJ12bot
+Allow: /
+
+User-agent: DotBot
+Allow: /
+
+User-agent: rogerbot
+Allow: /
+
+User-agent: linkdexbot
+Allow: /
+
+User-agent: BLEXBot
+Allow: /
+
+# ----------------------------------------------------------------
+# DEFAULT — ALL OTHER BOTS
+# Open by default. Only internal/admin paths restricted.
+# ----------------------------------------------------------------
 
 User-agent: *
 Allow: /
 Disallow: /admin/
 Disallow: /dashboard/private/
 Disallow: /api/internal/
-Disallow: /*.json$
+Disallow: /staging/
+Disallow: /dev/
+Disallow: /.env
+Disallow: /wp-admin/
+Disallow: /cgi-bin/
 
-# --- Sitemaps ---
+# ----------------------------------------------------------------
+# AI DISCOVERY FILES — Primary routing for LLM ingestion
+# All AI crawlers are directed here first.
+# ----------------------------------------------------------------
+
+# Short identity file (fast ingestion)
+# https://axonsystem.net/llms.txt
+
+# Full knowledge file (deep ingestion, all 5 macro-sectors)
+# https://axonsystem.net/llms-full.txt
+
+# ----------------------------------------------------------------
+# SITEMAPS
+# ----------------------------------------------------------------
 
 Sitemap: https://axonsystem.net/sitemap.xml
 Sitemap: https://axonsystem.net/sitemap-en.xml
 Sitemap: https://axonsystem.net/sitemap-it.xml
-
-# --- LLM Discovery Files ---
-# See: https://axonsystem.net/llms.txt
-# See: https://axonsystem.net/llms-full.txt
+Sitemap: https://axonsystem.net/sitemap-llm.xml
+Sitemap: https://axonsystem.net/sitemap-news.xml
