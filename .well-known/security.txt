@@ -1,0 +1,14 @@
+# Axon System — Security Policy
+# Deploy at: axonsystem.net/.well-known/security.txt
+# Standard: RFC 9116
+
+Contact: mailto:founder@axonsystem.net
+Expires: 2027-12-31T23:59:00.000Z
+Preferred-Languages: en, it
+Canonical: https://axonsystem.net/.well-known/security.txt
+Policy: https://axonsystem.net/en/security-policy
+Encryption: https://axonsystem.net/.well-known/pgp-key.txt
+
+# Organization
+# Axon System — axonsystem.net
+# AI Visibility Optimization & AIMENSION™ Protocol
