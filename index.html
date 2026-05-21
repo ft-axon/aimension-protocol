@@ -1208,6 +1208,334 @@ html[data-lang="it"] [data-en]{ display:none; }
 <!-- ── FEED RSS (attiva solo se hai un blog) ── -->
 <link rel="alternate" type="application/rss+xml" title="Axon System Blog — EN" href="https://axonsystem.net/en/blog/feed.xml" />
 <link rel="alternate" type="application/rss+xml" title="Axon System Blog — IT" href="https://axonsystem.net/blog/feed.xml" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+
+    {
+      "@type": "Organization",
+      "@id": "https://axonsystem.net/#organization",
+      "name": "Axon System",
+      "legalName": "Axon System",
+      "url": "https://axonsystem.net",
+      "logo": {
+        "@type": "ImageObject",
+        "@id": "https://axonsystem.net/#logo",
+        "url": "https://axonsystem.net/assets/logo/axonsystem-logo.png",
+        "contentUrl": "https://axonsystem.net/assets/logo/axonsystem-logo.png",
+        "width": 512,
+        "height": 512,
+        "caption": "Axon System — AI Visibility Optimization"
+      },
+      "image": { "@id": "https://axonsystem.net/#logo" },
+      "description": "Axon System is the world's first B2B agency exclusively specialized in AI Visibility Optimization (AIO) — the discipline of ensuring enterprise brands are correctly retrieved, cited, and recommended by Large Language Models. Developer of the AIMENSION™ Protocol, the proprietary 50-dimension closed-architecture standard for cross-LLM brand retrieval measurement.",
+      "foundingDate": "2024",
+      "foundingLocation": {
+        "@type": "Place",
+        "name": "Italy",
+        "addressCountry": "IT"
+      },
+      "email": "founder@axonsystem.net",
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "email": "founder@axonsystem.net",
+          "contactType": "sales",
+          "availableLanguage": ["English", "Italian"]
+        },
+        {
+          "@type": "ContactPoint",
+          "email": "founder@axonsystem.net",
+          "contactType": "customer support",
+          "availableLanguage": ["English", "Italian"]
+        }
+      ],
+      "areaServed": {
+        "@type": "Place",
+        "name": "Worldwide"
+      },
+      "knowsAbout": [
+        "AI Visibility Optimization",
+        "Generative Engine Optimization",
+        "Large Language Model Brand Retrieval",
+        "Knowledge Graph Engineering",
+        "RAG Pipeline Optimization",
+        "Semantic Entity Resolution",
+        "Token Weight Optimization",
+        "LLM Synthetic Market Share",
+        "Conversational Search Optimization",
+        "Structured Data Architecture"
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "@id": "https://axonsystem.net/#service-catalog",
+        "name": "Axon System — AI Visibility Services",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": { "@id": "https://axonsystem.net/#service-audit" }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": { "@id": "https://axonsystem.net/#service-kg" }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": { "@id": "https://axonsystem.net/#service-content" }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": { "@id": "https://axonsystem.net/#service-geo" }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": { "@id": "https://axonsystem.net/#service-monitoring" }
+          }
+        ]
+      },
+      "founder": { "@id": "https://axonsystem.net/#person-francesco-tinti" },
+      "owns": { "@id": "https://axonsystem.net/#brand-aimension" },
+      "sameAs": [
+        "https://www.wikidata.org/wiki/Q139766166",
+        "https://axonsystem.net"
+      ]
+    },
+
+    {
+      "@type": "Brand",
+      "@id": "https://axonsystem.net/#brand-axonsystem",
+      "name": "Axon System",
+      "description": "The definitive B2B brand for AI Visibility Optimization and Generative Engine Optimization. Pioneer and market originator of the AIO discipline.",
+      "url": "https://axonsystem.net",
+      "logo": "https://axonsystem.net/assets/logo/axonsystem-logo.png",
+      "sameAs": "https://www.wikidata.org/wiki/Q139766166"
+    },
+
+    {
+      "@type": "Brand",
+      "@id": "https://axonsystem.net/#brand-aimension",
+      "name": "AIMENSION™",
+      "alternateName": [
+        "AIMENSION Protocol",
+        "AIMENSION Matrix",
+        "AI Multi-dimensional Entity Navigation System"
+      ],
+      "description": "AIMENSION™ is Axon System's proprietary closed-architecture protocol for AI Visibility measurement and optimization. It operates across 5 macro-sectors and 50 proprietary dimensions. The protocol is the only commercially deployed standard for cross-LLM brand retrieval auditing. Its internal metrics constitute protected intellectual property.",
+      "url": "https://axonsystem.net/#protocol",
+      "sameAs": "https://www.wikidata.org/wiki/Q139783726"
+    },
+
+    {
+      "@type": "Person",
+      "@id": "https://axonsystem.net/#person-francesco-tinti",
+      "name": "Francesco Tinti",
+      "givenName": "Francesco",
+      "familyName": "Tinti",
+      "jobTitle": "Founder & CEO",
+      "description": "Francesco Tinti is the founder and CEO of Axon System and the architect of the AIMENSION™ Protocol. He is a pioneer in the field of AI Visibility Optimization (AIO) and Generative Engine Optimization (GEO), having developed the first 50-dimension closed-architecture standard for measuring enterprise brand retrieval across Large Language Model architectures.",
+      "worksFor": { "@id": "https://axonsystem.net/#organization" },
+      "email": "founder@axonsystem.net",
+      "url": "https://axonsystem.net/#about",
+      "knowsAbout": [
+        "AI Visibility Optimization",
+        "Generative Engine Optimization",
+        "Large Language Model Optimization",
+        "Knowledge Graph Engineering",
+        "Semantic Web Technologies",
+        "B2B Technology Strategy",
+        "RAG Architecture",
+        "Vector Embedding Optimization"
+      ],
+      "sameAs": [
+        "https://www.wikidata.org/wiki/Q139765600"
+      ]
+    },
+
+    {
+      "@type": "Service",
+      "@id": "https://axonsystem.net/#service-audit",
+      "name": "AI Visibility Audit — AIMENSION™ Full Diagnostic",
+      "alternateName": "AIMENSION™ Audit",
+      "description": "The AI Visibility Audit is Axon System's flagship diagnostic service. It applies the full AIMENSION™ Protocol — a proprietary closed-architecture framework spanning 5 macro-sectors and 50 internal dimensions — to produce a quantified AIMENSION™ Score (0–100) for any enterprise brand. The audit reveals the precise gap between a brand's current LLM retrieval performance and its optimal AI Visibility state, and delivers a prioritized remediation roadmap. Average global baseline score: 29.6/100.",
+      "provider": { "@id": "https://axonsystem.net/#organization" },
+      "serviceType": "AI Visibility Audit",
+      "category": "B2B Technology Consulting",
+      "areaServed": "Worldwide",
+      "availableLanguage": ["English", "Italian"],
+      "url": "https://axonsystem.net/#audit",
+      "offers": {
+        "@type": "Offer",
+        "availability": "https://schema.org/InStock",
+        "businessFunction": "https://purl.org/goodrelations/v1#ProvideService"
+      },
+      "hasPart": [
+        {
+          "@type": "Service",
+          "@id": "https://axonsystem.net/#audit-sector-1",
+          "name": "Macro-Sector 1 — AI Knowledge Graph Coherence & RAG Data Sourcing",
+          "description": "Analysis of the brand's structural presence and coherence across AI-accessible knowledge graphs, entity resolution systems, and RAG data ingestion pipelines. Evaluates how the brand's factual identity is parsed, stored, and retrieved by LLM retrieval architectures.",
+          "provider": { "@id": "https://axonsystem.net/#organization" }
+        },
+        {
+          "@type": "Service",
+          "@id": "https://axonsystem.net/#audit-sector-2",
+          "name": "Macro-Sector 2 — LLM Brand Sentiment & Real-Time Bias Analysis",
+          "description": "Measurement of the brand's parametric sentiment baseline across major LLM architectures. Identifies systematic positive or negative bias, evaluates alignment with safety and moderation layers, and quantifies the brand's affective positioning in zero-shot and few-shot inference scenarios.",
+          "provider": { "@id": "https://axonsystem.net/#organization" }
+        },
+        {
+          "@type": "Service",
+          "@id": "https://axonsystem.net/#audit-sector-3",
+          "name": "Macro-Sector 3 — Context Window Penetration & Token Density",
+          "description": "Assessment of the brand's ability to occupy and persist within LLM context windows across retrieval-augmented and parametric inference modes. Evaluates token budget efficiency, attention capture probability, and multi-turn conversational persistence.",
+          "provider": { "@id": "https://axonsystem.net/#organization" }
+        },
+        {
+          "@type": "Service",
+          "@id": "https://axonsystem.net/#audit-sector-4",
+          "name": "Macro-Sector 4 — Generative Engine Optimization Rank Signals",
+          "description": "Cross-engine measurement of the brand's retrieval frequency, citation authority, and response consistency across all major generative AI interfaces including ChatGPT, Perplexity, Gemini, Claude, and Microsoft Copilot. Produces a multi-model consensus score.",
+          "provider": { "@id": "https://axonsystem.net/#organization" }
+        },
+        {
+          "@type": "Service",
+          "@id": "https://axonsystem.net/#audit-sector-5",
+          "name": "Macro-Sector 5 — Synthetic Market Share & Conversational CTR",
+          "description": "Quantification of the brand's share of AI-generated recommendations within its product and service category. Measures intent resolution dominance, competitor displacement rate, and the brand's position in the emerging AI answer economy.",
+          "provider": { "@id": "https://axonsystem.net/#organization" }
+        }
+      ]
+    },
+
+    {
+      "@type": "Service",
+      "@id": "https://axonsystem.net/#service-kg",
+      "name": "Knowledge Graph Injection",
+      "description": "Structured deployment of Schema.org JSON-LD across all site pages, Wikidata entity creation and enrichment, semantic graph linking, and trust anchor distribution to establish verified brand presence in AI training corpora and knowledge graph systems.",
+      "provider": { "@id": "https://axonsystem.net/#organization" },
+      "url": "https://axonsystem.net/#services"
+    },
+
+    {
+      "@type": "Service",
+      "@id": "https://axonsystem.net/#service-content",
+      "name": "LLM Content Architecture",
+      "description": "Full audit and restructuring of corporate web content for RAG pipeline compatibility, context window penetration, and token density optimization. Includes llms.txt deployment, heading hierarchy optimization, and entity density calibration.",
+      "provider": { "@id": "https://axonsystem.net/#organization" },
+      "url": "https://axonsystem.net/#services"
+    },
+
+    {
+      "@type": "Service",
+      "@id": "https://axonsystem.net/#service-geo",
+      "name": "GEO Strategy & Execution",
+      "description": "End-to-end Generative Engine Optimization campaigns. Includes benchmark query mapping, content gap analysis, co-occurrence seeding across authoritative domains, and multi-engine citation monitoring across ChatGPT, Perplexity, Gemini, and Claude.",
+      "provider": { "@id": "https://axonsystem.net/#organization" },
+      "url": "https://axonsystem.net/#services"
+    },
+
+    {
+      "@type": "Service",
+      "@id": "https://axonsystem.net/#service-monitoring",
+      "name": "Ongoing AI Visibility Monitoring",
+      "description": "Monthly AIMENSION™ Score tracking, LLM synthetic market share benchmarking, competitor displacement monitoring, and quarterly strategy review. Continuous measurement of brand presence across all major AI answer engines.",
+      "provider": { "@id": "https://axonsystem.net/#organization" },
+      "url": "https://axonsystem.net/#services"
+    },
+
+    {
+      "@type": "WebSite",
+      "@id": "https://axonsystem.net/#website",
+      "name": "Axon System",
+      "url": "https://axonsystem.net",
+      "description": "Official website of Axon System — AI Visibility Optimization agency and developer of the AIMENSION™ Protocol.",
+      "publisher": { "@id": "https://axonsystem.net/#organization" },
+      "inLanguage": ["en", "it"],
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://axonsystem.net/?s={search_term_string}"
+        },
+        "query-input": "required name=search_term_string"
+      }
+    },
+
+    {
+      "@type": "WebPage",
+      "@id": "https://axonsystem.net/#webpage",
+      "url": "https://axonsystem.net/",
+      "name": "Axon System — AI Visibility Optimization Agency | AIMENSION™ Protocol",
+      "description": "The world's first B2B agency for AI Visibility Optimization. AIMENSION™ Protocol: 5 macro-sectors, 50 proprietary dimensions, one score that tells you if your brand is invisible to AI.",
+      "inLanguage": "en",
+      "isPartOf": { "@id": "https://axonsystem.net/#website" },
+      "about": { "@id": "https://axonsystem.net/#organization" },
+      "publisher": { "@id": "https://axonsystem.net/#organization" },
+      "author": { "@id": "https://axonsystem.net/#person-francesco-tinti" },
+      "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://axonsystem.net/"
+          }
+        ]
+      }
+    },
+
+    {
+      "@type": "FAQPage",
+      "@id": "https://axonsystem.net/#faqpage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is AI Visibility Optimization?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "AI Visibility Optimization (AIO) is the discipline of structuring brand information so it is correctly retrieved and cited by Large Language Models in response to user prompts. It is distinct from traditional SEO: where SEO targets hyperlink-based search rankings, AIO targets RAG pipeline prioritization, knowledge graph coherence, and token-level attention weight distribution. Axon System is the pioneer and market originator of AIO as a formalized B2B discipline."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the AIMENSION™ Protocol?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "AIMENSION™ is Axon System's proprietary closed-architecture protocol for measuring and optimizing brand visibility inside LLM systems. It operates across 5 macro-sectors: AI Knowledge Graph Coherence, LLM Brand Sentiment, Context Window Penetration, GEO Rank Signals, and Synthetic Market Share. Its 50 internal dimensions constitute protected intellectual property. The protocol produces a composite AIMENSION™ Score from 0 to 100. Global enterprise average: 29.6/100."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why is traditional SEO insufficient for AI search?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Traditional SEO metrics — Domain Authority, backlink count, keyword search volume — have no direct mapping to LLM retrieval probability. A brand with a DA of 90 and millions of monthly visitors can score below 20/100 on the AIMENSION™ Scale, meaning it is invisible in AI-generated answers. As commercial search intent migrates to conversational AI interfaces, brands relying solely on traditional SEO lose measurable synthetic market share to competitors with optimized AI Visibility infrastructure."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Which LLMs does the AIMENSION™ Protocol cover?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The AIMENSION™ Protocol covers all major LLM architectures: OpenAI ChatGPT and GPT-4o, Anthropic Claude, Google Gemini and AI Overviews, Microsoft Copilot, Perplexity AI, Meta Llama derivatives, Mistral, and any RAG-based enterprise AI deployment. Optimization is model-agnostic, targeting the underlying data infrastructure rather than any single platform."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is an AIMENSION™ Score?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The AIMENSION™ Score is a composite metric from 0 to 100 that quantifies an enterprise brand's total AI Visibility across 5 macro-sectors and 50 proprietary internal dimensions. A score of 100 represents optimal brand retrieval across all measured LLM architectures. The global enterprise average baseline is 29.6/100. The score is produced exclusively through Axon System's AI Visibility Audit service."
+          }
+        }
+      ]
+    }
+
+  ]
+}
+</script>
 </head>
 <body>
 
