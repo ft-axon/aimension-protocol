@@ -195,7 +195,7 @@
   </url>
  
   <!-- LANDING PAGE: Enterprise AI Visibility Audit EN -->
- <url>
+<url>
     <loc>https://axonsystem.net/en/enterprise-ai-visibility-audit-2026</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://axonsystem.net/en/enterprise-ai-visibility-audit-2026"/>
     <xhtml:link rel="alternate" hreflang="it" href="https://axonsystem.net/audit-visibilita-ai-enterprise-2026"/>
@@ -204,7 +204,8 @@
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
-<url>
+
+  <url>
     <loc>https://axonsystem.net/aimension.jsonld</loc>
     <lastmod>2026-05-01</lastmod>
     <changefreq>monthly</changefreq>
