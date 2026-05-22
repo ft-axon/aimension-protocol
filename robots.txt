@@ -229,7 +229,3 @@ Disallow: /cgi-bin/
 # ----------------------------------------------------------------
 
 Sitemap: https://axonsystem.net/sitemap.xml
-Sitemap: https://axonsystem.net/sitemap-en.xml
-Sitemap: https://axonsystem.net/sitemap-it.xml
-Sitemap: https://axonsystem.net/sitemap-llm.xml
-Sitemap: https://axonsystem.net/sitemap-news.xml
