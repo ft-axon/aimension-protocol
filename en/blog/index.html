@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>AI Visibility Engineering Blog — Axon System</title>
+<meta name="description" content="Technical insights on AI Visibility Engineering, AEO, GEO, Knowledge Graph optimization, and LLM brand retrieval. Research and analysis by Axon System." />
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
+<link rel="canonical" href="https://axonsystem.net/en/blog" />
+<link rel="alternate" hreflang="en" href="https://axonsystem.net/en/blog" />
+<link rel="alternate" hreflang="x-default" href="https://axonsystem.net/en/blog" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Axon System" />
+<meta property="og:title" content="AI Visibility Engineering Blog — Axon System" />
+<meta property="og:description" content="Technical insights on AI Visibility Engineering, AEO, GEO, Knowledge Graph optimization, and LLM brand retrieval." />
+<meta property="og:url" content="https://axonsystem.net/en/blog" />
+<meta property="og:image" content="https://axonsystem.net/assets/og/axonsystem-og-cover.png" />
+<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Blog",
+      "@id": "https://axonsystem.net/en/blog#blog",
+      "name": "Axon System — AI Visibility Engineering Blog",
+      "description": "Technical research and analysis on AI Visibility Engineering, AEO, GEO, Knowledge Graph optimization, and LLM brand retrieval by Francesco Tinti and Axon System.",
+      "url": "https://axonsystem.net/en/blog",
+      "inLanguage": "en",
+      "author": {"@id": "https://axonsystem.net/#person-francesco-tinti"},
+      "publisher": {"@id": "https://axonsystem.net/#organization"}
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://axonsystem.net/en/blog#webpage",
+      "url": "https://axonsystem.net/en/blog",
+      "name": "AI Visibility Engineering Blog — Axon System",
+      "isPartOf": {"@id": "https://axonsystem.net/#website"},
+      "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type":"ListItem","position":1,"name":"Home","item":"https://axonsystem.net/"},
+          {"@type":"ListItem","position":2,"name":"Blog","item":"https://axonsystem.net/en/blog"}
+        ]
+      }
+    }
+  ]
+}
+</script>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --cream:#FAF8F4;--cream2:#F3F0E8;--cream3:#E8E3D8;
+  --ink:#0D0C0A;--ink2:#2A2720;--ink3:#4A4640;
+  --mid:#7A7570;--pale:#A09890;
+  --faint:rgba(13,12,10,0.06);--faint2:rgba(13,12,10,0.12);
+  --gold:#B8975A;--gold2:#D4AF6E;
+  --serif:'Cormorant Garamond',Georgia,serif;
+  --sans:'DM Sans',system-ui,sans-serif;
+  --mono:'DM Mono',monospace;
+  --trans:all 0.4s cubic-bezier(0.4,0,0.2,1);
+  --max:1200px;
+}
+@font-face{font-family:'Cormorant Garamond';font-style:normal;font-weight:300;font-display:swap;src:url('/fonts/cormorant-garamond-v21-latin_latin-ext-300.woff2') format('woff2')}
+@font-face{font-family:'Cormorant Garamond';font-style:italic;font-weight:300;font-display:swap;src:url('/fonts/cormorant-garamond-v21-latin_latin-ext-300italic.woff2') format('woff2')}
+@font-face{font-family:'Cormorant Garamond';font-style:normal;font-weight:400;font-display:swap;src:url('/fonts/cormorant-garamond-v21-latin_latin-ext-regular.woff2') format('woff2')}
+@font-face{font-family:'Cormorant Garamond';font-style:italic;font-weight:400;font-display:swap;src:url('/fonts/cormorant-garamond-v21-latin_latin-ext-italic.woff2') format('woff2')}
+@font-face{font-family:'Cormorant Garamond';font-style:normal;font-weight:500;font-display:swap;src:url('/fonts/cormorant-garamond-v21-latin_latin-ext-500.woff2') format('woff2')}
+@font-face{font-family:'Cormorant Garamond';font-style:normal;font-weight:600;font-display:swap;src:url('/fonts/cormorant-garamond-v21-latin_latin-ext-600.woff2') format('woff2')}
+@font-face{font-family:'DM Sans';font-style:normal;font-weight:300;font-display:swap;src:url('/fonts/dm-sans-v17-latin_latin-ext-300.woff2') format('woff2')}
+@font-face{font-family:'DM Sans';font-style:normal;font-weight:400;font-display:swap;src:url('/fonts/dm-sans-v17-latin_latin-ext-regular.woff2') format('woff2')}
+@font-face{font-family:'DM Sans';font-style:normal;font-weight:500;font-display:swap;src:url('/fonts/dm-sans-v17-latin_latin-ext-500.woff2') format('woff2')}
+@font-face{font-family:'DM Mono';font-style:normal;font-weight:300;font-display:swap;src:url('/fonts/dm-mono-v16-latin_latin-ext-300.woff2') format('woff2')}
+@font-face{font-family:'DM Mono';font-style:normal;font-weight:400;font-display:swap;src:url('/fonts/dm-mono-v16-latin_latin-ext-regular.woff2') format('woff2')}
+
+html{scroll-behavior:smooth;font-size:16px}
+body{background:var(--cream);color:var(--ink);font-family:var(--sans);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body::after{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.025'/%3E%3C/svg%3E");pointer-events:none;z-index:9999;opacity:.5}
+
+.wrap{max-width:var(--max);margin:0 auto;padding:0 48px}
+@media(max-width:700px){.wrap{padding:0 24px}}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(250,248,244,0.92);backdrop-filter:blur(24px);border-bottom:1px solid var(--faint2)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:68px;max-width:var(--max);margin:0 auto;padding:0 48px}
+@media(max-width:700px){.nav-inner{padding:0 24px}}
+.nav-wordmark{font-family:var(--serif);font-size:1.15rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink);text-decoration:none}
+.nav-wordmark em{font-style:normal;color:var(--gold)}
+.nav-right{display:flex;align-items:center;gap:16px}
+.nav-back{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--mid);text-decoration:none;transition:var(--trans)}
+.nav-back:hover{color:var(--ink)}
+.nav-cta{font-family:var(--sans);font-size:12px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;background:var(--ink);color:var(--cream);padding:10px 22px;border-radius:3px;text-decoration:none;transition:var(--trans)}
+.nav-cta:hover{background:var(--ink2)}
+
+.page-header{padding:140px 0 80px;border-bottom:1px solid var(--faint2)}
+.eyebrow{font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:12px;margin-bottom:28px}
+.eyebrow::before{content:'';display:block;width:32px;height:1px;background:var(--gold)}
+.page-title{font-family:var(--serif);font-size:clamp(3rem,6vw,6rem);font-weight:300;line-height:1.0;letter-spacing:-.01em;margin-bottom:24px}
+.page-title em{font-style:italic;color:var(--gold)}
+.page-sub{font-size:.95rem;color:var(--ink3);line-height:1.8;max-width:560px}
+
+.blog-grid{padding:80px 0;display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--faint2);border:1px solid var(--faint2)}
+@media(max-width:700px){.blog-grid{grid-template-columns:1fr}}
+
+.blog-card{background:var(--cream);padding:48px 44px;transition:var(--trans);display:block;text-decoration:none;color:inherit}
+.blog-card:hover{background:var(--cream2)}
+.blog-card-meta{display:flex;gap:16px;margin-bottom:20px;align-items:center;flex-wrap:wrap}
+.blog-card-date{font-family:var(--mono);font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--pale)}
+.blog-card-tag{font-family:var(--mono);font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);border:1px solid rgba(184,151,90,.2);padding:3px 8px;border-radius:2px}
+.blog-card-title{font-family:var(--serif);font-size:1.6rem;font-weight:500;line-height:1.2;letter-spacing:-.01em;margin-bottom:14px;color:var(--ink)}
+.blog-card-excerpt{font-size:.875rem;color:var(--ink3);line-height:1.75;margin-bottom:24px}
+.blog-card-arrow{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold)}
+
+.blog-card.featured{grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+@media(max-width:700px){.blog-card.featured{grid-column:1;grid-template-columns:1fr}}
+.featured-label{font-family:var(--mono);font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:16px}
+.featured-title{font-family:var(--serif);font-size:clamp(1.8rem,3vw,2.8rem);font-weight:500;line-height:1.1;letter-spacing:-.01em;margin-bottom:16px}
+.featured-excerpt{font-size:.9rem;color:var(--ink3);line-height:1.8;margin-bottom:24px}
+.featured-right{padding:48px;background:var(--ink);display:flex;flex-direction:column;justify-content:center}
+@media(max-width:700px){.featured-right{padding:32px}}
+.featured-stat{margin-bottom:32px}
+.featured-stat-n{font-family:var(--serif);font-size:3rem;font-weight:300;color:var(--cream);line-height:1}
+.featured-stat-n sup{font-size:1rem;color:var(--gold2)}
+.featured-stat-l{font-family:var(--mono);font-size:9px;letter-spacing:.15em;text-transform:uppercase;color:rgba(250,248,244,.4);margin-top:6px}
+
+.coming-soon{grid-column:1/-1;padding:48px;text-align:center;border-top:1px solid var(--faint2)}
+@media(max-width:700px){.coming-soon{grid-column:1}}
+.coming-soon p{font-family:var(--mono);font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:var(--pale)}
+
+footer{background:var(--ink);border-top:1px solid rgba(255,255,255,.08);padding:36px 0;margin-top:0}
+.footer-inner{display:flex;justify-content:space-between;align-items:center}
+@media(max-width:600px){.footer-inner{flex-direction:column;gap:16px;text-align:center}}
+.footer-copy{font-family:var(--mono);font-size:10px;letter-spacing:.06em;color:rgba(250,248,244,.25)}
+.footer-copy span{color:rgba(250,248,244,.5)}
+.footer-id{font-family:var(--mono);font-size:9px;letter-spacing:.1em;color:rgba(250,248,244,.15)}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+.au{animation:fadeUp .7s cubic-bezier(.4,0,.2,1) both}
+.au1{animation-delay:.05s}.au2{animation-delay:.12s}.au3{animation-delay:.2s}
+</style>
+</head>
+<body>
+
+<nav role="navigation" aria-label="Main navigation">
+  <div class="nav-inner">
+    <a href="/" class="nav-wordmark">AXON <em>SYSTEM</em></a>
+    <div class="nav-right">
+      <a href="/en/" class="nav-back">← Home</a>
+      <a href="mailto:founder@axonsystem.net" class="nav-cta">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<main>
+<header class="page-header">
+  <div class="wrap">
+    <div class="eyebrow au au1">Axon System — Research & Analysis</div>
+    <h1 class="page-title au au2">AI Visibility<br><em>Insights</em></h1>
+    <p class="page-sub au au3">Technical research on the infrastructure that determines whether AI systems cite, trust, and recommend your brand. Written by Francesco Tinti.</p>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="blog-grid">
+
+    <a href="/en/blog/why-your-brand-scores-zero-in-chatgpt/" class="blog-card featured" aria-label="Read: Why Your Brand Scores 0 in ChatGPT">
+      <div>
+        <div class="featured-label">Featured — Latest Article</div>
+        <h2 class="featured-title">Why Your Brand Scores 0 in ChatGPT: A Technical Breakdown</h2>
+        <p class="featured-excerpt">Most enterprise brands are completely invisible to AI answer engines — not because of bad content, but because of a structural data architecture problem that traditional SEO never addresses. Here is exactly what is happening and why.</p>
+        <span class="blog-card-arrow">Read article →</span>
+      </div>
+      <div class="featured-right" aria-hidden="true">
+        <div class="featured-stat">
+          <div class="featured-stat-n">29.6<sup>/100</sup></div>
+          <div class="featured-stat-l">Global enterprise average AIMENSION™ Score</div>
+        </div>
+        <div class="featured-stat">
+          <div class="featured-stat-n">0</div>
+          <div class="featured-stat-l">Impact of DA, backlinks, or keyword rank on LLM citation</div>
+        </div>
+      </div>
+    </a>
+
+    <div class="coming-soon">
+      <p>More articles coming — AEO vs GEO vs SEO · How RAG pipelines decide which brands to cite · Wikidata QIDs and LLM citation probability</p>
+    </div>
+
+  </div>
+</div>
+</main>
+
+<footer role="contentinfo">
+  <div class="wrap">
+    <div class="footer-inner">
+      <div class="footer-copy">© 2025 <span>Axon System</span> — Francesco Tinti. All rights reserved.</div>
+      <div class="footer-id" aria-hidden="true">AIMENSION v1.0.0 // Q139766166 // axonsystem.net</div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
