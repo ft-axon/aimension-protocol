@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Wikidata QIDs and LLM Citation Probability: What the Data Shows — Axon System</title>
+<meta name="description" content="Wikidata is explicitly included in most major LLM training corpora. A complete, verified Wikidata entity is the single highest-impact GEO intervention available. Here is why — and how to build one." />
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
+<link rel="canonical" href="https://axonsystem.net/en/blog/wikidata-qids-and-llm-citation-probability/" />
+<link rel="alternate" hreflang="en" href="https://axonsystem.net/en/blog/wikidata-qids-and-llm-citation-probability/" />
+<link rel="alternate" hreflang="x-default" href="https://axonsystem.net/en/blog/wikidata-qids-and-llm-citation-probability/" />
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="Axon System" />
+<meta property="og:title" content="Wikidata QIDs and LLM Citation Probability: What the Data Shows" />
+<meta property="og:description" content="Wikidata is explicitly included in most LLM training corpora. A complete, verified entity is the single highest-impact GEO intervention available." />
+<meta property="og:url" content="https://axonsystem.net/en/blog/wikidata-qids-and-llm-citation-probability/" />
+<meta property="og:image" content="https://axonsystem.net/assets/og/axonsystem-og-cover.png" />
+<meta property="article:author" content="Francesco Tinti" />
+<meta property="article:published_time" content="2026-05-23" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Wikidata QIDs and LLM Citation Probability" />
+<meta name="twitter:description" content="Wikidata is explicitly included in most LLM training corpora. Here is why a QID is the single highest-impact GEO intervention." />
+<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://axonsystem.net/en/blog/wikidata-qids-and-llm-citation-probability/#article",
+      "headline": "Wikidata QIDs and LLM Citation Probability: What the Data Shows",
+      "description": "Wikidata is explicitly included in most major LLM training corpora. A complete, verified Wikidata entity is the single highest-impact GEO intervention available.",
+      "url": "https://axonsystem.net/en/blog/wikidata-qids-and-llm-citation-probability/",
+      "datePublished": "2026-05-23",
+      "dateModified": "2026-05-23",
+      "inLanguage": "en",
+      "author": {"@id": "https://axonsystem.net/#person-francesco-tinti"},
+      "publisher": {"@id": "https://axonsystem.net/#organization"},
+      "isPartOf": {"@id": "https://axonsystem.net/en/blog#blog"},
+      "about": [
+        {"@type": "Thing", "name": "Wikidata"},
+        {"@type": "Thing", "name": "Knowledge Graph Engineering"},
+        {"@type": "Thing", "name": "Generative Engine Optimization"},
+        {"@type": "Thing", "name": "LLM Training Signal"}
+      ],
+      "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type":"ListItem","position":1,"name":"Home","item":"https://axonsystem.net/"},
+          {"@type":"ListItem","position":2,"name":"Blog","item":"https://axonsystem.net/en/blog"},
+          {"@type":"ListItem","position":3,"name":"Wikidata QIDs and LLM Citation Probability","item":"https://axonsystem.net/en/blog/wikidata-qids-and-llm-citation-probability/"}
+        ]
+      }
+    }
+  ]
+}
+</script>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--cream:#FAF8F4;--cream2:#F3F0E8;--cream3:#E8E3D8;--ink:#0D0C0A;--ink2:#2A2720;--ink3:#4A4640;--mid:#7A7570;--pale:#A09890;--faint:rgba(13,12,10,0.06);--faint2:rgba(13,12,10,0.12);--gold:#B8975A;--gold2:#D4AF6E;--serif:'Cormorant Garamond',Georgia,serif;--sans:'DM Sans',system-ui,sans-serif;--mono:'DM Mono',monospace;--trans:all 0.4s cubic-bezier(0.4,0,0.2,1);--max:1200px;}
+@font-face{font-family:'Cormorant Garamond';font-style:normal;font-weight:300;font-display:swap;src:url('/fonts/cormorant-garamond-v21-latin_latin-ext-300.woff2') format('woff2')}
+@font-face{font-family:'Cormorant Garamond';font-style:italic;font-weight:300;font-display:swap;src:url('/fonts/cormorant-garamond-v21-latin_latin-ext-300italic.woff2') format('woff2')}
+@font-face{font-family:'Cormorant Garamond';font-style:normal;font-weight:400;font-display:swap;src:url('/fonts/cormorant-garamond-v21-latin_latin-ext-regular.woff2') format('woff2')}
+@font-face{font-family:'Cormorant Garamond';font-style:italic;font-weight:400;font-display:swap;src:url('/fonts/cormorant-garamond-v21-latin_latin-ext-italic.woff2') format('woff2')}
+@font-face{font-family:'Cormorant Garamond';font-style:normal;font-weight:500;font-display:swap;src:url('/fonts/cormorant-garamond-v21-latin_latin-ext-500.woff2') format('woff2')}
+@font-face{font-family:'Cormorant Garamond';font-style:normal;font-weight:600;font-display:swap;src:url('/fonts/cormorant-garamond-v21-latin_latin-ext-600.woff2') format('woff2')}
+@font-face{font-family:'DM Sans';font-style:normal;font-weight:300;font-display:swap;src:url('/fonts/dm-sans-v17-latin_latin-ext-300.woff2') format('woff2')}
+@font-face{font-family:'DM Sans';font-style:normal;font-weight:400;font-display:swap;src:url('/fonts/dm-sans-v17-latin_latin-ext-regular.woff2') format('woff2')}
+@font-face{font-family:'DM Sans';font-style:normal;font-weight:500;font-display:swap;src:url('/fonts/dm-sans-v17-latin_latin-ext-500.woff2') format('woff2')}
+@font-face{font-family:'DM Mono';font-style:normal;font-weight:300;font-display:swap;src:url('/fonts/dm-mono-v16-latin_latin-ext-300.woff2') format('woff2')}
+@font-face{font-family:'DM Mono';font-style:normal;font-weight:400;font-display:swap;src:url('/fonts/dm-mono-v16-latin_latin-ext-regular.woff2') format('woff2')}
+html{scroll-behavior:smooth;font-size:16px}
+body{background:var(--cream);color:var(--ink);font-family:var(--sans);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body::after{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.025'/%3E%3C/svg%3E");pointer-events:none;z-index:9999;opacity:.5}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 48px}
+@media(max-width:700px){.wrap{padding:0 24px}}
+.wrap-narrow{max-width:760px;margin:0 auto;padding:0 48px}
+@media(max-width:700px){.wrap-narrow{padding:0 24px}}
+nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(250,248,244,0.92);backdrop-filter:blur(24px);border-bottom:1px solid var(--faint2)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:68px;max-width:var(--max);margin:0 auto;padding:0 48px}
+@media(max-width:700px){.nav-inner{padding:0 24px}}
+.nav-wordmark{font-family:var(--serif);font-size:1.15rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink);text-decoration:none}
+.nav-wordmark em{font-style:normal;color:var(--gold)}
+.nav-right{display:flex;align-items:center;gap:16px}
+.nav-back{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--mid);text-decoration:none;transition:var(--trans)}
+.nav-back:hover{color:var(--ink)}
+.nav-cta{font-family:var(--sans);font-size:12px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;background:var(--ink);color:var(--cream);padding:10px 22px;border-radius:3px;text-decoration:none;transition:var(--trans)}
+.nav-cta:hover{background:var(--ink2)}
+.article-header{padding:140px 0 80px;border-bottom:1px solid var(--faint2)}
+.article-meta{display:flex;gap:16px;margin-bottom:32px;flex-wrap:wrap;align-items:center}
+.meta-tag{font-family:var(--mono);font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);border:1px solid rgba(184,151,90,.2);padding:4px 10px;border-radius:2px}
+.meta-date{font-family:var(--mono);font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--pale)}
+.meta-author{font-family:var(--mono);font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--pale)}
+.article-title{font-family:var(--serif);font-size:clamp(2.4rem,5vw,5rem);font-weight:300;line-height:1.0;letter-spacing:-.01em;margin-bottom:32px}
+.article-title em{font-style:italic;color:var(--gold)}
+.article-lead{font-family:var(--serif);font-size:1.3rem;font-weight:300;line-height:1.6;color:var(--ink3);border-left:2px solid var(--gold);padding-left:24px;max-width:680px}
+.article-body{padding:80px 0}
+.article-body h2{font-family:var(--serif);font-size:clamp(1.6rem,2.5vw,2.2rem);font-weight:500;line-height:1.1;letter-spacing:-.01em;margin-bottom:20px;margin-top:56px;color:var(--ink)}
+.article-body h2:first-child{margin-top:0}
+.article-body h3{font-family:var(--serif);font-size:1.3rem;font-weight:500;line-height:1.2;margin-bottom:16px;margin-top:36px;color:var(--ink)}
+.article-body p{font-size:.95rem;color:var(--ink3);line-height:1.85;margin-bottom:20px}
+.article-body p strong{color:var(--ink);font-weight:500}
+.article-body ul{margin-bottom:20px;padding-left:0;list-style:none}
+.article-body li{font-size:.95rem;color:var(--ink3);line-height:1.85;margin-bottom:8px;padding-left:20px;position:relative}
+.article-body li::before{content:'—';position:absolute;left:0;color:var(--gold)}
+.article-body a{color:var(--gold);text-decoration:none;border-bottom:1px solid rgba(184,151,90,.3);transition:var(--trans)}
+.article-body a:hover{border-color:var(--gold)}
+.callout{background:var(--ink);padding:40px 48px;margin:40px 0;border-left:3px solid var(--gold)}
+@media(max-width:700px){.callout{padding:28px 24px}}
+.callout p{color:rgba(250,248,244,.8);font-size:.95rem;line-height:1.85;margin-bottom:0}
+.callout p strong{color:var(--cream)}
+.callout p em{color:var(--gold2)}
+.property-table{width:100%;border-collapse:collapse;margin:40px 0;font-size:.875rem}
+.property-table th{font-family:var(--mono);font-size:9px;letter-spacing:.15em;text-transform:uppercase;color:var(--pale);padding:12px 20px;text-align:left;border-bottom:2px solid var(--faint2)}
+.property-table td{padding:14px 20px;border-bottom:1px solid var(--faint2);color:var(--ink3);vertical-align:top}
+.property-table tr:hover td{background:var(--cream2)}
+.property-table td:first-child{font-family:var(--mono);font-size:10px;color:var(--gold);font-weight:400}
+.property-table td:nth-child(2){font-weight:500;color:var(--ink)}
+.req-tag{font-family:var(--mono);font-size:8px;letter-spacing:.1em;text-transform:uppercase;padding:2px 6px;border-radius:2px}
+.req-critical{background:rgba(220,38,38,.08);color:#DC2626;border:1px solid rgba(220,38,38,.2)}
+.req-high{background:rgba(184,151,90,.08);color:var(--gold);border:1px solid rgba(184,151,90,.2)}
+.req-medium{background:rgba(13,12,10,.04);color:var(--mid);border:1px solid var(--faint2)}
+.stat-block{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--faint2);border:1px solid var(--faint2);margin:40px 0}
+@media(max-width:600px){.stat-block{grid-template-columns:1fr}}
+.stat-item{background:var(--cream);padding:28px 32px}
+.stat-n{font-family:var(--serif);font-size:2.8rem;font-weight:300;line-height:1;color:var(--ink)}
+.stat-n sup{font-size:1rem;color:var(--gold)}
+.stat-l{font-family:var(--mono);font-size:9px;letter-spacing:.15em;text-transform:uppercase;color:var(--pale);margin-top:6px}
+.code-block{background:var(--ink2);padding:24px 28px;margin:24px 0;border-radius:2px;overflow-x:auto}
+.code-block code{font-family:var(--mono);font-size:.8rem;color:var(--gold2);line-height:1.7;white-space:pre}
+.article-cta{background:var(--ink);padding:64px;margin-top:80px}
+@media(max-width:700px){.article-cta{padding:40px 24px}}
+.article-cta .eyebrow{font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold2);display:flex;align-items:center;gap:12px;margin-bottom:24px}
+.article-cta .eyebrow::before{content:'';display:block;width:32px;height:1px;background:var(--gold2)}
+.article-cta h2{font-family:var(--serif);font-size:clamp(2rem,4vw,3.5rem);font-weight:300;line-height:1.1;color:var(--cream);margin-bottom:16px}
+.article-cta h2 em{font-style:italic;color:var(--gold2)}
+.article-cta p{font-size:.9rem;color:rgba(250,248,244,.5);line-height:1.8;margin-bottom:32px;max-width:520px}
+.btn-gold{font-size:12px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;background:var(--gold);color:var(--cream);padding:14px 32px;border-radius:3px;text-decoration:none;transition:var(--trans);display:inline-block}
+.btn-gold:hover{background:var(--gold2)}
+.related{padding:80px 0;border-top:1px solid var(--faint2)}
+.related-title{font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--pale);margin-bottom:40px}
+.related-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1px;background:var(--faint2);border:1px solid var(--faint2)}
+@media(max-width:700px){.related-grid{grid-template-columns:1fr}}
+.related-item{background:var(--cream);padding:32px 28px;text-decoration:none;color:inherit;display:block;transition:var(--trans)}
+.related-item:hover{background:var(--cream2)}
+.related-tag{font-family:var(--mono);font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
+.related-name{font-family:var(--serif);font-size:1.1rem;font-weight:500;line-height:1.3;color:var(--ink)}
+footer{background:var(--ink);border-top:1px solid rgba(255,255,255,.08);padding:36px 0}
+.footer-inner{display:flex;justify-content:space-between;align-items:center}
+@media(max-width:600px){.footer-inner{flex-direction:column;gap:16px;text-align:center}}
+.footer-copy{font-family:var(--mono);font-size:10px;letter-spacing:.06em;color:rgba(250,248,244,.25)}
+.footer-copy span{color:rgba(250,248,244,.5)}
+.footer-id{font-family:var(--mono);font-size:9px;letter-spacing:.1em;color:rgba(250,248,244,.15)}
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+.au{animation:fadeUp .7s cubic-bezier(.4,0,.2,1) both}
+.au1{animation-delay:.05s}.au2{animation-delay:.12s}.au3{animation-delay:.2s}
+</style>
+</head>
+<body>
+<nav role="navigation" aria-label="Main navigation">
+  <div class="nav-inner">
+    <a href="/" class="nav-wordmark">AXON <em>SYSTEM</em></a>
+    <div class="nav-right">
+      <a href="/en/blog" class="nav-back">← Blog</a>
+      <a href="mailto:founder@axonsystem.net" class="nav-cta">Contact</a>
+    </div>
+  </div>
+</nav>
+<main>
+<header class="article-header">
+  <div class="wrap-narrow">
+    <div class="article-meta">
+      <span class="meta-tag">Knowledge Graph</span>
+      <span class="meta-tag">GEO</span>
+      <span class="meta-tag">Wikidata</span>
+      <span class="meta-date">May 23, 2026</span>
+      <span class="meta-author">Francesco Tinti — Axon System</span>
+    </div>
+    <h1 class="article-title au au1"><em>Wikidata QIDs</em><br>and LLM Citation<br>Probability</h1>
+    <p class="article-lead au au2">Wikidata is explicitly included in the training corpora of virtually every major Large Language Model. A complete, verified Wikidata entity with the right property set is the single highest-impact GEO intervention a brand can make — and most organizations have not made it.</p>
+  </div>
+</header>
+<div class="article-body">
+  <div class="wrap-narrow">
+
+    <h2>Why Wikidata is different from every other data source</h2>
+    <p>There are thousands of sources that mention your brand on the web. News articles, directory listings, social media profiles, industry databases — all of them contribute, to varying degrees, to what LLMs learn about your organization. Most of these sources are processed as unstructured text: the model extracts entity attributes from prose, which is an inherently noisy, ambiguous process.</p>
+    <p>Wikidata is fundamentally different. It is a <strong>structured, machine-readable, open Knowledge Graph</strong> maintained by the Wikimedia Foundation — the same organization that maintains Wikipedia. Every item in Wikidata is a typed entity node with explicit, verified property-value pairs. There is no ambiguity, no natural language interpretation, no extraction noise. The data says: this entity (Q139766166) is an instance of (P31) a business (Q4830453), has official website (P856) axonsystem.net, has founder (P112) Francesco Tinti (Q139765600).</p>
+    <p>This structured format is exactly what LLM training pipelines are designed to process with high fidelity. Wikidata exports — in JSON, RDF, and other formats — are explicitly included in the training datasets of GPT models, Gemini, and most other major LLMs. The Wikimedia Foundation has confirmed Wikidata data is used in AI training. This is not speculative: it is documented, structured, and directly actionable.</p>
+
+    <div class="stat-block">
+      <div class="stat-item">
+        <div class="stat-n">100M<sup>+</sup></div>
+        <div class="stat-l">Structured entity items in Wikidata</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-n">~0</div>
+        <div class="stat-l">Enterprise brands with complete AIMENSION-standard Wikidata entities</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-n">1st</div>
+        <div class="stat-l">Mover structural advantage — Knowledge Graphs are not retroactive</div>
+      </div>
+    </div>
+
+    <h2>How Wikidata data enters LLM training</h2>
+    <p>Wikidata data enters LLM training through multiple pathways, each contributing differently to the model's encoded knowledge about entities.</p>
+
+    <h3>Direct Wikidata dumps</h3>
+    <p>The Wikimedia Foundation publishes complete Wikidata JSON dumps, updated weekly, available for free download. These dumps contain all items, properties, and statements in the Knowledge Graph. Multiple LLM training pipelines include these dumps explicitly. When your entity exists in Wikidata with complete, correct properties, every model trained on a Wikidata dump learns the structured facts about your organization directly from the dump — not from noisy web extraction.</p>
+
+    <h3>Wikipedia infoboxes</h3>
+    <p>Wikipedia articles about organizations, people, and products contain infoboxes — the structured data tables in the right sidebar of Wikipedia pages. Infobox data is increasingly synchronized with Wikidata. A Wikipedia article with a complete infobox, backed by a Wikidata entity, creates a second, high-authority pathway for structured entity data into LLM training corpora. Wikipedia is in virtually every LLM training dataset.</p>
+
+    <h3>Google Knowledge Graph cross-reference</h3>
+    <p>Google's Knowledge Graph — which powers Knowledge Panels in search results and Google AI Overviews — is partly derived from Wikidata. When a brand has a verified Wikidata entity, Google's entity resolution system is more likely to create a Knowledge Panel for the brand. Knowledge Panel content is processed by Google's own LLM training pipelines and cited in AI Overview responses.</p>
+
+    <h3>Linked Data and SPARQL endpoints</h3>
+    <p>Wikidata's public SPARQL endpoint allows AI systems to query entity data at inference time — not just training time. Some RAG systems use SPARQL queries to verify entity claims at the moment of generating a response. A brand with a Wikidata entity can be verified in real time; a brand without one cannot.</p>
+
+    <div class="callout">
+      <p><strong>The compounding effect:</strong> A complete Wikidata entity simultaneously increases GEO signal quality (training-time encoding), AEO retrieval accuracy (inference-time entity resolution), Google Knowledge Panel probability (organic search visibility), and real-time SPARQL verifiability. <em>No other single infrastructure intervention delivers this range of AI visibility benefits.</em></p>
+    </div>
+
+    <h2>The minimum viable Wikidata entity</h2>
+    <p>Not all Wikidata entities are equal. A minimal entity with only a label and P31 (instance of) provides far less training signal than a complete entity with all required properties, references, and cross-links. The AIMENSION Protocol defines the minimum viable property set for enterprise organizations:</p>
+
+    <table class="property-table" role="table">
+      <thead>
+        <tr>
+          <th>Property</th>
+          <th>Name</th>
+          <th>Value type</th>
+          <th>Priority</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>P31</td>
+          <td>instance of</td>
+          <td>Q4830453 (business) or appropriate type</td>
+          <td><span class="req-tag req-critical">Critical</span></td>
+        </tr>
+        <tr>
+          <td>P856</td>
+          <td>official website</td>
+          <td>Canonical domain URL</td>
+          <td><span class="req-tag req-critical">Critical</span></td>
+        </tr>
+        <tr>
+          <td>P112</td>
+          <td>founded by</td>
+          <td>Person entity QID</td>
+          <td><span class="req-tag req-critical">Critical</span></td>
+        </tr>
+        <tr>
+          <td>P571</td>
+          <td>inception</td>
+          <td>Founding date</td>
+          <td><span class="req-tag req-critical">Critical</span></td>
+        </tr>
+        <tr>
+          <td>P17</td>
+          <td>country</td>
+          <td>Country entity QID</td>
+          <td><span class="req-tag req-high">High</span></td>
+        </tr>
+        <tr>
+          <td>P159</td>
+          <td>headquarters location</td>
+          <td>City/region entity QID</td>
+          <td><span class="req-tag req-high">High</span></td>
+        </tr>
+        <tr>
+          <td>P452</td>
+          <td>industry</td>
+          <td>Industry entity QID</td>
+          <td><span class="req-tag req-high">High</span></td>
+        </tr>
+        <tr>
+          <td>P1324</td>
+          <td>source code repository</td>
+          <td>GitHub URL</td>
+          <td><span class="req-tag req-high">High</span></td>
+        </tr>
+        <tr>
+          <td>P18</td>
+          <td>image</td>
+          <td>Wikimedia Commons logo file</td>
+          <td><span class="req-tag req-medium">Medium</span></td>
+        </tr>
+        <tr>
+          <td>P749</td>
+          <td>parent organization</td>
+          <td>Parent entity QID (if applicable)</td>
+          <td><span class="req-tag req-medium">Medium</span></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>Every statement should have at least one P854 reference URL pointing to the official website or another authoritative external source. Unreferenced statements are flagged by Wikidata quality monitoring tools and are subject to removal by community editors.</p>
+
+    <h2>The sameAs circuit: closing the triangulation loop</h2>
+    <p>A Wikidata entity in isolation improves GEO signal quality. A Wikidata entity connected to your website via sameAs declarations creates the full Semantic Triangulation that the AIMENSION Protocol is built on.</p>
+    <p>The mechanism works in both directions. On the Wikidata side: P856 (official website) creates a verified link from the Knowledge Graph node to the web surface. P1324 (source code repository) links to the GitHub documentation. On the website side: the JSON-LD sameAs array references the Wikidata QID, explicitly instructing every entity resolver — Google's Knowledge Graph crawler, Bing's Entity Search, LLM training pipeline processors — that the website entity and the Wikidata entity are the same real-world organization.</p>
+
+    <div class="code-block"><code>"sameAs": [
+  "https://www.wikidata.org/wiki/Q139766166",
+  "https://github.com/ft-axon/aimension-protocol"
+]</code></div>
+
+    <p>When an AI system encounters the Wikidata entity, it can follow P856 to the website and find the JSON-LD that cross-references the QID. When it encounters the website JSON-LD, it can follow the sameAs to the Wikidata entity and verify the structured properties. When it encounters the GitHub documentation, it finds the entity table with QID references that link back to both.</p>
+    <p>Each vertex of this triangle independently confirms the others. The result is a web of mutual verification that is structurally more credible than any single source — and that every AI system traversing any part of the web of trust will eventually resolve to the same authoritative entity record.</p>
+
+    <h2>What happens without a Wikidata entity</h2>
+    <p>Without a Wikidata entity, an LLM's knowledge about your brand is assembled entirely from unstructured web content — a noisy, inconsistent, ambiguous corpus. The model learns your brand name from press mentions, your description from your own marketing copy, and your attributes from whatever combinations of sources happened to be included in its training crawl.</p>
+    <p>The result is typically one of three failure modes: the model generates accurate but hedged descriptions ("a company that appears to specialize in..."), produces hallucinated attributes assembled from similar companies in the training data, or returns nothing at all when asked directly about the brand. All three outcomes represent a complete failure of AI brand authority.</p>
+    <p>The fix is not complicated. Creating a Wikidata entity for an organization is a publicly available, free process. The technical barrier is low. The strategic barrier — knowing which properties to set, how to structure references, how to connect entities in a graph, and how to integrate the entity with the rest of the AIMENSION infrastructure — is where most organizations need expert guidance.</p>
+    <p>Axon System's <a href="/#services">Knowledge Graph Engineering service</a> covers the complete Wikidata entity creation and enrichment process as part of Pillar I of the AIMENSION Protocol implementation. The entities for Axon System (Q139766166), Francesco Tinti (Q139765600), and the AIMENSION Protocol (Q139783726) are live examples of the standard we apply to every client engagement.</p>
+
+  </div>
+</div>
+
+<div class="wrap-narrow">
+  <div class="article-cta">
+    <div class="eyebrow">Full AIMENSION™ Audit</div>
+    <h2>Does your brand exist<br>in the <em>Knowledge Graph?</em></h2>
+    <p>The AIMENSION Protocol audit begins with a complete Knowledge Graph coherence assessment — evaluating your Wikidata presence, property completeness, cross-source consistency, and sameAs circuit integrity. Global average Sector 1 score: below 25/100.</p>
+    <a href="mailto:founder@axonsystem.net?subject=AIMENSION%20Audit%20Request" class="btn-gold">Request Full Audit →</a>
+  </div>
+</div>
+
+<div class="related">
+  <div class="wrap">
+    <div class="related-title">More from Axon System</div>
+    <div class="related-grid">
+      <a href="/en/blog/why-your-brand-scores-zero-in-chatgpt/" class="related-item">
+        <div class="related-tag">AI Visibility Engineering</div>
+        <div class="related-name">Why Your Brand Scores 0 in ChatGPT: A Technical Breakdown</div>
+      </a>
+      <a href="/en/blog/aeo-vs-geo-vs-seo/" class="related-item">
+        <div class="related-tag">Strategy</div>
+        <div class="related-name">AEO vs GEO vs SEO: The Complete Comparison for 2026</div>
+      </a>
+      <a href="/en/blog/how-rag-pipelines-decide-which-brands-to-cite/" class="related-item">
+        <div class="related-tag">RAG Architecture</div>
+        <div class="related-name">How RAG Pipelines Decide Which Brands to Cite</div>
+      </a>
+    </div>
+  </div>
+</div>
+
+</main>
+<footer role="contentinfo">
+  <div class="wrap">
+    <div class="footer-inner">
+      <div class="footer-copy">© 2025 <span>Axon System</span> — Francesco Tinti. All rights reserved.</div>
+      <div class="footer-id" aria-hidden="true">AIMENSION v1.0.0 // Q139766166 // axonsystem.net</div>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
