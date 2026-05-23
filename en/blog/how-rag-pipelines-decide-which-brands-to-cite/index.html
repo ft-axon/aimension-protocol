@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>How RAG Pipelines Decide Which Brands to Cite — Axon System</title>
+<meta name="description" content="Retrieval-Augmented Generation systems follow a specific decision process when selecting which sources to cite. Understanding the mechanics is the foundation of effective AEO strategy." />
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
+<link rel="canonical" href="https://axonsystem.net/en/blog/how-rag-pipelines-decide-which-brands-to-cite/" />
+<link rel="alternate" hreflang="en" href="https://axonsystem.net/en/blog/how-rag-pipelines-decide-which-brands-to-cite/" />
+<link rel="alternate" hreflang="x-default" href="https://axonsystem.net/en/blog/how-rag-pipelines-decide-which-brands-to-cite/" />
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="Axon System" />
+<meta property="og:title" content="How RAG Pipelines Decide Which Brands to Cite" />
+<meta property="og:description" content="RAG systems follow a specific decision process when selecting sources to cite. Understanding the mechanics is the foundation of effective AEO strategy." />
+<meta property="og:url" content="https://axonsystem.net/en/blog/how-rag-pipelines-decide-which-brands-to-cite/" />
+<meta property="og:image" content="https://axonsystem.net/assets/og/axonsystem-og-cover.png" />
+<meta property="article:author" content="Francesco Tinti" />
+<meta property="article:published_time" content="2026-05-23" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="How RAG Pipelines Decide Which Brands to Cite" />
+<meta name="twitter:description" content="RAG systems follow a specific decision process. Understanding it is the foundation of AEO strategy." />
+<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://axonsystem.net/en/blog/how-rag-pipelines-decide-which-brands-to-cite/#article",
+      "headline": "How RAG Pipelines Decide Which Brands to Cite",
+      "description": "Retrieval-Augmented Generation systems follow a specific decision process when selecting which sources to cite. Understanding the mechanics is the foundation of effective AEO strategy.",
+      "url": "https://axonsystem.net/en/blog/how-rag-pipelines-decide-which-brands-to-cite/",
+      "datePublished": "2026-05-23",
+      "dateModified": "2026-05-23",
+      "inLanguage": "en",
+      "author": {"@id": "https://axonsystem.net/#person-francesco-tinti"},
+      "publisher": {"@id": "https://axonsystem.net/#organization"},
+      "isPartOf": {"@id": "https://axonsystem.net/en/blog#blog"},
+      "about": [
+        {"@type": "Thing", "name": "Retrieval-Augmented Generation"},
+        {"@type": "Thing", "name": "Answer Engine Optimization"},
+        {"@type": "Thing", "name": "AI Visibility Engineering"}
+      ],
+      "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type":"ListItem","position":1,"name":"Home","item":"https://axonsystem.net/"},
+          {"@type":"ListItem","position":2,"name":"Blog","item":"https://axonsystem.net/en/blog"},
+          {"@type":"ListItem","position":3,"name":"How RAG Pipelines Decide Which Brands to Cite","item":"https://axonsystem.net/en/blog/how-rag-pipelines-decide-which-brands-to-cite/"}
+        ]
+      }
+    }
+  ]
+}
+</script>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--cream:#FAF8F4;--cream2:#F3F0E8;--cream3:#E8E3D8;--ink:#0D0C0A;--ink2:#2A2720;--ink3:#4A4640;--mid:#7A7570;--pale:#A09890;--faint:rgba(13,12,10,0.06);--faint2:rgba(13,12,10,0.12);--gold:#B8975A;--gold2:#D4AF6E;--serif:'Cormorant Garamond',Georgia,serif;--sans:'DM Sans',system-ui,sans-serif;--mono:'DM Mono',monospace;--trans:all 0.4s cubic-bezier(0.4,0,0.2,1);--max:1200px;}
+@font-face{font-family:'Cormorant Garamond';font-style:normal;font-weight:300;font-display:swap;src:url('/fonts/cormorant-garamond-v21-latin_latin-ext-300.woff2') format('woff2')}
+@font-face{font-family:'Cormorant Garamond';font-style:italic;font-weight:300;font-display:swap;src:url('/fonts/cormorant-garamond-v21-latin_latin-ext-300italic.woff2') format('woff2')}
+@font-face{font-family:'Cormorant Garamond';font-style:normal;font-weight:400;font-display:swap;src:url('/fonts/cormorant-garamond-v21-latin_latin-ext-regular.woff2') format('woff2')}
+@font-face{font-family:'Cormorant Garamond';font-style:italic;font-weight:400;font-display:swap;src:url('/fonts/cormorant-garamond-v21-latin_latin-ext-italic.woff2') format('woff2')}
+@font-face{font-family:'Cormorant Garamond';font-style:normal;font-weight:500;font-display:swap;src:url('/fonts/cormorant-garamond-v21-latin_latin-ext-500.woff2') format('woff2')}
+@font-face{font-family:'Cormorant Garamond';font-style:normal;font-weight:600;font-display:swap;src:url('/fonts/cormorant-garamond-v21-latin_latin-ext-600.woff2') format('woff2')}
+@font-face{font-family:'DM Sans';font-style:normal;font-weight:300;font-display:swap;src:url('/fonts/dm-sans-v17-latin_latin-ext-300.woff2') format('woff2')}
+@font-face{font-family:'DM Sans';font-style:normal;font-weight:400;font-display:swap;src:url('/fonts/dm-sans-v17-latin_latin-ext-regular.woff2') format('woff2')}
+@font-face{font-family:'DM Sans';font-style:normal;font-weight:500;font-display:swap;src:url('/fonts/dm-sans-v17-latin_latin-ext-500.woff2') format('woff2')}
+@font-face{font-family:'DM Mono';font-style:normal;font-weight:300;font-display:swap;src:url('/fonts/dm-mono-v16-latin_latin-ext-300.woff2') format('woff2')}
+@font-face{font-family:'DM Mono';font-style:normal;font-weight:400;font-display:swap;src:url('/fonts/dm-mono-v16-latin_latin-ext-regular.woff2') format('woff2')}
+html{scroll-behavior:smooth;font-size:16px}
+body{background:var(--cream);color:var(--ink);font-family:var(--sans);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body::after{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.025'/%3E%3C/svg%3E");pointer-events:none;z-index:9999;opacity:.5}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 48px}
+@media(max-width:700px){.wrap{padding:0 24px}}
+.wrap-narrow{max-width:760px;margin:0 auto;padding:0 48px}
+@media(max-width:700px){.wrap-narrow{padding:0 24px}}
+nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(250,248,244,0.92);backdrop-filter:blur(24px);border-bottom:1px solid var(--faint2)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:68px;max-width:var(--max);margin:0 auto;padding:0 48px}
+@media(max-width:700px){.nav-inner{padding:0 24px}}
+.nav-wordmark{font-family:var(--serif);font-size:1.15rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink);text-decoration:none}
+.nav-wordmark em{font-style:normal;color:var(--gold)}
+.nav-right{display:flex;align-items:center;gap:16px}
+.nav-back{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--mid);text-decoration:none;transition:var(--trans)}
+.nav-back:hover{color:var(--ink)}
+.nav-cta{font-family:var(--sans);font-size:12px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;background:var(--ink);color:var(--cream);padding:10px 22px;border-radius:3px;text-decoration:none;transition:var(--trans)}
+.nav-cta:hover{background:var(--ink2)}
+.article-header{padding:140px 0 80px;border-bottom:1px solid var(--faint2)}
+.article-meta{display:flex;gap:16px;margin-bottom:32px;flex-wrap:wrap;align-items:center}
+.meta-tag{font-family:var(--mono);font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);border:1px solid rgba(184,151,90,.2);padding:4px 10px;border-radius:2px}
+.meta-date{font-family:var(--mono);font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--pale)}
+.meta-author{font-family:var(--mono);font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--pale)}
+.article-title{font-family:var(--serif);font-size:clamp(2.4rem,5vw,5rem);font-weight:300;line-height:1.0;letter-spacing:-.01em;margin-bottom:32px}
+.article-title em{font-style:italic;color:var(--gold)}
+.article-lead{font-family:var(--serif);font-size:1.3rem;font-weight:300;line-height:1.6;color:var(--ink3);border-left:2px solid var(--gold);padding-left:24px;max-width:680px}
+.article-body{padding:80px 0}
+.article-body h2{font-family:var(--serif);font-size:clamp(1.6rem,2.5vw,2.2rem);font-weight:500;line-height:1.1;letter-spacing:-.01em;margin-bottom:20px;margin-top:56px;color:var(--ink)}
+.article-body h2:first-child{margin-top:0}
+.article-body h3{font-family:var(--serif);font-size:1.3rem;font-weight:500;line-height:1.2;margin-bottom:16px;margin-top:36px;color:var(--ink)}
+.article-body p{font-size:.95rem;color:var(--ink3);line-height:1.85;margin-bottom:20px}
+.article-body p strong{color:var(--ink);font-weight:500}
+.article-body ul{margin-bottom:20px;padding-left:0;list-style:none}
+.article-body li{font-size:.95rem;color:var(--ink3);line-height:1.85;margin-bottom:8px;padding-left:20px;position:relative}
+.article-body li::before{content:'—';position:absolute;left:0;color:var(--gold)}
+.article-body a{color:var(--gold);text-decoration:none;border-bottom:1px solid rgba(184,151,90,.3);transition:var(--trans)}
+.article-body a:hover{border-color:var(--gold)}
+.callout{background:var(--ink);padding:40px 48px;margin:40px 0;border-left:3px solid var(--gold)}
+@media(max-width:700px){.callout{padding:28px 24px}}
+.callout p{color:rgba(250,248,244,.8);font-size:.95rem;line-height:1.85;margin-bottom:0}
+.callout p strong{color:var(--cream)}
+.callout p em{color:var(--gold2)}
+.process-steps{margin:40px 0}
+.step{display:grid;grid-template-columns:64px 1fr;gap:24px;padding:28px 0;border-bottom:1px solid var(--faint2);align-items:start}
+.step:last-child{border-bottom:none}
+.step-num{font-family:var(--serif);font-size:2.5rem;font-weight:300;color:var(--cream3);line-height:1;text-align:center;border:1px solid var(--faint2);padding:8px 0}
+.step-content h3{font-family:var(--serif);font-size:1.2rem;font-weight:500;margin-bottom:10px;color:var(--ink)}
+.step-content p{font-size:.875rem;color:var(--ink3);line-height:1.75;margin-bottom:0}
+.step-content p strong{color:var(--ink);font-weight:500}
+.impact-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--faint2);border:1px solid var(--faint2);margin:40px 0}
+@media(max-width:600px){.impact-grid{grid-template-columns:1fr}}
+.impact-item{background:var(--cream);padding:32px 28px}
+.impact-label{font-family:var(--mono);font-size:9px;letter-spacing:.15em;text-transform:uppercase;margin-bottom:12px}
+.impact-label.high{color:#059669}
+.impact-label.medium{color:var(--gold)}
+.impact-label.low{color:var(--pale)}
+.impact-title{font-family:var(--serif);font-size:1.1rem;font-weight:500;margin-bottom:8px}
+.impact-desc{font-size:.85rem;color:var(--ink3);line-height:1.7}
+.article-cta{background:var(--ink);padding:64px;margin-top:80px}
+@media(max-width:700px){.article-cta{padding:40px 24px}}
+.article-cta .eyebrow{font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold2);display:flex;align-items:center;gap:12px;margin-bottom:24px}
+.article-cta .eyebrow::before{content:'';display:block;width:32px;height:1px;background:var(--gold2)}
+.article-cta h2{font-family:var(--serif);font-size:clamp(2rem,4vw,3.5rem);font-weight:300;line-height:1.1;color:var(--cream);margin-bottom:16px}
+.article-cta h2 em{font-style:italic;color:var(--gold2)}
+.article-cta p{font-size:.9rem;color:rgba(250,248,244,.5);line-height:1.8;margin-bottom:32px;max-width:520px}
+.btn-gold{font-size:12px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;background:var(--gold);color:var(--cream);padding:14px 32px;border-radius:3px;text-decoration:none;transition:var(--trans);display:inline-block}
+.btn-gold:hover{background:var(--gold2)}
+.related{padding:80px 0;border-top:1px solid var(--faint2)}
+.related-title{font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--pale);margin-bottom:40px}
+.related-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1px;background:var(--faint2);border:1px solid var(--faint2)}
+@media(max-width:700px){.related-grid{grid-template-columns:1fr}}
+.related-item{background:var(--cream);padding:32px 28px;text-decoration:none;color:inherit;display:block;transition:var(--trans)}
+.related-item:hover{background:var(--cream2)}
+.related-tag{font-family:var(--mono);font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
+.related-name{font-family:var(--serif);font-size:1.1rem;font-weight:500;line-height:1.3;color:var(--ink)}
+.related-name-dim{color:var(--mid)}
+footer{background:var(--ink);border-top:1px solid rgba(255,255,255,.08);padding:36px 0}
+.footer-inner{display:flex;justify-content:space-between;align-items:center}
+@media(max-width:600px){.footer-inner{flex-direction:column;gap:16px;text-align:center}}
+.footer-copy{font-family:var(--mono);font-size:10px;letter-spacing:.06em;color:rgba(250,248,244,.25)}
+.footer-copy span{color:rgba(250,248,244,.5)}
+.footer-id{font-family:var(--mono);font-size:9px;letter-spacing:.1em;color:rgba(250,248,244,.15)}
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+.au{animation:fadeUp .7s cubic-bezier(.4,0,.2,1) both}
+.au1{animation-delay:.05s}.au2{animation-delay:.12s}.au3{animation-delay:.2s}
+</style>
+</head>
+<body>
+<nav role="navigation" aria-label="Main navigation">
+  <div class="nav-inner">
+    <a href="/" class="nav-wordmark">AXON <em>SYSTEM</em></a>
+    <div class="nav-right">
+      <a href="/en/blog" class="nav-back">← Blog</a>
+      <a href="mailto:founder@axonsystem.net" class="nav-cta">Contact</a>
+    </div>
+  </div>
+</nav>
+<main>
+<header class="article-header">
+  <div class="wrap-narrow">
+    <div class="article-meta">
+      <span class="meta-tag">RAG Architecture</span>
+      <span class="meta-tag">AEO</span>
+      <span class="meta-date">May 23, 2026</span>
+      <span class="meta-author">Francesco Tinti — Axon System</span>
+    </div>
+    <h1 class="article-title au au1">How <em>RAG Pipelines</em><br>Decide Which Brands<br>to Cite</h1>
+    <p class="article-lead au au2">Every time Perplexity, ChatGPT Search, or a RAG-augmented enterprise AI generates a response, it follows a specific multi-step process to decide which sources to retrieve and cite. Understanding each step is the technical foundation of Answer Engine Optimization.</p>
+  </div>
+</header>
+<div class="article-body">
+  <div class="wrap-narrow">
+
+    <h2>What RAG actually is</h2>
+    <p>Retrieval-Augmented Generation is the architecture underlying most deployed AI answer systems. The core idea is simple: instead of relying solely on knowledge encoded in training weights, the system retrieves relevant external documents at inference time and uses them as context for generating a response.</p>
+    <p>This architecture addresses a fundamental limitation of pure language models: their knowledge is frozen at training time. A RAG system can answer questions about events that happened yesterday. A pure parametric model cannot. For commercial AI applications — customer support, research assistants, enterprise search — RAG is now the standard architecture.</p>
+    <p>For brand visibility, RAG creates both an opportunity and a challenge. The opportunity: any brand with well-structured, retrieval-optimized content can appear in RAG-generated responses regardless of how long it has existed or how large its SEO backlink profile is. The challenge: RAG systems are highly selective. Most content never makes it through the retrieval pipeline to appear in a response.</p>
+
+    <h2>The five-stage RAG pipeline</h2>
+    <p>While implementations vary, virtually all production RAG systems follow the same five-stage pipeline. Each stage is a filter — content that fails at any stage does not appear in the final response.</p>
+
+    <div class="process-steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-content">
+          <h3>Query encoding</h3>
+          <p>The user's query is converted into a dense vector embedding using an embedding model. This embedding captures the semantic meaning of the query — not just its keywords, but its intent, its entity references, and its contextual implications. <strong>The embedding model determines which document embeddings will be considered semantically similar.</strong> Content that uses the precise terminology and entity references relevant to the query will generate embeddings that cluster more closely with the query vector.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-content">
+          <h3>Approximate nearest neighbor retrieval</h3>
+          <p>The query embedding is compared against millions of pre-computed document chunk embeddings stored in a vector database. The system retrieves the top-K chunks with the highest cosine similarity to the query — typically between 20 and 100 candidate chunks. <strong>This is the first and most consequential filter.</strong> Content not indexed in the vector database, or content that generates embeddings dissimilar to typical queries in the brand's domain, never appears in any response regardless of quality.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-content">
+          <h3>Reranking</h3>
+          <p>The top-K candidates are reranked using a more computationally expensive cross-encoder model that evaluates query-document relevance with higher precision. This stage typically reduces the candidate set from 20-100 chunks to 5-10 final context chunks. <strong>Reranking models favor content that explicitly addresses the query's entity references and provides verifiable, specific factual claims.</strong> Vague, promotional, or keyword-stuffed content scores poorly at this stage even if it passed retrieval.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <div class="step-content">
+          <h3>Context assembly and truncation</h3>
+          <p>The top-ranked chunks are assembled into a context window and provided to the language model along with the original query. Context windows are finite — typically 4,000 to 128,000 tokens depending on the system. When retrieved content exceeds the context budget, lower-ranked chunks are truncated. <strong>Content that is self-contained, factually dense, and structured in retrievable units survives truncation more reliably than long-form prose that buries key facts in the middle of paragraphs.</strong></p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">5</div>
+        <div class="step-content">
+          <h3>Generation and citation</h3>
+          <p>The language model generates a response grounded in the retrieved context. It cites sources when the system is configured to do so — typically when the retrieved chunk contains an explicit source URL or entity identifier. <strong>Content with clear entity declarations, explicit source URLs, and sameAs references to verified Knowledge Graph nodes is cited with higher frequency and accuracy than anonymous content.</strong></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="callout">
+      <p><strong>The critical insight:</strong> RAG citation is not a single decision — it is the product of five sequential filters. A brand can have excellent content that fails at Stage 2 (not indexed), passes Stage 2 but fails at Stage 3 (low reranking score), or passes Stage 3 but fails at Stage 5 (no explicit entity declaration to cite). <em>AEO must optimize for every stage, not just content quality.</em></p>
+    </div>
+
+    <h2>What determines retrieval success at each stage</h2>
+    <p>Each stage of the RAG pipeline is influenced by specific, actionable content and infrastructure characteristics. Understanding which characteristics matter at which stage is the foundation of a precise AEO strategy.</p>
+
+    <div class="impact-grid">
+      <div class="impact-item">
+        <div class="impact-label high">Stage 2 — Critical</div>
+        <div class="impact-title">Indexing and crawlability</div>
+        <div class="impact-desc">Content must be crawlable and indexable by AI retrieval systems. llms.txt directives, correct robots.txt configuration, and clean HTML structure are prerequisites. Content behind JavaScript-rendered SPAs without SSR is frequently missed by AI crawlers.</div>
+      </div>
+      <div class="impact-item">
+        <div class="impact-label high">Stage 2 — Critical</div>
+        <div class="impact-title">Entity term density</div>
+        <div class="impact-desc">Content that uses the precise terminology of the query domain generates embeddings that cluster near relevant query vectors. Implicit references and synonyms produce weaker embedding alignment than explicit entity names and technical terms.</div>
+      </div>
+      <div class="impact-item">
+        <div class="impact-label high">Stage 3 — Critical</div>
+        <div class="impact-title">Factual density</div>
+        <div class="impact-desc">Reranking models favor content with high ratios of verifiable factual claims to total word count. A paragraph containing five specific facts scores higher than a paragraph of equal length containing one fact and four sentences of commentary.</div>
+      </div>
+      <div class="impact-item">
+        <div class="impact-label high">Stage 3 — Critical</div>
+        <div class="impact-title">Self-contained chunk structure</div>
+        <div class="impact-desc">RAG systems chunk documents before indexing — typically at paragraph or section boundaries. Content structured so that each section answers a complete question independently survives chunking with higher semantic integrity than content that requires surrounding context to be meaningful.</div>
+      </div>
+      <div class="impact-item">
+        <div class="impact-label medium">Stage 4 — Important</div>
+        <div class="impact-title">Content length and structure</div>
+        <div class="impact-desc">Shorter, denser content units are less likely to be truncated during context assembly. Long paragraphs with key facts at the end are frequently cut. Leading with the most important factual claim in each section is a structural optimization for context window survival.</div>
+      </div>
+      <div class="impact-item">
+        <div class="impact-label high">Stage 5 — Critical</div>
+        <div class="impact-title">Explicit entity declarations</div>
+        <div class="impact-desc">Schema.org JSON-LD with Organization type, explicit sameAs references to Wikidata QIDs, and clear source URL declarations enable the generation model to produce accurate citations. Content without entity markup is cited vaguely or not at all.</div>
+      </div>
+      <div class="impact-item">
+        <div class="impact-label high">Stage 5 — Critical</div>
+        <div class="impact-title">FAQ schema markup</div>
+        <div class="impact-desc">FAQPage JSON-LD maps content directly to question-answering query patterns. The question-answer structure mirrors the query-response structure of RAG generation, making FAQ-marked content the highest-precision retrieval target for conversational queries.</div>
+      </div>
+      <div class="impact-item">
+        <div class="impact-label medium">All stages</div>
+        <div class="impact-title">Cross-source entity consistency</div>
+        <div class="impact-desc">When multiple retrieved chunks from different sources describe the same entity consistently, the generation model produces more confident, accurate citations. Inconsistency across sources creates contradictory context that the model resolves by hedging or omitting the citation.</div>
+      </div>
+    </div>
+
+    <h2>The chunking problem most brands ignore</h2>
+    <p>When a RAG system indexes a web page, it does not index the page as a whole. It splits the page into chunks — typically 200 to 500 tokens each — and indexes each chunk independently. This means that a 3,000-word article is indexed as 15 to 30 separate chunks, each of which must independently pass the retrieval and reranking filters to appear in a response.</p>
+    <p>Most web content is not structured for this. A typical corporate About page opens with several paragraphs of brand narrative before mentioning any specific, factual claim about the organization. The chunks containing those opening paragraphs score poorly on retrieval relevance for almost any factual query. The chunks containing specific facts — founding date, services, key personnel — may rank well, but those facts are buried hundreds of tokens into the document.</p>
+    <p>The AIMENSION Protocol's content architecture guidelines address this directly: <strong>every content section should open with its most specific, retrievable factual claim.</strong> The brand name, the entity type, the primary service, and the canonical identifier should appear in the first sentence of every major content section — not because this improves human readability, but because it maximizes the semantic signal density of every chunk that RAG systems will evaluate.</p>
+
+    <h2>Why entity declarations are the final mile</h2>
+    <p>Even content that successfully passes all five RAG pipeline stages can fail at the final step: citation. A generation model that has retrieved accurate, relevant content about a brand will cite that brand by name — but only if it can resolve the entity unambiguously.</p>
+    <p>Entity resolution at citation time depends on the same infrastructure that drives GEO: Wikidata QIDs, sameAs declarations, and consistent entity naming. When retrieved content explicitly declares <code>"sameAs": "https://www.wikidata.org/wiki/Q139766166"</code>, the generation model has an unambiguous, machine-verifiable identifier to attach to its citation. When retrieved content is anonymous prose with no entity markup, the model either guesses the source name from context clues or omits the citation entirely.</p>
+    <p>This is why AEO and GEO infrastructure overlap at the entity layer. The Wikidata entity and JSON-LD markup built for GEO purposes are simultaneously the citation infrastructure for AEO. Every sameAs declaration is both a training signal for future models and a citation anchor for current retrieval systems.</p>
+
+    <h2>The practical AEO checklist</h2>
+    <p>Based on the five-stage RAG pipeline analysis, the minimum viable AEO infrastructure for any brand includes:</p>
+    <ul>
+      <li><strong>llms.txt at domain root</strong> — instructs AI crawlers on canonical entity declarations and citation format</li>
+      <li><strong>Server-side rendered HTML</strong> — ensures content is accessible to crawlers that do not execute JavaScript</li>
+      <li><strong>Organization JSON-LD with sameAs</strong> — explicit entity declaration linking to Wikidata QID on every page</li>
+      <li><strong>FAQPage schema</strong> — maps key brand questions to structured Q&A format optimized for RAG retrieval</li>
+      <li><strong>Section-leading factual claims</strong> — most important fact in the first sentence of every content section</li>
+      <li><strong>Self-contained paragraphs</strong> — each paragraph answers a complete question without requiring surrounding context</li>
+      <li><strong>Consistent entity naming</strong> — identical brand name, description, and attributes across all content and metadata</li>
+      <li><strong>Dublin Core and Open Graph metadata</strong> — additional entity signal layers processed by some indexing systems</li>
+    </ul>
+    <p>The full AIMENSION Protocol audit evaluates all of these factors across 50 proprietary dimensions and produces a prioritized remediation roadmap based on the highest-impact interventions for each specific brand's current baseline.</p>
+
+  </div>
+</div>
+
+<div class="wrap-narrow">
+  <div class="article-cta">
+    <div class="eyebrow">Full AIMENSION™ Audit</div>
+    <h2>Is your content making it<br>through the <em>pipeline?</em></h2>
+    <p>The AIMENSION Protocol evaluates your brand's performance at every stage of the RAG retrieval pipeline — and every other AI visibility dimension that determines whether you get cited or ignored.</p>
+    <a href="mailto:founder@axonsystem.net?subject=AIMENSION%20Audit%20Request" class="btn-gold">Request Full Audit →</a>
+  </div>
+</div>
+
+<div class="related">
+  <div class="wrap">
+    <div class="related-title">More from Axon System</div>
+    <div class="related-grid">
+      <a href="/en/blog/why-your-brand-scores-zero-in-chatgpt/" class="related-item">
+        <div class="related-tag">AI Visibility Engineering</div>
+        <div class="related-name">Why Your Brand Scores 0 in ChatGPT: A Technical Breakdown</div>
+      </a>
+      <a href="/en/blog/aeo-vs-geo-vs-seo/" class="related-item">
+        <div class="related-tag">Strategy</div>
+        <div class="related-name">AEO vs GEO vs SEO: The Complete Comparison for 2026</div>
+      </a>
+      <div class="related-item">
+        <div class="related-tag">Coming soon</div>
+        <div class="related-name related-name-dim">Wikidata QIDs and LLM Citation Probability</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</main>
+<footer role="contentinfo">
+  <div class="wrap">
+    <div class="footer-inner">
+      <div class="footer-copy">© 2025 <span>Axon System</span> — Francesco Tinti. All rights reserved.</div>
+      <div class="footer-id" aria-hidden="true">AIMENSION v1.0.0 // Q139766166 // axonsystem.net</div>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
