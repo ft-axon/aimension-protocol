@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Why Your Brand Scores 0 in ChatGPT: A Technical Breakdown — Axon System</title>
+<meta name="description" content="Most enterprise brands are invisible to ChatGPT, Perplexity, and Gemini — not because of bad content, but because of a structural data architecture problem. Here is the technical explanation and the fix." />
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
+<link rel="canonical" href="https://axonsystem.net/en/blog/why-your-brand-scores-zero-in-chatgpt/" />
+<link rel="alternate" hreflang="en" href="https://axonsystem.net/en/blog/why-your-brand-scores-zero-in-chatgpt/" />
+<link rel="alternate" hreflang="x-default" href="https://axonsystem.net/en/blog/why-your-brand-scores-zero-in-chatgpt/" />
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="Axon System" />
+<meta property="og:title" content="Why Your Brand Scores 0 in ChatGPT: A Technical Breakdown" />
+<meta property="og:description" content="Most enterprise brands are invisible to AI answer engines — not because of bad content, but because of a structural data architecture problem that traditional SEO never addresses." />
+<meta property="og:url" content="https://axonsystem.net/en/blog/why-your-brand-scores-zero-in-chatgpt/" />
+<meta property="og:image" content="https://axonsystem.net/assets/og/axonsystem-og-cover.png" />
+<meta property="article:author" content="Francesco Tinti" />
+<meta property="article:published_time" content="2026-05-23" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Why Your Brand Scores 0 in ChatGPT: A Technical Breakdown" />
+<meta name="twitter:description" content="Most enterprise brands are invisible to AI answer engines — not because of bad content, but because of a structural data architecture problem." />
+<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://axonsystem.net/en/blog/why-your-brand-scores-zero-in-chatgpt/#article",
+      "headline": "Why Your Brand Scores 0 in ChatGPT: A Technical Breakdown",
+      "description": "Most enterprise brands are invisible to AI answer engines — not because of bad content, but because of a structural data architecture problem that traditional SEO never addresses.",
+      "url": "https://axonsystem.net/en/blog/why-your-brand-scores-zero-in-chatgpt/",
+      "datePublished": "2026-05-23",
+      "dateModified": "2026-05-23",
+      "inLanguage": "en",
+      "author": {"@id": "https://axonsystem.net/#person-francesco-tinti"},
+      "publisher": {"@id": "https://axonsystem.net/#organization"},
+      "isPartOf": {"@id": "https://axonsystem.net/en/blog#blog"},
+      "about": [
+        {"@type": "Thing", "name": "AI Visibility Engineering"},
+        {"@type": "Thing", "name": "Large Language Models"},
+        {"@type": "Thing", "name": "Knowledge Graph"},
+        {"@type": "Thing", "name": "Answer Engine Optimization"}
+      ],
+      "mentions": [
+        {"@id": "https://axonsystem.net/#organization"},
+        {"@id": "https://axonsystem.net/#person-francesco-tinti"}
+      ],
+      "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type":"ListItem","position":1,"name":"Home","item":"https://axonsystem.net/"},
+          {"@type":"ListItem","position":2,"name":"Blog","item":"https://axonsystem.net/en/blog"},
+          {"@type":"ListItem","position":3,"name":"Why Your Brand Scores 0 in ChatGPT","item":"https://axonsystem.net/en/blog/why-your-brand-scores-zero-in-chatgpt/"}
+        ]
+      }
+    }
+  ]
+}
+</script>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --cream:#FAF8F4;--cream2:#F3F0E8;--cream3:#E8E3D8;
+  --ink:#0D0C0A;--ink2:#2A2720;--ink3:#4A4640;
+  --mid:#7A7570;--pale:#A09890;
+  --faint:rgba(13,12,10,0.06);--faint2:rgba(13,12,10,0.12);
+  --gold:#B8975A;--gold2:#D4AF6E;
+  --serif:'Cormorant Garamond',Georgia,serif;
+  --sans:'DM Sans',system-ui,sans-serif;
+  --mono:'DM Mono',monospace;
+  --trans:all 0.4s cubic-bezier(0.4,0,0.2,1);
+  --max:1200px;
+}
+@font-face{font-family:'Cormorant Garamond';font-style:normal;font-weight:300;font-display:swap;src:url('/fonts/cormorant-garamond-v21-latin_latin-ext-300.woff2') format('woff2')}
+@font-face{font-family:'Cormorant Garamond';font-style:italic;font-weight:300;font-display:swap;src:url('/fonts/cormorant-garamond-v21-latin_latin-ext-300italic.woff2') format('woff2')}
+@font-face{font-family:'Cormorant Garamond';font-style:normal;font-weight:400;font-display:swap;src:url('/fonts/cormorant-garamond-v21-latin_latin-ext-regular.woff2') format('woff2')}
+@font-face{font-family:'Cormorant Garamond';font-style:italic;font-weight:400;font-display:swap;src:url('/fonts/cormorant-garamond-v21-latin_latin-ext-italic.woff2') format('woff2')}
+@font-face{font-family:'Cormorant Garamond';font-style:normal;font-weight:500;font-display:swap;src:url('/fonts/cormorant-garamond-v21-latin_latin-ext-500.woff2') format('woff2')}
+@font-face{font-family:'Cormorant Garamond';font-style:normal;font-weight:600;font-display:swap;src:url('/fonts/cormorant-garamond-v21-latin_latin-ext-600.woff2') format('woff2')}
+@font-face{font-family:'DM Sans';font-style:normal;font-weight:300;font-display:swap;src:url('/fonts/dm-sans-v17-latin_latin-ext-300.woff2') format('woff2')}
+@font-face{font-family:'DM Sans';font-style:normal;font-weight:400;font-display:swap;src:url('/fonts/dm-sans-v17-latin_latin-ext-regular.woff2') format('woff2')}
+@font-face{font-family:'DM Sans';font-style:normal;font-weight:500;font-display:swap;src:url('/fonts/dm-sans-v17-latin_latin-ext-500.woff2') format('woff2')}
+@font-face{font-family:'DM Mono';font-style:normal;font-weight:300;font-display:swap;src:url('/fonts/dm-mono-v16-latin_latin-ext-300.woff2') format('woff2')}
+@font-face{font-family:'DM Mono';font-style:normal;font-weight:400;font-display:swap;src:url('/fonts/dm-mono-v16-latin_latin-ext-regular.woff2') format('woff2')}
+
+html{scroll-behavior:smooth;font-size:16px}
+body{background:var(--cream);color:var(--ink);font-family:var(--sans);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body::after{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.025'/%3E%3C/svg%3E");pointer-events:none;z-index:9999;opacity:.5}
+
+.wrap{max-width:var(--max);margin:0 auto;padding:0 48px}
+@media(max-width:700px){.wrap{padding:0 24px}}
+.wrap-narrow{max-width:760px;margin:0 auto;padding:0 48px}
+@media(max-width:700px){.wrap-narrow{padding:0 24px}}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(250,248,244,0.92);backdrop-filter:blur(24px);border-bottom:1px solid var(--faint2)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:68px;max-width:var(--max);margin:0 auto;padding:0 48px}
+@media(max-width:700px){.nav-inner{padding:0 24px}}
+.nav-wordmark{font-family:var(--serif);font-size:1.15rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink);text-decoration:none}
+.nav-wordmark em{font-style:normal;color:var(--gold)}
+.nav-right{display:flex;align-items:center;gap:16px}
+.nav-back{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--mid);text-decoration:none;transition:var(--trans)}
+.nav-back:hover{color:var(--ink)}
+.nav-cta{font-family:var(--sans);font-size:12px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;background:var(--ink);color:var(--cream);padding:10px 22px;border-radius:3px;text-decoration:none;transition:var(--trans)}
+.nav-cta:hover{background:var(--ink2)}
+
+.article-header{padding:140px 0 80px;border-bottom:1px solid var(--faint2)}
+.article-meta{display:flex;gap:16px;margin-bottom:32px;flex-wrap:wrap;align-items:center}
+.meta-tag{font-family:var(--mono);font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);border:1px solid rgba(184,151,90,.2);padding:4px 10px;border-radius:2px}
+.meta-date{font-family:var(--mono);font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--pale)}
+.meta-author{font-family:var(--mono);font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--pale)}
+.article-title{font-family:var(--serif);font-size:clamp(2.4rem,5vw,5rem);font-weight:300;line-height:1.0;letter-spacing:-.01em;margin-bottom:32px}
+.article-title em{font-style:italic;color:var(--gold)}
+.article-lead{font-family:var(--serif);font-size:1.3rem;font-weight:300;line-height:1.6;color:var(--ink3);border-left:2px solid var(--gold);padding-left:24px;max-width:680px}
+
+.article-body{padding:80px 0}
+.article-body h2{font-family:var(--serif);font-size:clamp(1.6rem,2.5vw,2.2rem);font-weight:500;line-height:1.1;letter-spacing:-.01em;margin-bottom:20px;margin-top:56px;color:var(--ink)}
+.article-body h2:first-child{margin-top:0}
+.article-body h3{font-family:var(--serif);font-size:1.3rem;font-weight:500;line-height:1.2;margin-bottom:16px;margin-top:36px;color:var(--ink)}
+.article-body p{font-size:.95rem;color:var(--ink3);line-height:1.85;margin-bottom:20px}
+.article-body p strong{color:var(--ink);font-weight:500}
+.article-body p em{font-style:italic;color:var(--ink)}
+.article-body ul,.article-body ol{margin-bottom:20px;padding-left:0;list-style:none}
+.article-body li{font-size:.95rem;color:var(--ink3);line-height:1.85;margin-bottom:8px;padding-left:20px;position:relative}
+.article-body li::before{content:'—';position:absolute;left:0;color:var(--gold)}
+.article-body a{color:var(--gold);text-decoration:none;border-bottom:1px solid rgba(184,151,90,.3);transition:var(--trans)}
+.article-body a:hover{border-color:var(--gold)}
+
+.callout{background:var(--ink);padding:40px 48px;margin:40px 0;border-left:3px solid var(--gold)}
+@media(max-width:700px){.callout{padding:28px 24px}}
+.callout p{color:rgba(250,248,244,.8);font-size:.95rem;line-height:1.85;margin-bottom:0}
+.callout p strong{color:var(--cream)}
+.callout p em{color:var(--gold2)}
+
+.stat-block{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--faint2);border:1px solid var(--faint2);margin:40px 0}
+@media(max-width:600px){.stat-block{grid-template-columns:1fr}}
+.stat-item{background:var(--cream);padding:28px 32px}
+.stat-n{font-family:var(--serif);font-size:2.8rem;font-weight:300;line-height:1;color:var(--ink)}
+.stat-n sup{font-size:1rem;color:var(--gold)}
+.stat-l{font-family:var(--mono);font-size:9px;letter-spacing:.15em;text-transform:uppercase;color:var(--pale);margin-top:6px}
+
+.comparison-table{width:100%;border-collapse:collapse;margin:40px 0;font-size:.875rem}
+.comparison-table th{font-family:var(--mono);font-size:9px;letter-spacing:.15em;text-transform:uppercase;color:var(--pale);padding:12px 20px;text-align:left;border-bottom:2px solid var(--faint2)}
+.comparison-table td{padding:16px 20px;border-bottom:1px solid var(--faint2);color:var(--ink3);vertical-align:top}
+.comparison-table tr:hover td{background:var(--cream2)}
+.comparison-table td:first-child{font-weight:500;color:var(--ink);font-family:var(--sans)}
+.tag-yes{color:#059669;font-family:var(--mono);font-size:9px;letter-spacing:.1em;text-transform:uppercase}
+.tag-no{color:#DC2626;font-family:var(--mono);font-size:9px;letter-spacing:.1em;text-transform:uppercase}
+.tag-partial{color:var(--gold);font-family:var(--mono);font-size:9px;letter-spacing:.1em;text-transform:uppercase}
+
+.code-block{background:var(--ink2);padding:28px 32px;margin:28px 0;border-radius:2px;overflow-x:auto}
+.code-block code{font-family:var(--mono);font-size:.8rem;color:var(--gold2);line-height:1.7;white-space:pre}
+
+.article-cta{background:var(--ink);padding:64px;margin-top:80px}
+@media(max-width:700px){.article-cta{padding:40px 24px}}
+.article-cta .eyebrow{font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold2);display:flex;align-items:center;gap:12px;margin-bottom:24px}
+.article-cta .eyebrow::before{content:'';display:block;width:32px;height:1px;background:var(--gold2)}
+.article-cta h2{font-family:var(--serif);font-size:clamp(2rem,4vw,3.5rem);font-weight:300;line-height:1.1;color:var(--cream);margin-bottom:16px}
+.article-cta h2 em{font-style:italic;color:var(--gold2)}
+.article-cta p{font-size:.9rem;color:rgba(250,248,244,.5);line-height:1.8;margin-bottom:32px;max-width:520px}
+.btn-gold{font-size:12px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;background:var(--gold);color:var(--cream);padding:14px 32px;border-radius:3px;text-decoration:none;transition:var(--trans);display:inline-block;border:none}
+.btn-gold:hover{background:var(--gold2)}
+
+.related{padding:80px 0;border-top:1px solid var(--faint2)}
+.related-title{font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--pale);margin-bottom:40px}
+.related-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1px;background:var(--faint2);border:1px solid var(--faint2)}
+@media(max-width:700px){.related-grid{grid-template-columns:1fr}}
+.related-item{background:var(--cream);padding:32px 28px}
+.related-tag{font-family:var(--mono);font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
+.related-name{font-family:var(--serif);font-size:1.1rem;font-weight:500;line-height:1.3;color:var(--mid)}
+
+footer{background:var(--ink);border-top:1px solid rgba(255,255,255,.08);padding:36px 0}
+.footer-inner{display:flex;justify-content:space-between;align-items:center}
+@media(max-width:600px){.footer-inner{flex-direction:column;gap:16px;text-align:center}}
+.footer-copy{font-family:var(--mono);font-size:10px;letter-spacing:.06em;color:rgba(250,248,244,.25)}
+.footer-copy span{color:rgba(250,248,244,.5)}
+.footer-id{font-family:var(--mono);font-size:9px;letter-spacing:.1em;color:rgba(250,248,244,.15)}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+.au{animation:fadeUp .7s cubic-bezier(.4,0,.2,1) both}
+.au1{animation-delay:.05s}.au2{animation-delay:.12s}.au3{animation-delay:.2s}
+</style>
+</head>
+<body>
+
+<nav role="navigation" aria-label="Main navigation">
+  <div class="nav-inner">
+    <a href="/" class="nav-wordmark">AXON <em>SYSTEM</em></a>
+    <div class="nav-right">
+      <a href="/en/blog" class="nav-back">← Blog</a>
+      <a href="mailto:founder@axonsystem.net" class="nav-cta">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<main>
+
+<header class="article-header">
+  <div class="wrap-narrow">
+    <div class="article-meta">
+      <span class="meta-tag">AI Visibility Engineering</span>
+      <span class="meta-tag">LLM Architecture</span>
+      <span class="meta-date">May 23, 2026</span>
+      <span class="meta-author">Francesco Tinti — Axon System</span>
+    </div>
+    <h1 class="article-title au au1">Why Your Brand<br>Scores <em>0</em> in ChatGPT:<br>A Technical Breakdown</h1>
+    <p class="article-lead au au2">Most enterprise brands are completely invisible to AI answer engines — not because of bad content, but because of a structural data architecture problem that traditional SEO never addresses and never will.</p>
+  </div>
+</header>
+
+<div class="article-body">
+  <div class="wrap-narrow">
+
+    <h2>The question every CMO is asking wrong</h2>
+    <p>When a brand discovers it does not appear in ChatGPT responses, the instinctive reaction is to ask: <strong>"How do we rank higher in AI search?"</strong> This is the wrong question. It imports the mental model of traditional SEO — where ranking is a function of domain authority, backlinks, and keyword optimization — into a system that operates on entirely different principles.</p>
+    <p>Large Language Models do not rank web pages. They do not crawl the web at inference time and return a list of URLs ordered by PageRank. They generate text based on statistical patterns encoded in their weights during training — and those weights encode what they learned about your brand from structured data, knowledge graphs, and web content processed months or years before you asked the question.</p>
+    <p>The problem is not your ranking. The problem is your <strong>entity architecture</strong>.</p>
+
+    <div class="stat-block">
+      <div class="stat-item">
+        <div class="stat-n">29.6<sup>/100</sup></div>
+        <div class="stat-l">Global enterprise average AI Visibility Score</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-n">0</div>
+        <div class="stat-l">Correlation between Domain Authority and LLM citation probability</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-n">~2yr</div>
+        <div class="stat-l">Average lag between web publication and LLM training cutoff</div>
+      </div>
+    </div>
+
+    <h2>How LLMs actually learn about your brand</h2>
+    <p>During pre-training, a Large Language Model processes hundreds of billions of tokens from web crawls, Wikipedia dumps, Wikidata exports, GitHub repositories, academic papers, and structured datasets. From this corpus, it builds a compressed statistical representation of the world — including what it knows about every organization, person, product, and concept it encountered.</p>
+    <p>The critical insight is this: <strong>not all tokens are equal.</strong> Structured data — a Wikidata entity with verified properties, a Schema.org JSON-LD block with correct entity declarations, a well-formed GitHub README with explicit entity references — is processed with higher fidelity than unstructured prose. The model learns entity attributes more accurately from a Wikidata property statement than from a blog post that mentions the same fact in passing.</p>
+    <p>This means that a brand with a Domain Authority of 90 and three million monthly visitors can score below 15/100 on AI Visibility metrics if its structured data infrastructure is absent or malformed. The traditional SEO signals that took years to build are largely irrelevant to the question an LLM answers when it decides whether and how to cite your brand.</p>
+
+    <div class="callout">
+      <p><strong>The fundamental difference:</strong> Traditional search engines rank documents. <em>AI answer engines encode entities.</em> Document ranking is dynamic and query-time. Entity encoding is static and training-time. These require completely different optimization strategies.</p>
+    </div>
+
+    <h2>The three failure modes</h2>
+    <p>After auditing enterprise brands across multiple sectors, three structural failure modes account for the vast majority of low AI Visibility scores.</p>
+
+    <h3>Failure Mode 1 — Entity absence</h3>
+    <p>The brand does not exist as a verified entity in any major Knowledge Graph. There is no Wikidata QID. There is no Google Knowledge Panel. The organization appears in web content only as unstructured text — a name mentioned in articles, a domain that returns a website — but never as a machine-resolvable node in a structured graph.</p>
+    <p>When an LLM encounters an entity absent from its training Knowledge Graph data, it has two options: generate a hallucinated description assembled from fragmented web mentions, or return nothing. Neither is acceptable for enterprise brand positioning. The fix is establishing Entity Ground Truth — a complete, verified, property-rich Wikidata entity that every AI system on the planet can query and verify.</p>
+
+    <h3>Failure Mode 2 — Entity inconsistency</h3>
+    <p>The brand exists in multiple sources but with contradictory attributes. The name on Wikidata does not exactly match the name in JSON-LD. The founding date on the website differs from the founding date on Crunchbase. The description in the About page uses different terminology than the description in structured data.</p>
+    <p>LLMs learn entity attributes from the statistical consensus across sources. Inconsistency creates noise in that consensus — the model learns an ambiguous, contradictory representation that it cannot resolve with confidence. The result is hedged, inaccurate, or missing citations even when the brand theoretically exists in training data.</p>
+
+    <h3>Failure Mode 3 — Semantic markup absence</h3>
+    <p>The brand's website has no structured data, or has incomplete structured data that fails to declare the most important entity relationships. There is no Organization schema. There is no Person schema for the founder. There is no sameAs declaration linking the website entity to its Wikidata QID. There is no FAQPage schema for common queries about the brand's products and services.</p>
+    <p>Without semantic markup, the website is a document — a collection of text that crawlers process as unstructured prose. With semantic markup, it becomes an identity declaration — a machine-readable statement that says, explicitly and unambiguously: <em>this is who we are, this is what we do, and here is the verified entity record that confirms it.</em></p>
+
+    <h2>Why traditional SEO cannot fix this</h2>
+    <p>The SEO industry has spent thirty years optimizing for a system that ranks documents based on hyperlink authority and keyword relevance. The techniques that work for Google search — earning backlinks, optimizing page titles, targeting search volume keywords — have no direct mapping to LLM citation probability.</p>
+
+    <table class="comparison-table" role="table">
+      <thead>
+        <tr>
+          <th>Signal</th>
+          <th>Google Search Impact</th>
+          <th>LLM Citation Impact</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Domain Authority / Backlinks</td>
+          <td><span class="tag-yes">HIGH</span></td>
+          <td><span class="tag-no">NONE</span></td>
+        </tr>
+        <tr>
+          <td>Keyword optimization</td>
+          <td><span class="tag-yes">HIGH</span></td>
+          <td><span class="tag-no">NONE</span></td>
+        </tr>
+        <tr>
+          <td>Page speed / Core Web Vitals</td>
+          <td><span class="tag-yes">MEDIUM</span></td>
+          <td><span class="tag-no">NONE</span></td>
+        </tr>
+        <tr>
+          <td>Wikidata entity completeness</td>
+          <td><span class="tag-partial">LOW</span></td>
+          <td><span class="tag-yes">CRITICAL</span></td>
+        </tr>
+        <tr>
+          <td>Schema.org JSON-LD markup</td>
+          <td><span class="tag-partial">MEDIUM</span></td>
+          <td><span class="tag-yes">HIGH</span></td>
+        </tr>
+        <tr>
+          <td>Cross-source entity consistency</td>
+          <td><span class="tag-partial">LOW</span></td>
+          <td><span class="tag-yes">CRITICAL</span></td>
+        </tr>
+        <tr>
+          <td>GitHub structured documentation</td>
+          <td><span class="tag-partial">LOW</span></td>
+          <td><span class="tag-yes">HIGH</span></td>
+        </tr>
+        <tr>
+          <td>llms.txt directives</td>
+          <td><span class="tag-no">NONE</span></td>
+          <td><span class="tag-yes">HIGH</span></td>
+        </tr>
+        <tr>
+          <td>Factual density in content</td>
+          <td><span class="tag-partial">MEDIUM</span></td>
+          <td><span class="tag-yes">HIGH</span></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>This table is not a criticism of SEO. Search engine optimization remains essential for capturing query-time web traffic. The point is that it is a completely different discipline addressing a completely different system. A brand that invests exclusively in traditional SEO and ignores AI Visibility Engineering is optimizing for one channel while leaving another — rapidly growing — channel entirely unaddressed.</p>
+
+    <h2>The training cutoff problem</h2>
+    <p>There is one additional factor that makes this urgent in a way that most brands do not appreciate: <strong>Knowledge Graphs are not retroactive.</strong></p>
+    <p>An LLM is trained on a snapshot of the web at a specific point in time — its training cutoff. Everything that happens after that cutoff is invisible to the model until it is retrained. This means that a brand without a Wikidata entity today cannot be interpolated back into historical training data tomorrow. The absence is permanent for every model trained on the current corpus.</p>
+    <p>As major LLM providers release new model generations every 12 to 18 months, each training run is an opportunity to establish brand presence that will persist in that model's parametric memory for years. Brands that establish complete, consistent, cross-verified entity infrastructure now will appear in those training runs. Brands that delay will not.</p>
+    <p>This is the first-mover dynamic that makes AI Visibility Engineering structurally different from traditional marketing. You cannot buy your way into an LLM's training data. You cannot pay for a sponsored position in a ChatGPT response. The only path to AI authority is building the semantic infrastructure that AI systems learn from — and doing it before the next training cutoff.</p>
+
+    <h2>What the fix looks like</h2>
+    <p>The AIMENSION Protocol developed by Axon System addresses this through three mutually reinforcing pillars that together create what we call Semantic Triangulation — a state of entity authority that AI systems converge on as verified truth.</p>
+    <p><strong>Pillar I — Entity Ground Truth:</strong> A complete, verified, property-rich Wikidata entity serving as the canonical reference point. Every AI system that queries Wikidata — which is most of them — finds a complete, authoritative record with verified attributes and cross-references.</p>
+    <p><strong>Pillar II — Algorithmic Authority:</strong> Structured, versioned, machine-readable documentation in public code repositories. GitHub repositories with llms.txt directives, BibTeX citation blocks, and RAG-optimized markdown communicate technical authority in the formats that LLM training pipelines weight most highly.</p>
+    <p><strong>Pillar III — Semantic Injection:</strong> Comprehensive Schema.org JSON-LD markup across all digital properties, with sameAs declarations linking every entity to its Wikidata QID and GitHub documentation. Every page becomes a machine-readable identity declaration that closes the triangulation loop.</p>
+
+    <div class="callout">
+      <p>The critical mechanism is the sameAs cross-reference: every entity on the website declares its Wikidata QID (Pillar I) and its GitHub documentation URL (Pillar II). When an AI system encounters any one of the three pillars, it can navigate to all three — creating a web of mutual verification that is <em>orders of magnitude more credible</em> than any single source.</p>
+    </div>
+
+    <h2>How to measure where you stand</h2>
+    <p>The first step is diagnosis. Before investing in any AI Visibility infrastructure, a brand needs to know its current baseline across the five macro-sectors of the AIMENSION Protocol:</p>
+    <ul>
+      <li><strong>Macro-Sector 1 — AI Knowledge Graph Coherence:</strong> Is the entity correctly structured in Wikidata and linked Knowledge Graphs?</li>
+      <li><strong>Macro-Sector 2 — LLM Brand Sentiment:</strong> How do major LLMs frame and describe the brand in zero-shot inference?</li>
+      <li><strong>Macro-Sector 3 — Context Window Penetration:</strong> Does brand content survive RAG retrieval and chunking processes?</li>
+      <li><strong>Macro-Sector 4 — GEO Rank Signals:</strong> What is the brand's retrieval frequency across ChatGPT, Perplexity, Gemini, and Claude?</li>
+      <li><strong>Macro-Sector 5 — Synthetic Market Share:</strong> What percentage of AI-generated answers in the brand's category mention or recommend it?</li>
+    </ul>
+    <p>Axon System provides both a free infrastructure scan covering 12 of 50 AIMENSION dimensions and a full audit delivering a composite AIMENSION Score with a prioritized remediation roadmap. The global enterprise average baseline is 29.6/100 — meaning most organizations have significant, addressable gaps in AI Visibility infrastructure that are directly costing them synthetic market share right now.</p>
+    <p>The question is not whether AI-mediated search is becoming a primary channel for commercial research. The data makes clear that it already is. The question is whether your brand will be present in that channel — or invisible to it.</p>
+
+  </div>
+</div>
+
+<div class="wrap-narrow">
+  <div class="article-cta">
+    <div class="eyebrow">Full AIMENSION™ Audit</div>
+    <h2>Find out your<br><em>exact score.</em></h2>
+    <p>The free infrastructure scan covers 12 of 50 AIMENSION dimensions. The full audit delivers your composite score across all five macro-sectors — plus a prioritized remediation roadmap. Global average: 29.6/100.</p>
+    <a href="mailto:founder@axonsystem.net?subject=AIMENSION%20Audit%20Request" class="btn-gold">Request Full Audit →</a>
+  </div>
+</div>
+
+<div class="related">
+  <div class="wrap">
+    <div class="related-title">More from Axon System</div>
+    <div class="related-grid">
+      <div class="related-item">
+        <div class="related-tag">Coming soon</div>
+        <div class="related-name">AEO vs GEO vs SEO: The Complete Comparison for 2026</div>
+      </div>
+      <div class="related-item">
+        <div class="related-tag">Coming soon</div>
+        <div class="related-name">How RAG Pipelines Decide Which Brands to Cite</div>
+      </div>
+      <div class="related-item">
+        <div class="related-tag">Coming soon</div>
+        <div class="related-name">Wikidata QIDs and LLM Citation Probability: What the Data Shows</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</main>
+
+<footer role="contentinfo">
+  <div class="wrap">
+    <div class="footer-inner">
+      <div class="footer-copy">© 2025 <span>Axon System</span> — Francesco Tinti. All rights reserved.</div>
+      <div class="footer-id" aria-hidden="true">AIMENSION v1.0.0 // Q139766166 // axonsystem.net</div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
