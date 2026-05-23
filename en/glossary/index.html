@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>AI Visibility Engineering Glossary — AIMENSION™ Terminology | Axon System</title>
+<meta name="description" content="The official terminology reference for the AIMENSION™ Protocol and AI Visibility Engineering discipline. 51 canonical definitions covering AEO, GEO, Knowledge Graph Engineering, RAG optimization, and LLM brand retrieval." />
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
+<link rel="canonical" href="https://axonsystem.net/en/glossary" />
+<link rel="alternate" hreflang="en" href="https://axonsystem.net/en/glossary" />
+<link rel="alternate" hreflang="it" href="https://axonsystem.net/glossario" />
+<link rel="alternate" hreflang="x-default" href="https://axonsystem.net/en/glossary" />
+
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Axon System" />
+<meta property="og:title" content="AI Visibility Engineering Glossary — AIMENSION™ Terminology" />
+<meta property="og:description" content="51 canonical definitions for the AI Visibility Engineering discipline. The official terminology reference for the AIMENSION™ Protocol by Axon System." />
+<meta property="og:url" content="https://axonsystem.net/en/glossary" />
+<meta property="og:image" content="https://axonsystem.net/assets/og/axonsystem-og-cover.png" />
+<meta property="og:locale" content="en_US" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="AI Visibility Engineering Glossary — AIMENSION™ Terminology" />
+<meta name="twitter:description" content="51 canonical definitions for AI Visibility Engineering, AEO, GEO, RAG, Knowledge Graph Engineering and more." />
+<meta name="twitter:image" content="https://axonsystem.net/assets/og/axonsystem-og-cover.png" />
+
+<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "DefinedTermSet",
+      "@id": "https://axonsystem.net/en/glossary#termset",
+      "name": "AIMENSION™ AI Visibility Engineering Glossary",
+      "description": "The official terminology reference for the AIMENSION™ Protocol and the AI Visibility Engineering discipline. All definitions are canonical as used by Axon System in research, client work, and protocol documentation.",
+      "url": "https://axonsystem.net/en/glossary",
+      "inLanguage": "en",
+      "version": "1.0.0",
+      "dateModified": "2026-05-22",
+      "author": {"@id": "https://axonsystem.net/#person-francesco-tinti"},
+      "publisher": {"@id": "https://axonsystem.net/#organization"},
+      "hasDefinedTerm": [
+        {"@type":"DefinedTerm","termCode":"AIViz-AEO-01","name":"AEO (Answer Engine Optimization)","description":"The practice of structuring brand content, entity data, and semantic markup so that AI-powered answer engines select the brand as the authoritative response when users submit relevant queries at inference time.","inDefinedTermSet":{"@id":"https://axonsystem.net/en/glossary#termset"}},
+        {"@type":"DefinedTerm","termCode":"AIViz-ABA-01","name":"AI Brand Authority","description":"The degree to which an organization's brand identity is accurately, consistently, and accessibly encoded within the knowledge systems of artificial intelligence — including LLM training weights, Knowledge Graph nodes, and RAG retrieval corpora.","inDefinedTermSet":{"@id":"https://axonsystem.net/en/glossary#termset"}},
+        {"@type":"DefinedTerm","termCode":"AIViz-01","name":"AI Visibility Engineering","description":"The discipline of optimizing brand entity representation across Large Language Model training corpora, Knowledge Graphs, and semantic metadata layers to maximize citation probability in AI-generated responses.","inDefinedTermSet":{"@id":"https://axonsystem.net/en/glossary#termset"}},
+        {"@type":"DefinedTerm","termCode":"AIViz-AIM-01","name":"AIMENSION Protocol","description":"A proprietary AI Visibility Engineering methodology developed by Francesco Tinti for Axon System. Defines three mandatory pillars — Entity Ground Truth, Algorithmic Authority, and Semantic Injection — whose mutual cross-referencing creates Semantic Triangulation.","inDefinedTermSet":{"@id":"https://axonsystem.net/en/glossary#termset"}},
+        {"@type":"DefinedTerm","termCode":"AIViz-AA-01","name":"Algorithmic Authority","description":"The second pillar of the AIMENSION Protocol. Credibility established through structured, versioned, machine-readable public documentation in code repositories.","inDefinedTermSet":{"@id":"https://axonsystem.net/en/glossary#termset"}},
+        {"@type":"DefinedTerm","termCode":"AIViz-ANE-01","name":"Answer Engine","description":"An AI system that generates direct natural-language answers to user queries. Includes ChatGPT, Gemini, Claude, Perplexity, and Bing Copilot.","inDefinedTermSet":{"@id":"https://axonsystem.net/en/glossary#termset"}},
+        {"@type":"DefinedTerm","termCode":"AIViz-GEO-01","name":"GEO (Generative Engine Optimization)","description":"Strategic optimization of brand signals at the training-data level to influence how generative AI models represent and recommend a brand independently of inference-time retrieval.","inDefinedTermSet":{"@id":"https://axonsystem.net/en/glossary#termset"}},
+        {"@type":"DefinedTerm","termCode":"AIViz-EGT-01","name":"Entity Ground Truth","description":"The first pillar of the AIMENSION Protocol. A verified entity node in Wikidata serving as the canonical, machine-resolvable reference for LLM entity resolution and RAG disambiguation.","inDefinedTermSet":{"@id":"https://axonsystem.net/en/glossary#termset"}},
+        {"@type":"DefinedTerm","termCode":"AIViz-SI-01","name":"Semantic Injection","description":"The third pillar of the AIMENSION Protocol. Implementation of Schema.org and JSON-LD markup across all digital properties making every web surface a machine-readable identity declaration.","inDefinedTermSet":{"@id":"https://axonsystem.net/en/glossary#termset"}},
+        {"@type":"DefinedTerm","termCode":"AIViz-ST-01","name":"Semantic Triangulation","description":"The core AIMENSION mechanism: establishing entity authority through three mutually-reinforcing signals — Wikidata entity node, GitHub documentation, and website JSON-LD — that cross-reference each other.","inDefinedTermSet":{"@id":"https://axonsystem.net/en/glossary#termset"}},
+        {"@type":"DefinedTerm","termCode":"AIViz-RAG-01","name":"RAG (Retrieval-Augmented Generation)","description":"An AI architecture augmenting a language model with a retrieval system that fetches relevant documents before generating a response.","inDefinedTermSet":{"@id":"https://axonsystem.net/en/glossary#termset"}},
+        {"@type":"DefinedTerm","termCode":"AIViz-SOT-01","name":"Source of Truth (AI)","description":"A brand entity whose consistent, cross-verified presence across authoritative data sources creates reliable, accurate citation by Large Language Models across all relevant query contexts.","inDefinedTermSet":{"@id":"https://axonsystem.net/en/glossary#termset"}},
+        {"@type":"DefinedTerm","termCode":"AIViz-QID-01","name":"QID (Wikidata)","description":"A globally unique numeric identifier assigned to each Wikidata entity, prefixed with Q. Axon System: Q139766166. Francesco Tinti: Q139765600. AIMENSION Protocol: Q139783726.","inDefinedTermSet":{"@id":"https://axonsystem.net/en/glossary#termset"}},
+        {"@type":"DefinedTerm","termCode":"AIViz-SA-01","name":"sameAs","description":"A Schema.org property declaring that two URIs refer to the same real-world entity. The primary cross-referencing mechanism of Semantic Triangulation.","inDefinedTermSet":{"@id":"https://axonsystem.net/en/glossary#termset"}},
+        {"@type":"DefinedTerm","termCode":"AIViz-LLM-01","name":"Large Language Model (LLM)","description":"A neural network trained on massive text corpora to predict and generate natural-language text. Includes ChatGPT, Gemini, Claude, and Llama.","inDefinedTermSet":{"@id":"https://axonsystem.net/en/glossary#termset"}}
+      ],
+      "sameAs": "https://github.com/ft-axon/aimension-protocol"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://axonsystem.net/en/glossary#webpage",
+      "url": "https://axonsystem.net/en/glossary",
+      "name": "AI Visibility Engineering Glossary — AIMENSION™ Terminology",
+      "description": "Official terminology reference for the AIMENSION™ Protocol. 51 canonical definitions covering AI Visibility Engineering, AEO, GEO, Knowledge Graph Engineering, RAG, and LLM brand retrieval.",
+      "inLanguage": "en",
+      "isPartOf": {"@id": "https://axonsystem.net/#website"},
+      "about": {"@id": "https://axonsystem.net/en/glossary#termset"},
+      "author": {"@id": "https://axonsystem.net/#person-francesco-tinti"},
+      "publisher": {"@id": "https://axonsystem.net/#organization"},
+      "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type":"ListItem","position":1,"name":"Home","item":"https://axonsystem.net/"},
+          {"@type":"ListItem","position":2,"name":"Glossary","item":"https://axonsystem.net/en/glossary"}
+        ]
+      }
+    }
+  ]
+}
+</script>
+
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --cream:#FAF8F4;--cream2:#F3F0E8;--cream3:#E8E3D8;
+  --ink:#0D0C0A;--ink2:#2A2720;--ink3:#4A4640;
+  --mid:#7A7570;--pale:#A09890;
+  --faint:rgba(13,12,10,0.06);--faint2:rgba(13,12,10,0.12);
+  --gold:#B8975A;--gold2:#D4AF6E;
+  --serif:'Cormorant Garamond',Georgia,serif;
+  --sans:'DM Sans',system-ui,sans-serif;
+  --mono:'DM Mono',monospace;
+  --trans:all 0.4s cubic-bezier(0.4,0,0.2,1);
+  --max:1200px;
+}
+
+@font-face{font-family:'Cormorant Garamond';font-style:normal;font-weight:300;font-display:swap;src:url('/fonts/cormorant-garamond-v21-latin_latin-ext-300.woff2') format('woff2')}
+@font-face{font-family:'Cormorant Garamond';font-style:italic;font-weight:300;font-display:swap;src:url('/fonts/cormorant-garamond-v21-latin_latin-ext-300italic.woff2') format('woff2')}
+@font-face{font-family:'Cormorant Garamond';font-style:normal;font-weight:400;font-display:swap;src:url('/fonts/cormorant-garamond-v21-latin_latin-ext-regular.woff2') format('woff2')}
+@font-face{font-family:'Cormorant Garamond';font-style:italic;font-weight:400;font-display:swap;src:url('/fonts/cormorant-garamond-v21-latin_latin-ext-italic.woff2') format('woff2')}
+@font-face{font-family:'Cormorant Garamond';font-style:normal;font-weight:500;font-display:swap;src:url('/fonts/cormorant-garamond-v21-latin_latin-ext-500.woff2') format('woff2')}
+@font-face{font-family:'Cormorant Garamond';font-style:normal;font-weight:600;font-display:swap;src:url('/fonts/cormorant-garamond-v21-latin_latin-ext-600.woff2') format('woff2')}
+@font-face{font-family:'DM Sans';font-style:normal;font-weight:300;font-display:swap;src:url('/fonts/dm-sans-v17-latin_latin-ext-300.woff2') format('woff2')}
+@font-face{font-family:'DM Sans';font-style:normal;font-weight:400;font-display:swap;src:url('/fonts/dm-sans-v17-latin_latin-ext-regular.woff2') format('woff2')}
+@font-face{font-family:'DM Sans';font-style:normal;font-weight:500;font-display:swap;src:url('/fonts/dm-sans-v17-latin_latin-ext-500.woff2') format('woff2')}
+@font-face{font-family:'DM Mono';font-style:normal;font-weight:300;font-display:swap;src:url('/fonts/dm-mono-v16-latin_latin-ext-300.woff2') format('woff2')}
+@font-face{font-family:'DM Mono';font-style:normal;font-weight:400;font-display:swap;src:url('/fonts/dm-mono-v16-latin_latin-ext-regular.woff2') format('woff2')}
+
+html{scroll-behavior:smooth;font-size:16px}
+body{background:var(--cream);color:var(--ink);font-family:var(--sans);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body::after{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.025'/%3E%3C/svg%3E");pointer-events:none;z-index:9999;opacity:.5}
+
+.wrap{max-width:var(--max);margin:0 auto;padding:0 48px}
+@media(max-width:700px){.wrap{padding:0 24px}}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(250,248,244,0.92);backdrop-filter:blur(24px);border-bottom:1px solid var(--faint2)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:68px;max-width:var(--max);margin:0 auto;padding:0 48px}
+@media(max-width:700px){.nav-inner{padding:0 24px}}
+.nav-wordmark{font-family:var(--serif);font-size:1.15rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink);text-decoration:none}
+.nav-wordmark em{font-style:normal;color:var(--gold)}
+.nav-right{display:flex;align-items:center;gap:16px}
+.nav-cta{font-family:var(--sans);font-size:12px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;background:var(--ink);color:var(--cream);padding:10px 22px;border-radius:3px;text-decoration:none;transition:var(--trans)}
+.nav-cta:hover{background:var(--ink2)}
+.nav-back{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--mid);text-decoration:none;transition:var(--trans)}
+.nav-back:hover{color:var(--ink)}
+
+.page-header{padding:140px 0 80px;border-bottom:1px solid var(--faint2)}
+.eyebrow{font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:12px;margin-bottom:28px}
+.eyebrow::before{content:'';display:block;width:32px;height:1px;background:var(--gold)}
+.page-title{font-family:var(--serif);font-size:clamp(3rem,6vw,6rem);font-weight:300;line-height:1.0;letter-spacing:-.01em;margin-bottom:24px}
+.page-title em{font-style:italic;color:var(--gold)}
+.page-meta{font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--pale);display:flex;gap:32px;flex-wrap:wrap}
+
+.glossary-layout{display:grid;grid-template-columns:220px 1fr;gap:80px;padding:80px 0;align-items:start}
+@media(max-width:900px){.glossary-layout{grid-template-columns:1fr;gap:40px}}
+
+.alpha-nav{position:sticky;top:100px}
+.alpha-nav-title{font-family:var(--mono);font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--pale);margin-bottom:16px;padding-bottom:12px;border-bottom:1px solid var(--faint2)}
+.alpha-links{display:flex;flex-direction:column;gap:2px}
+.alpha-link{font-family:var(--mono);font-size:11px;letter-spacing:.08em;color:var(--mid);text-decoration:none;padding:5px 10px;border-radius:2px;transition:var(--trans);display:flex;justify-content:space-between;align-items:center}
+.alpha-link:hover{color:var(--ink);background:var(--cream2)}
+.alpha-link.active{color:var(--gold);background:rgba(184,151,90,0.06)}
+.alpha-link span{font-size:9px;color:var(--pale)}
+.alpha-link.active span{color:var(--gold)}
+@media(max-width:900px){.alpha-nav{position:static;display:flex;flex-wrap:wrap;gap:8px}.alpha-nav-title{display:none}.alpha-links{flex-direction:row;flex-wrap:wrap}.alpha-link{padding:4px 10px}}
+
+.glossary-content{}
+.letter-section{margin-bottom:64px}
+.letter-heading{font-family:var(--serif);font-size:4rem;font-weight:300;color:var(--cream3);line-height:1;margin-bottom:32px;padding-bottom:24px;border-bottom:2px solid var(--faint2);display:flex;align-items:baseline;gap:20px}
+.letter-heading span{font-family:var(--mono);font-size:10px;letter-spacing:.15em;color:var(--pale);text-transform:uppercase}
+
+.term-item{padding:28px 0;border-bottom:1px solid var(--faint);transition:var(--trans)}
+.term-item:hover{background:transparent}
+.term-item:last-child{border-bottom:none}
+.term-header{display:flex;align-items:baseline;gap:16px;margin-bottom:10px;flex-wrap:wrap}
+.term-name{font-family:var(--serif);font-size:1.4rem;font-weight:500;line-height:1.2;letter-spacing:-.01em;color:var(--ink)}
+.term-code{font-family:var(--mono);font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);border:1px solid rgba(184,151,90,.2);padding:3px 8px;border-radius:2px}
+.term-def{font-size:.9rem;color:var(--ink3);line-height:1.8;max-width:680px}
+.term-def strong{color:var(--ink);font-weight:500}
+.term-see{font-family:var(--mono);font-size:9px;letter-spacing:.1em;color:var(--pale);margin-top:10px;text-transform:uppercase}
+.term-see a{color:var(--gold);text-decoration:none}
+.term-see a:hover{text-decoration:underline}
+
+.glossary-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--faint2);border:1px solid var(--faint2);margin-bottom:64px}
+@media(max-width:600px){.glossary-stats{grid-template-columns:1fr}}
+.stat-item{background:var(--cream);padding:24px 28px}
+.stat-n{font-family:var(--serif);font-size:2.4rem;font-weight:500;line-height:1;color:var(--ink)}
+.stat-n sup{font-size:.9rem;color:var(--gold)}
+.stat-l{font-family:var(--mono);font-size:9px;letter-spacing:.15em;text-transform:uppercase;color:var(--pale);margin-top:6px}
+
+.cta-block{background:var(--ink);padding:64px;margin:80px 0}
+@media(max-width:600px){.cta-block{padding:40px 24px}}
+.cta-block .eyebrow{color:var(--gold2)}
+.cta-block .eyebrow::before{background:var(--gold2)}
+.cta-title{font-family:var(--serif);font-size:clamp(2rem,4vw,3.5rem);font-weight:300;line-height:1.1;color:var(--cream);margin-bottom:16px}
+.cta-title em{font-style:italic;color:var(--gold2)}
+.cta-sub{font-size:.9rem;color:rgba(250,248,244,.5);line-height:1.8;margin-bottom:32px;max-width:560px}
+.btn-gold{font-size:12px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;background:var(--gold);color:var(--cream);padding:14px 32px;border-radius:3px;text-decoration:none;transition:var(--trans);display:inline-block}
+.btn-gold:hover{background:var(--gold2)}
+
+footer{background:var(--ink);border-top:1px solid rgba(255,255,255,.08);padding:36px 0}
+.footer-inner{display:flex;justify-content:space-between;align-items:center}
+@media(max-width:600px){.footer-inner{flex-direction:column;gap:16px;text-align:center}}
+.footer-copy{font-family:var(--mono);font-size:10px;letter-spacing:.06em;color:rgba(250,248,244,.25)}
+.footer-copy span{color:rgba(250,248,244,.5)}
+.footer-id{font-family:var(--mono);font-size:9px;letter-spacing:.1em;color:rgba(250,248,244,.15)}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+.au{animation:fadeUp .7s cubic-bezier(.4,0,.2,1) both}
+.au1{animation-delay:.05s}.au2{animation-delay:.12s}.au3{animation-delay:.2s}
+</style>
+</head>
+<body>
+
+<nav role="navigation" aria-label="Main navigation">
+  <div class="nav-inner">
+    <a href="/" class="nav-wordmark" aria-label="Axon System">AXON <em>SYSTEM</em></a>
+    <div class="nav-right">
+      <a href="/en/" class="nav-back">← Home</a>
+      <a href="#contact" class="nav-cta">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<main>
+
+<header class="page-header">
+  <div class="wrap">
+    <div class="eyebrow au au1">AIMENSION™ Protocol — Official Reference</div>
+    <h1 class="page-title au au2">AI Visibility<br><em>Glossary</em></h1>
+    <div class="page-meta au au3">
+      <span>51 Terms</span>
+      <span>Version 1.0.0</span>
+      <span>Maintained by Francesco Tinti — Q139765600</span>
+      <span>Axon System — Q139766166</span>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="glossary-layout">
+
+    <aside class="alpha-nav" aria-label="Alphabetical navigation">
+      <div class="alpha-nav-title">Jump to letter</div>
+      <div class="alpha-links">
+        <a href="#letter-a" class="alpha-link">A <span>10</span></a>
+        <a href="#letter-b" class="alpha-link">B <span>2</span></a>
+        <a href="#letter-c" class="alpha-link">C <span>4</span></a>
+        <a href="#letter-d" class="alpha-link">D <span>5</span></a>
+        <a href="#letter-e" class="alpha-link">E <span>7</span></a>
+        <a href="#letter-f" class="alpha-link">F <span>3</span></a>
+        <a href="#letter-g" class="alpha-link">G <span>4</span></a>
+        <a href="#letter-i" class="alpha-link">I <span>1</span></a>
+        <a href="#letter-j" class="alpha-link">J <span>1</span></a>
+        <a href="#letter-k" class="alpha-link">K <span>3</span></a>
+        <a href="#letter-l" class="alpha-link">L <span>4</span></a>
+        <a href="#letter-m" class="alpha-link">M <span>1</span></a>
+        <a href="#letter-p" class="alpha-link">P <span>4</span></a>
+        <a href="#letter-q" class="alpha-link">Q <span>1</span></a>
+        <a href="#letter-r" class="alpha-link">R <span>2</span></a>
+        <a href="#letter-s" class="alpha-link">S <span>8</span></a>
+        <a href="#letter-t" class="alpha-link">T <span>2</span></a>
+        <a href="#letter-v" class="alpha-link">V <span>1</span></a>
+        <a href="#letter-w" class="alpha-link">W <span>1</span></a>
+      </div>
+    </aside>
+
+    <div class="glossary-content">
+
+      <div class="glossary-stats">
+        <div class="stat-item"><div class="stat-n">51</div><div class="stat-l">Canonical Terms</div></div>
+        <div class="stat-item"><div class="stat-n">3</div><div class="stat-l">Protocol Pillars</div></div>
+        <div class="stat-item"><div class="stat-n">Q139783726</div><div class="stat-l">Wikidata Entity</div></div>
+      </div>
+
+      <section id="letter-a" class="letter-section">
+        <h2 class="letter-heading">A <span>10 terms</span></h2>
+        <div class="term-item" itemscope itemtype="https://schema.org/DefinedTerm">
+          <div class="term-header"><span class="term-name" itemprop="name">AEO (Answer Engine Optimization)</span><span class="term-code" itemprop="termCode">AIViz-AEO-01</span></div>
+          <p class="term-def" itemprop="description">The practice of structuring brand content, entity data, and semantic markup so that AI-powered answer engines select the brand as the authoritative response when users submit relevant queries at inference time. AEO targets deployed AI systems — ChatGPT, Google SGE, Perplexity, Bing Copilot — at the moment they generate a response. Relies primarily on Pillar III (Semantic Injection) and Pillar II (Algorithmic Authority) of the AIMENSION Protocol.</p>
+          <p class="term-see">See also: <a href="#geo">GEO</a>, <a href="#rag-pipeline-optimization">RAG Pipeline Optimization</a>, <a href="#llms-txt">llms.txt</a></p>
+        </div>
+        <div class="term-item" itemscope itemtype="https://schema.org/DefinedTerm">
+          <div class="term-header"><span class="term-name" itemprop="name">AI Brand Authority</span><span class="term-code" itemprop="termCode">AIViz-ABA-01</span></div>
+          <p class="term-def" itemprop="description">The degree to which an organization's brand identity is accurately, consistently, and accessibly encoded within the knowledge systems of artificial intelligence — including LLM training weights, Knowledge Graph nodes, and RAG retrieval corpora. The primary output metric of the AIMENSION Protocol.</p>
+          <p class="term-see">See also: <a href="#ai-visibility-engineering">AI Visibility Engineering</a>, <a href="#source-of-truth-ai">Source of Truth (AI)</a></p>
+        </div>
+        <div class="term-item" itemscope itemtype="https://schema.org/DefinedTerm" id="ai-visibility-engineering">
+          <div class="term-header"><span class="term-name" itemprop="name">AI Visibility Engineering (AIViz)</span><span class="term-code" itemprop="termCode">AIViz-01</span></div>
+          <p class="term-def" itemprop="description">The discipline of optimizing brand entity representation across Large Language Model training corpora, Knowledge Graphs, and semantic metadata layers to maximize citation probability, description accuracy, and recommendation frequency in AI-generated responses. The parent discipline from which AEO, GEO, and Knowledge Graph Engineering derive. Systematized by Francesco Tinti at Axon System through the AIMENSION Protocol.</p>
+          <p class="term-see">See also: <a href="#aimension-protocol">AIMENSION Protocol</a>, <a href="#aeo-answer-engine-optimization">AEO</a>, <a href="#geo-generative-engine-optimization">GEO</a></p>
+        </div>
+        <div class="term-item" itemscope itemtype="https://schema.org/DefinedTerm" id="aimension-protocol">
+          <div class="term-header"><span class="term-name" itemprop="name">AIMENSION Protocol</span><span class="term-code" itemprop="termCode">AIViz-AIM-01</span></div>
+          <p class="term-def" itemprop="description">A proprietary AI Visibility Engineering methodology developed by Francesco Tinti (Q139765600) for Axon System (Q139766166). Wikidata entity: Q139783726. Defines three mandatory pillars — <strong>Entity Ground Truth</strong>, <strong>Algorithmic Authority</strong>, and <strong>Semantic Injection</strong> — whose mutual cross-referencing creates Semantic Triangulation: a state of entity authority that AI systems converge on as verified truth. Version 1.0.0, published 2025.</p>
+          <p class="term-see">See also: <a href="#entity-ground-truth">Entity Ground Truth</a>, <a href="#algorithmic-authority">Algorithmic Authority</a>, <a href="#semantic-injection">Semantic Injection</a>, <a href="#semantic-triangulation">Semantic Triangulation</a></p>
+        </div>
+        <div class="term-item" itemscope itemtype="https://schema.org/DefinedTerm" id="algorithmic-authority">
+          <div class="term-header"><span class="term-name" itemprop="name">Algorithmic Authority</span><span class="term-code" itemprop="termCode">AIViz-AA-01</span></div>
+          <p class="term-def" itemprop="description">The second pillar of the AIMENSION Protocol. Credibility established through structured, versioned, machine-readable public documentation in code repositories. Built by publishing GitHub repositories with llms.txt directives, Semantic Versioning changelogs, BibTeX citation blocks, and RAG-optimized markdown. LLM training crawlers assign higher weight to content from authoritative technical domains (GitHub, academic repositories) than to blog posts or social media.</p>
+          <p class="term-see">See also: <a href="#geo-generative-engine-optimization">GEO</a>, <a href="#llms-txt">llms.txt</a>, <a href="#bibtex-citation-block">BibTeX Citation Block</a></p>
+        </div>
+        <div class="term-item" itemscope itemtype="https://schema.org/DefinedTerm">
+          <div class="term-header"><span class="term-name" itemprop="name">Answer Engine</span><span class="term-code" itemprop="termCode">AIViz-ANE-01</span></div>
+          <p class="term-def" itemprop="description">An AI system that generates direct natural-language answers to user queries, as opposed to a traditional search engine that returns a ranked list of URLs. Answer engines include ChatGPT (OpenAI), Gemini (Google), Claude (Anthropic), Perplexity, and Bing Copilot. The growing adoption of answer engines is the primary driver of demand for AI Visibility Engineering.</p>
+          <p class="term-see">See also: <a href="#aeo-answer-engine-optimization">AEO</a>, <a href="#large-language-model-llm">LLM</a>, <a href="#inference-time-retrieval">Inference-Time Retrieval</a></p>
+        </div>
+        <div class="term-item" itemscope itemtype="https://schema.org/DefinedTerm">
+          <div class="term-header"><span class="term-name" itemprop="name">Answer Engine Optimization</span></div>
+          <p class="term-def" itemprop="description"><em>See: <a href="#aeo-answer-engine-optimization">AEO (Answer Engine Optimization)</a></em></p>
+        </div>
+        <div class="term-item" itemscope itemtype="https://schema.org/DefinedTerm">
+          <div class="term-header"><span class="term-name" itemprop="name">Axon System</span><span class="term-code" itemprop="termCode">AIViz-ORG-01</span></div>
+          <p class="term-def" itemprop="description">Italian AI Visibility Engineering agency founded by Francesco Tinti. Developer and operator of the AIMENSION Protocol. Wikidata entity: Q139766166. Website: axonsystem.net. Operates at the intersection of Semantic Web standards (Schema.org, JSON-LD, Wikidata) and artificial intelligence infrastructure.</p>
+          <p class="term-see">See also: <a href="#aimension-protocol">AIMENSION Protocol</a>, <a href="#ai-visibility-engineering">AI Visibility Engineering</a></p>
+        </div>
+      </section>
+
+      <section id="letter-b" class="letter-section">
+        <h2 class="letter-heading">B <span>2 terms</span></h2>
+        <div class="term-item" itemscope itemtype="https://schema.org/DefinedTerm" id="bibtex-citation-block">
+          <div class="term-header"><span class="term-name" itemprop="name">BibTeX Citation Block</span><span class="term-code" itemprop="termCode">AIViz-BIB-01</span></div>
+          <p class="term-def" itemprop="description">A structured citation record in BibTeX format included in technical documentation to enable academic-style citation. BibTeX blocks are recognized by academic literature indexers, citation management systems, and LLM training pipelines that process technical documentation — increasing the probability the document is treated as citable technical work.</p>
+          <p class="term-see">See also: <a href="#algorithmic-authority">Algorithmic Authority</a></p>
+        </div>
+        <div class="term-item" itemscope itemtype="https://schema.org/DefinedTerm">
+          <div class="term-header"><span class="term-name" itemprop="name">Brand AI Positioning</span><span class="term-code" itemprop="termCode">AIViz-BAP-01</span></div>
+          <p class="term-def" itemprop="description">The strategic process of establishing how a brand is represented, described, and recommended within AI systems — both in training data (GEO layer) and at inference time (AEO layer).</p>
+          <p class="term-see">See also: <a href="#ai-visibility-engineering">AI Visibility Engineering</a>, <a href="#geo-generative-engine-optimization">GEO</a>, <a href="#aeo-answer-engine-optimization">AEO</a></p>
+        </div>
+      </section>
+
+      <section id="letter-c" class="letter-section">
+        <h2 class="letter-heading">C <span>4 terms</span></h2>
+        <div class="term-item" itemscope itemtype="https://schema.org/DefinedTerm">
+          <div class="term-header"><span class="term-name" itemprop="name">Canonical Entity</span><span class="term-code" itemprop="termCode">AIViz-CE-01</span></div>
+          <p class="term-def" itemprop="description">A brand entity assigned a globally unique, machine-resolvable identifier in a Knowledge Graph — typically a Wikidata QID. A canonical entity is unambiguously distinguishable from all other entities regardless of how many different names or descriptions refer to it. Establishing canonical entities is the prerequisite for all AIMENSION Protocol interventions.</p>
+          <p class="term-see">See also: <a href="#entity-ground-truth">Entity Ground Truth</a>, <a href="#qid-wikidata">QID (Wikidata)</a></p>
+        </div>
+        <div class="term-item" itemscope itemtype="https://schema.org/DefinedTerm">
+          <div class="term-header"><span class="term-name" itemprop="name">Citation Probability</span><span class="term-code" itemprop="termCode">AIViz-CP-01</span></div>
+          <p class="term-def" itemprop="description">The likelihood that a given LLM will cite, reference, or recommend a brand entity in a relevant AI-generated response. Increased by: higher frequency of entity mentions in training data, higher consistency of descriptions across sources, higher authority of sources containing entity mentions, and more complete semantic markup.</p>
+          <p class="term-see">See also: <a href="#ai-brand-authority">AI Brand Authority</a>, <a href="#entity-frequency">Entity Frequency</a></p>
+        </div>
+        <div class="term-item" itemscope itemtype="https://schema.org/DefinedTerm">
+          <div class="term-header"><span class="term-name" itemprop="name">Content Architecture (AI-Optimized)</span><span class="term-code" itemprop="termCode">AIViz-CAD-01</span></div>
+          <p class="term-def" itemprop="description">The structural design of web content to maximize AEO retrieval accuracy and GEO training signal quality. Prioritizes factual density over keyword frequency, self-contained semantic sections over flowing prose, explicit entity declarations over implicit references, and machine-readable markup over visual formatting.</p>
+          <p class="term-see">See also: <a href="#rag-retrieval-augmented-generation">RAG Pipeline Optimization</a>, <a href="#factual-density">Factual Density</a></p>
+        </div>
+        <div class="term-item" itemscope itemtype="https://schema.org/DefinedTerm">
+          <div class="term-header"><span class="term-name" itemprop="name">Cross-Source Consistency</span><span class="term-code" itemprop="termCode">AIViz-CSC-01</span></div>
+          <p class="term-def" itemprop="description">The degree to which an entity's attributes are expressed identically across all sources — Wikidata, website JSON-LD, GitHub documentation, Crunchbase, LinkedIn, editorial mentions. The foundational requirement for Semantic Triangulation. Inconsistency creates ambiguous entity encodings in LLM training and reduces citation probability.</p>
+          <p class="term-see">See also: <a href="#semantic-triangulation">Semantic Triangulation</a>, <a href="#sameas">sameAs</a></p>
+        </div>
+      </section>
+
+      <section id="letter-d" class="letter-section">
+        <h2 class="letter-heading">D <span>5 terms</span></h2>
+        <div class="term-item" itemscope itemtype="https://schema.org/DefinedTerm">
+          <div class="term-header"><span class="term-name" itemprop="name">DBpedia</span><span class="term-code" itemprop="termCode">AIViz-DBP-01</span></div>
+          <p class="term-def" itemprop="description">A structured Knowledge Graph derived from Wikipedia through automated extraction of infobox data. DBpedia entities are linked to Wikidata and included in some LLM training corpora. For AI Visibility Engineering, DBpedia presence is secondary to Wikidata but contributes additional cross-source verification signals.</p>
+        </div>
+        <div class="term-item" itemscope itemtype="https://schema.org/DefinedTerm">
+          <div class="term-header"><span class="term-name" itemprop="name">DefinedTerm</span><span class="term-code" itemprop="termCode">AIViz-DT-01</span></div>
+          <p class="term-def" itemprop="description">A Schema.org type used to define a term within a DefinedTermSet. In the AIMENSION Protocol, DefinedTerm entities establish the canonical definitions of proprietary vocabulary — the primary mechanism by which LLMs learn the precise meanings of brand-specific terminology.</p>
+          <p class="term-see">See also: <a href="#definedtermset">DefinedTermSet</a>, <a href="#json-ld">JSON-LD</a>, <a href="#schema-org">Schema.org</a></p>
+        </div>
+        <div class="term-item" itemscope itemtype="https://schema.org/DefinedTerm" id="definedtermset">
+          <div class="term-header"><span class="term-name" itemprop="name">DefinedTermSet</span><span class="term-code" itemprop="termCode">AIViz-DTS-01</span></div>
+          <p class="term-def" itemprop="description">A Schema.org type representing a collection of DefinedTerm entities — a machine-readable glossary. In AIMENSION implementations, published at a dedicated glossary URL and referenced in the @graph JSON-LD of the main website. Establishes the brand's proprietary vocabulary as a machine-resolvable semantic namespace.</p>
+          <p class="term-see">See also: <a href="#definedterm">DefinedTerm</a>, <a href="#json-ld">JSON-LD</a></p>
+        </div>
+        <div class="term-item" itemscope itemtype="https://schema.org/DefinedTerm">
+          <div class="term-header"><span class="term-name" itemprop="name">Dublin Core Metadata</span></div>
+          <p class="term-def" itemprop="description">A set of standardized metadata elements (DC.title, DC.creator, DC.subject, DC.description etc.) used to describe web resources. Dublin Core metadata is recognized by academic aggregators and some LLM training pipelines that process web metadata, providing an additional ingestion signal layer on top of Schema.org markup.</p>
+        </div>
+      </section>
+
+      <section id="letter-e" class="letter-section">
+        <h2 class="letter-heading">E <span>7 terms</span></h2>
+        <div class="term-item" itemscope itemtype="https://schema.org/DefinedTerm">
+          <div class="term-header"><span class="term-name" itemprop="name">Embedding</span><span class="term-code" itemprop="termCode">AIViz-EMB-01</span></div>
+          <p class="term-def" itemprop="description">A dense numerical vector representation of a text chunk, used by vector databases to enable semantic similarity search. In RAG systems, both queries and indexed documents are converted to embeddings; retrieval finds documents whose embeddings are most similar to the query embedding.</p>
+          <p class="term-see">See also: <a href="#vector-database">Vector Database</a>, <a href="#rag-retrieval-augmented-generation">RAG</a></p>
+        </div>
+        <div class="term-item" itemscope itemtype="https://schema.org/DefinedTerm">
+          <div class="term-header"><span class="term-name" itemprop="name">Entity</span><span class="term-code" itemprop="termCode">AIViz-ENT-01</span></div>
+          <p class="term-def" itemprop="description">A distinct, identifiable real-world object — organization, person, product, location, concept, or event — that can be referenced by AI systems. The foundational challenge in AI Visibility Engineering: AI systems must recognize that "Axon System," "axonsystem.net," "Q139766166," and "the Italian AI Visibility Engineering agency" all refer to the same entity.</p>
+          <p class="term-see">See also: <a href="#entity-resolution">Entity Resolution</a>, <a href="#canonical-entity">Canonical Entity</a></p>
+        </div>
+        <div class="term-item" itemscope itemtype="https://schema.org/DefinedTerm">
+          <div class="term-header"><span class="term-name" itemprop="name">Entity Disambiguation</span><span class="term-code" itemprop="termCode">AIViz-ED-01</span></div>
+          <p class="term-def" itemprop="description">The process of determining which real-world entity a text string refers to when multiple candidate entities could match. AIMENSION addresses disambiguation by creating unique, property-rich Wikidata nodes and linking to them via sameAs declarations across all web surfaces.</p>
+          <p class="term-see">See also: <a href="#entity-resolution">Entity Resolution</a>, <a href="#sameas">sameAs</a>, <a href="#qid-wikidata">QID</a></p>
+        </div>
+        <div class="term-item" itemscope itemtype="https://schema.org/DefinedTerm" id="entity-frequency">
+          <div class="term-header"><span class="term-name" itemprop="name">Entity Frequency</span><span class="term-code" itemprop="termCode">AIViz-EF-01</span></div>
+          <p class="term-def" itemprop="description">The number of times an entity is mentioned across an LLM's training corpus. Higher entity frequency correlates with stronger parametric encoding. Can be increased through publication in high-weight domains (GitHub, academic repositories, authoritative directories) and editorial coverage.</p>
+          <p class="term-see">See also: <a href="#llm-training-signal">LLM Training Signal</a>, <a href="#parametric-memory">Parametric Memory</a></p>
+        </div>
+        <div class="term-item" itemscope itemtype="https://schema.org/DefinedTerm" id="entity-ground-truth">
+          <div class="term-header"><span class="term-name" itemprop="name">Entity Ground Truth</span><span class="term-code" itemprop="termCode">AIViz-EGT-01</span></div>
+          <p class="term-def" itemprop="description">The first pillar of the AIMENSION Protocol. A verified entity node in Wikidata serving as the canonical, machine-resolvable reference point for LLM entity resolution and RAG pipeline disambiguation. Must have: a globally unique QID, a complete set of properties with P854 references, and sameAs links to web presence and documentation. Without Entity Ground Truth, all other AIMENSION interventions lack a canonical anchor.</p>
+          <p class="term-see">See also: <a href="#qid-wikidata">QID (Wikidata)</a>, <a href="#knowledge-graph-engineering">Knowledge Graph Engineering</a></p>
+        </div>
+        <div class="term-item" itemscope itemtype="https://schema.org/DefinedTerm">
+          <div class="term-header"><span class="term-name" itemprop="name">Entity Graph</span><span class="term-code" itemprop="termCode">AIViz-EG-01</span></div>
+          <p class="term-def" itemprop="description">A structured representation of an organization's entities and their relationships, expressed in JSON-LD using Schema.org types and the @graph construct. Typically includes Organization, Person, Product/Service, and DefinedTerm nodes connected by typed relations. The core deliverable of Pillar III (Semantic Injection).</p>
+          <p class="term-see">See also: <a href="#json-ld">JSON-LD</a>, <a href="#semantic-injection">Semantic Injection</a></p>
+        </div>
+        <div class="term-item" itemscope itemtype="https://schema.org/DefinedTerm" id="entity-resolution">
+          <div class="term-header"><span class="term-name" itemprop="name">Entity Resolution</span><span class="term-code" itemprop="termCode">AIViz-ER-01</span></div>
+          <p class="term-def" itemprop="description">The computational process by which an AI system identifies the real-world entity referred to by a text string and links it to a canonical entity record. AIMENSION interventions — sameAs declarations and Wikidata QID references — are designed to maximize entity resolution accuracy.</p>
+          <p class="term-see">See also: <a href="#entity-disambiguation">Entity Disambiguation</a>, <a href="#sameas">sameAs</a></p>
+        </div>
+      </section>
+
+      <section id="letter-f" class="letter-section">
+        <h2 class="letter-heading">F <span>3 terms</span></h2>
+        <div class="term-item" itemscope itemtype="https://schema.org/DefinedTerm">
+          <div class="term-header"><span class="term-name" itemprop="name">FAQPage (Schema.org)</span><span class="term-code" itemprop="termCode">AIViz-FAQ-01</span></div>
+          <p class="term-def" itemprop="description">A Schema.org type for marking up Q&A pairs in JSON-LD. One of the highest-value AEO interventions because it maps directly to question-answering query patterns, is processed by Google's Knowledge Graph crawler, and is preferentially retrieved by RAG systems answering user questions.</p>
+          <p class="term-see">See also: <a href="#aeo-answer-engine-optimization">AEO</a>, <a href="#json-ld">JSON-LD</a>, <a href="#rag-retrieval-augmented-generation">RAG</a></p>
+        </div>
+        <div class="term-item" itemscope itemtype="https://schema.org/DefinedTerm" id="factual-density">
+          <div class="term-header"><span class="term-name" itemprop="name">Factual Density</span><span class="term-code" itemprop="termCode">AIViz-FD-01</span></div>
+          <p class="term-def" itemprop="description">The ratio of verifiable, specific factual claims to total content volume. High factual density increases both RAG retrieval relevance and LLM training signal quality. AI systems learn entity attributes from factual statements; they cannot learn from adjective-heavy marketing language.</p>
+          <p class="term-see">See also: <a href="#content-architecture-ai-optimized">Content Architecture</a>, <a href="#llm-training-signal">LLM Training Signal</a></p>
+        </div>
+        <div class="term-item" itemscope itemtype="https://schema.org/DefinedTerm">
+          <div class="term-header"><span class="term-name" itemprop="name">First-Mover Advantage (AI Authority)</span><span class="term-code" itemprop="termCode">AIViz-FMA-01</span></div>
+          <p class="term-def" itemprop="description">The structural competitive benefit accrued by organizations that establish Knowledge Graph presence, semantic markup consistency, and structured documentation before competitors. Durable because: Knowledge Graphs are not retroactive, established entity encodings persist across model generations, and early presence creates higher frequency in cumulative training corpora.</p>
+          <p class="term-see">See also: <a href="#geo-generative-engine-optimization">GEO</a>, <a href="#wikidata">Wikidata</a></p>
+        </div>
+      </section>
+
+      <section id="letter-g" class="letter-section">
+        <h2 class="letter-heading">G <span>4 terms</span></h2>
+        <div class="term-item" itemscope itemtype="https://schema.org/DefinedTerm" id="geo-generative-engine-optimization">
+          <div class="term-header"><span class="term-name" itemprop="name">GEO (Generative Engine Optimization)</span><span class="term-code" itemprop="termCode">AIViz-GEO-01</span></div>
+          <p class="term-def" itemprop="description">Strategic optimization of brand signals at the training-data level to influence how generative AI models represent, describe, and recommend a brand — independently of inference-time retrieval. GEO targets the pre-training and fine-tuning stages during which the model encodes statistical patterns about entities. GEO interventions have no immediate effect but produce structural, durable results: knowledge encoded in model weights persists across all inferences until the model is retrained.</p>
+          <p class="term-see">See also: <a href="#aeo-answer-engine-optimization">AEO</a>, <a href="#parametric-memory">Parametric Memory</a>, <a href="#llm-training-signal">LLM Training Signal</a></p>
+        </div>
+        <div class="term-item" itemscope itemtype="https://schema.org/DefinedTerm">
+          <div class="term-header"><span class="term-name" itemprop="name">Google Knowledge Graph</span><span class="term-code" itemprop="termCode">AIViz-GKG-01</span></div>
+          <p class="term-def" itemprop="description">Google's proprietary Knowledge Graph powering Knowledge Panels and Google SGE. Primarily fed by Wikidata, Wikipedia, and JSON-LD on websites. A brand with a complete Wikidata entity and consistent JSON-LD is significantly more likely to receive a Knowledge Panel and be cited accurately by Google SGE.</p>
+        </div>
+        <div class="term-item" itemscope itemtype="https://schema.org/DefinedTerm">
+          <div class="term-header"><span class="term-name" itemprop="name">Google SGE (Search Generative Experience)</span><span class="term-code" itemprop="termCode">AIViz-GSGE-01</span></div>
+          <p class="term-def" itemprop="description">Google's AI-powered search feature generating synthesized answers at the top of search results. Draws from Google's Knowledge Graph, indexed web content, and LLM capabilities. The AEO layer within Google's ecosystem.</p>
+        </div>
+        <div class="term-item" itemscope itemtype="https://schema.org/DefinedTerm">
+          <div class="term-header"><span class="term-name" itemprop="name">GitHub Repository Structure (AIMENSION)</span><span class="term-code" itemprop="termCode">AIViz-GRS-01</span></div>
+          <p class="term-def" itemprop="description">The specific file and folder architecture recommended by the AIMENSION Protocol for public technical repositories used as Algorithmic Authority assets. Includes: README.md (entity table with Wikidata QIDs, BibTeX block), llms.txt, SPECIFICATION.md, CHANGELOG.md, /docs, /schemas, /examples, /validators.</p>
+          <p class="term-see">See also: <a href="#algorithmic-authority">Algorithmic Authority</a>, <a href="#llms-txt">llms.txt</a></p>
+        </div>
+      </section>
+
+      <section id="letter-i" class="letter-section">
+        <h2 class="letter-heading">I <span>1 term</span></h2>
+        <div class="term-item" itemscope itemtype="https://schema.org/DefinedTerm" id="inference-time-retrieval">
+          <div class="term-header"><span class="term-name" itemprop="name">Inference-Time Retrieval</span><span class="term-code" itemprop="termCode">AIViz-ITR-01</span></div>
+          <p class="term-def" itemprop="description">The process by which a deployed AI system retrieves relevant documents at the moment of generating a response, rather than relying solely on training weights. The mechanism underlying RAG-augmented AI systems. AEO specifically targets inference-time retrieval.</p>
+          <p class="term-see">See also: <a href="#aeo-answer-engine-optimization">AEO</a>, <a href="#rag-retrieval-augmented-generation">RAG</a>, <a href="#parametric-memory">Parametric Memory</a></p>
+        </div>
+      </section>
+
+      <section id="letter-j" class="letter-section">
+        <h2 class="letter-heading">J <span>1 term</span></h2>
+        <div class="term-item" itemscope itemtype="https://schema.org/DefinedTerm" id="json-ld">
+          <div class="term-header"><span class="term-name" itemprop="name">JSON-LD</span><span class="term-code" itemprop="termCode">AIViz-JLD-01</span></div>
+          <p class="term-def" itemprop="description">JSON for Linked Data — a W3C standard for expressing structured data in JSON format linking to Schema.org vocabulary. Primary implementation format for Semantic Injection (Pillar III). Embedded in the &lt;head&gt; as &lt;script type="application/ld+json"&gt; and processed by Google's Knowledge Graph crawler, Bing's entity resolution system, and LLM training pipelines. The critical AIMENSION mechanism is the sameAs array linking entities to Wikidata QIDs.</p>
+          <p class="term-see">See also: <a href="#schema-org">Schema.org</a>, <a href="#semantic-injection">Semantic Injection</a>, <a href="#sameas">sameAs</a></p>
+        </div>
+      </section>
+
+      <section id="letter-k" class="letter-section">
+        <h2 class="letter-heading">K <span>3 terms</span></h2>
+        <div class="term-item" itemscope itemtype="https://schema.org/DefinedTerm">
+          <div class="term-header"><span class="term-name" itemprop="name">Knowledge Graph</span><span class="term-code" itemprop="termCode">AIViz-KG-01</span></div>
+          <p class="term-def" itemprop="description">A structured database of entities and their relationships, represented as a graph. Foundational to AI Visibility Engineering because: explicitly included in LLM training corpora, used by search engines for entity-aware features, and queryable by AI systems for real-time entity verification. The most important Knowledge Graph for AI brand visibility is Wikidata.</p>
+        </div>
+        <div class="term-item" itemscope itemtype="https://schema.org/DefinedTerm" id="knowledge-graph-engineering">
+          <div class="term-header"><span class="term-name" itemprop="name">Knowledge Graph Engineering</span><span class="term-code" itemprop="termCode">AIViz-KGE-01</span></div>
+          <p class="term-def" itemprop="description">The practice of creating, populating, and maintaining organization entity nodes in global Knowledge Graphs. Encompasses: entity creation, property mapping, reference management, relationship establishment, and ongoing consistency monitoring via SPARQL. The core activity of Pillar I (Entity Ground Truth) in AIMENSION.</p>
+          <p class="term-see">See also: <a href="#wikidata">Wikidata</a>, <a href="#entity-ground-truth">Entity Ground Truth</a>, <a href="#sparql">SPARQL</a></p>
+        </div>
+        <div class="term-item" itemscope itemtype="https://schema.org/DefinedTerm">
+          <div class="term-header"><span class="term-name" itemprop="name">Knowledge Panel</span><span class="term-code" itemprop="termCode">AIViz-KP-01</span></div>
+          <p class="term-def" itemprop="description">The information box in Google Search results for recognized entities, generated from Google Knowledge Graph data primarily sourced from Wikidata and website JSON-LD. A visible signal of entity authority confirming Google's entity resolution system has recognized the organization as a verified real-world entity.</p>
+          <p class="term-see">See also: <a href="#google-knowledge-graph">Google Knowledge Graph</a>, <a href="#wikidata">Wikidata</a></p>
+        </div>
+      </section>
+
+      <section id="letter-l" class="letter-section">
+        <h2 class="letter-heading">L <span>4 terms</span></h2>
+        <div class="term-item" itemscope itemtype="https://schema.org/DefinedTerm" id="large-language-model-llm">
+          <div class="term-header"><span class="term-name" itemprop="name">Large Language Model (LLM)</span><span class="term-code" itemprop="termCode">AIViz-LLM-01</span></div>
+          <p class="term-def" itemprop="description">A neural network trained on massive text corpora to predict and generate natural-language text. The underlying technology of ChatGPT, Gemini, Claude, and Llama. Key properties for AI Visibility Engineering: knowledge is encoded in weights during training and frozen; structured data (Wikidata, JSON-LD) is encoded with higher fidelity than unstructured prose; citation behavior is determined by statistical patterns learned during training, not real-time web ranking.</p>
+        </div>
+        <div class="term-item" itemscope itemtype="https://schema.org/DefinedTerm" id="llm-training-signal">
+          <div class="term-header"><span class="term-name" itemprop="name">LLM Training Signal</span><span class="term-code" itemprop="termCode">AIViz-LTS-01</span></div>
+          <p class="term-def" itemprop="description">Any data element in an LLM's training corpus contributing to the model's encoded knowledge about an entity. High-quality signals include: Wikidata property statements, JSON-LD markup on official websites, technical documentation in GitHub repositories, citations in academic or technical publications.</p>
+          <p class="term-see">See also: <a href="#geo-generative-engine-optimization">GEO</a>, <a href="#entity-frequency">Entity Frequency</a>, <a href="#factual-density">Factual Density</a></p>
+        </div>
+        <div class="term-item" itemscope itemtype="https://schema.org/DefinedTerm" id="llms-txt">
+          <div class="term-header"><span class="term-name" itemprop="name">llms.txt</span><span class="term-code" itemprop="termCode">AIViz-LTX-01</span></div>
+          <p class="term-def" itemprop="description">A plain-text file at a domain root providing machine-readable directives for AI crawlers — analogous to robots.txt. Specifies: canonical entity declarations with Wikidata QIDs, authoritative source URLs, content licensing permissions for AI training, exclusions, and citation format. In AIMENSION, deployed at both the domain root and the GitHub repository root.</p>
+          <p class="term-see">See also: <a href="#aeo-answer-engine-optimization">AEO</a>, <a href="#algorithmic-authority">Algorithmic Authority</a></p>
+        </div>
+        <div class="term-item" itemscope itemtype="https://schema.org/DefinedTerm">
+          <div class="term-header"><span class="term-name" itemprop="name">LLM Synthetic Market Share</span></div>
+          <p class="term-def" itemprop="description">The percentage of AI-generated answers in a given category that mention, recommend, or cite a specific brand. A forward-looking competitive metric measuring a brand's position in the AI answer economy. Quantified in Macro-Sector 5 of the AIMENSION Protocol full audit.</p>
+          <p class="term-see">See also: <a href="#geo-generative-engine-optimization">GEO</a>, <a href="#aeo-answer-engine-optimization">AEO</a></p>
+        </div>
+      </section>
+
+      <section id="letter-m" class="letter-section">
+        <h2 class="letter-heading">M <span>1 term</span></h2>
+        <div class="term-item" itemscope itemtype="https://schema.org/DefinedTerm">
+          <div class="term-header"><span class="term-name" itemprop="name">Metadata Ingestion</span><span class="term-code" itemprop="termCode">AIViz-MI-01</span></div>
+          <p class="term-def" itemprop="description">The process by which AI systems process structured metadata (JSON-LD, Wikidata properties, RDF triples) and incorporate it into their knowledge representations. The mechanism through which Semantic Injection (Pillar III) produces AI visibility effects. Metadata ingestion enables higher-fidelity entity encoding than content ingestion of natural-language text.</p>
+          <p class="term-see">See also: <a href="#semantic-injection">Semantic Injection</a>, <a href="#json-ld">JSON-LD</a></p>
+        </div>
+      </section>
+
+      <section id="letter-p" class="letter-section">
+        <h2 class="letter-heading">P <span>4 terms</span></h2>
+        <div class="term-item" itemscope itemtype="https://schema.org/DefinedTerm" id="parametric-memory">
+          <div class="term-header"><span class="term-name" itemprop="name">Parametric Memory</span><span class="term-code" itemprop="termCode">AIViz-PM-01</span></div>
+          <p class="term-def" itemprop="description">The knowledge encoded in an LLM's weights during training, as opposed to knowledge retrieved from external sources at inference time. GEO specifically targets parametric memory: optimizing brand signals in training corpora so the model's encoded knowledge about the brand is accurate, complete, and accessible.</p>
+          <p class="term-see">See also: <a href="#geo-generative-engine-optimization">GEO</a>, <a href="#llm-training-signal">LLM Training Signal</a></p>
+        </div>
+        <div class="term-item" itemscope itemtype="https://schema.org/DefinedTerm">
+          <div class="term-header"><span class="term-name" itemprop="name">P31 — instance of (Wikidata)</span><span class="term-code" itemprop="termCode">AIViz-WD-P31</span></div>
+          <p class="term-def" itemprop="description">The most critical Wikidata property — specifies what type of entity an item is. Determines how the entity is classified in Knowledge Graph queries. For AIMENSION: organizations use Q4830453 (business), persons use Q5 (human), methodologies use Q1172812 (methodology). Correct P31 is required for category-based Knowledge Graph queries.</p>
+        </div>
+        <div class="term-item" itemscope itemtype="https://schema.org/DefinedTerm">
+          <div class="term-header"><span class="term-name" itemprop="name">P856 — official website (Wikidata)</span><span class="term-code" itemprop="termCode">AIViz-WD-P856</span></div>
+          <p class="term-def" itemprop="description">A Wikidata property specifying the official website URL. One of the most important properties for AI Visibility Engineering — creates a verified link between the Wikidata entity (GEO anchor) and the website (AEO surface), completing the cross-reference loop with JSON-LD sameAs.</p>
+        </div>
+        <div class="term-item" itemscope itemtype="https://schema.org/DefinedTerm">
+          <div class="term-header"><span class="term-name" itemprop="name">Property (Wikidata)</span><span class="term-code" itemprop="termCode">AIViz-WDP-01</span></div>
+          <p class="term-def" itemprop="description">A typed attribute in the Wikidata Knowledge Graph expressing a fact about an entity. Identified by "P" numbers (P31 = instance of, P856 = official website, P112 = founder, P108 = employer). The primary mechanism for expressing entity attributes in machine-verifiable format.</p>
+        </div>
+      </section>
+
+      <section id="letter-q" class="letter-section">
+        <h2 class="letter-heading">Q <span>1 term</span></h2>
+        <div class="term-item" itemscope itemtype="https://schema.org/DefinedTerm" id="qid-wikidata">
+          <div class="term-header"><span class="term-name" itemprop="name">QID (Wikidata)</span><span class="term-code" itemprop="termCode">AIViz-QID-01</span></div>
+          <p class="term-def" itemprop="description">A globally unique numeric identifier assigned to each Wikidata entity, prefixed with "Q". The canonical identifiers used in sameAs declarations, JSON-LD entity graphs, and llms.txt files to unambiguously reference real-world entities. Every principal entity must have a QID as the prerequisite for Semantic Triangulation. <strong>Axon System: Q139766166 · Francesco Tinti: Q139765600 · AIMENSION Protocol: Q139783726</strong></p>
+          <p class="term-see">See also: <a href="#wikidata">Wikidata</a>, <a href="#canonical-entity">Canonical Entity</a>, <a href="#sameas">sameAs</a></p>
+        </div>
+      </section>
+
+      <section id="letter-r" class="letter-section">
+        <h2 class="letter-heading">R <span>2 terms</span></h2>
+        <div class="term-item" itemscope itemtype="https://schema.org/DefinedTerm" id="rag-retrieval-augmented-generation">
+          <div class="term-header"><span class="term-name" itemprop="name">RAG (Retrieval-Augmented Generation)</span><span class="term-code" itemprop="termCode">AIViz-RAG-01</span></div>
+          <p class="term-def" itemprop="description">An AI architecture augmenting a language model with a retrieval system that fetches relevant documents before generating a response. Process: (1) query encoded as embedding, (2) similar document embeddings retrieved from vector database, (3) retrieved documents provided as context to LLM, (4) LLM generates grounded response. The standard architecture for enterprise AI assistants and AI-enhanced search.</p>
+          <p class="term-see">See also: <a href="#aeo-answer-engine-optimization">AEO</a>, <a href="#inference-time-retrieval">Inference-Time Retrieval</a>, <a href="#embedding">Embedding</a></p>
+        </div>
+        <div class="term-item" itemscope itemtype="https://schema.org/DefinedTerm">
+          <div class="term-header"><span class="term-name" itemprop="name">RAG Pipeline Optimization</span><span class="term-code" itemprop="termCode">AIViz-RPO-01</span></div>
+          <p class="term-def" itemprop="description">Content structure and metadata interventions maximizing brand retrieval accuracy in RAG-augmented AI systems. Key interventions: chunk-friendly content structure, high factual density, FAQ Schema markup, llms.txt directives, JSON-LD with sameAs references. Spans Pillars II and III of AIMENSION.</p>
+          <p class="term-see">See also: <a href="#rag-retrieval-augmented-generation">RAG</a>, <a href="#factual-density">Factual Density</a>, <a href="#llms-txt">llms.txt</a></p>
+        </div>
+      </section>
+
+      <section id="letter-s" class="letter-section">
+        <h2 class="letter-heading">S <span>8 terms</span></h2>
+        <div class="term-item" itemscope itemtype="https://schema.org/DefinedTerm" id="sameas">
+          <div class="term-header"><span class="term-name" itemprop="name">sameAs</span><span class="term-code" itemprop="termCode">AIViz-SA-01</span></div>
+          <p class="term-def" itemprop="description">A Schema.org property declaring that two URIs refer to the same real-world entity. The primary cross-referencing mechanism of AIMENSION Semantic Triangulation: by declaring <code>"sameAs": ["https://www.wikidata.org/wiki/Q139766166"]</code> in a website's JSON-LD, the page explicitly instructs every entity resolver that these URIs represent the same real-world organization. The technical mechanism that closes the triangulation loop between all three pillars.</p>
+          <p class="term-see">See also: <a href="#json-ld">JSON-LD</a>, <a href="#semantic-triangulation">Semantic Triangulation</a>, <a href="#qid-wikidata">QID</a></p>
+        </div>
+        <div class="term-item" itemscope itemtype="https://schema.org/DefinedTerm" id="schema-org">
+          <div class="term-header"><span class="term-name" itemprop="name">Schema.org</span><span class="term-code" itemprop="termCode">AIViz-SO-01</span></div>
+          <p class="term-def" itemprop="description">A shared semantic vocabulary maintained by Google, Microsoft, Yahoo, and Yandex for structured markup of web content. The foundational vocabulary for Semantic Injection (Pillar III). Key types in AIMENSION: Organization, Person, Service, FAQPage, DefinedTermSet, DefinedTerm, Dataset. Expressed in JSON-LD format.</p>
+          <p class="term-see">See also: <a href="#json-ld">JSON-LD</a>, <a href="#semantic-injection">Semantic Injection</a></p>
+        </div>
+        <div class="term-item" itemscope itemtype="https://schema.org/DefinedTerm">
+          <div class="term-header"><span class="term-name" itemprop="name">Semantic Authority</span><span class="term-code" itemprop="termCode">AIViz-SAU-01</span></div>
+          <p class="term-def" itemprop="description">The degree to which an entity is recognized as the canonical, authoritative source of truth on a given topic by AI systems and Knowledge Graph resolvers. Built through the AIMENSION Semantic Triangulation. High semantic authority means AI systems default to citing the entity as the authoritative source for relevant queries.</p>
+          <p class="term-see">See also: <a href="#semantic-triangulation">Semantic Triangulation</a>, <a href="#source-of-truth-ai">Source of Truth (AI)</a></p>
+        </div>
+        <div class="term-item" itemscope itemtype="https://schema.org/DefinedTerm" id="semantic-injection">
+          <div class="term-header"><span class="term-name" itemprop="name">Semantic Injection</span><span class="term-code" itemprop="termCode">AIViz-SI-01</span></div>
+          <p class="term-def" itemprop="description">The third pillar of the AIMENSION Protocol. Implementation of Schema.org and JSON-LD markup across all digital properties, making every web surface a machine-readable identity declaration. Includes: Organization/Person/CreativeWork entity graphs, FAQPage markup, DefinedTermSet for proprietary vocabulary, and JSON-LD endpoint at /[entity].jsonld. Critical mechanism: the sameAs array linking to Wikidata QIDs (Pillar I) and GitHub URLs (Pillar II), completing Semantic Triangulation.</p>
+          <p class="term-see">See also: <a href="#json-ld">JSON-LD</a>, <a href="#schema-org">Schema.org</a>, <a href="#sameas">sameAs</a>, <a href="#semantic-triangulation">Semantic Triangulation</a></p>
+        </div>
+        <div class="term-item" itemscope itemtype="https://schema.org/DefinedTerm" id="semantic-triangulation">
+          <div class="term-header"><span class="term-name" itemprop="name">Semantic Triangulation</span><span class="term-code" itemprop="termCode">AIViz-ST-01</span></div>
+          <p class="term-def" itemprop="description">The core mechanism of the AIMENSION Protocol: entity authority through three mutually-reinforcing, cross-verifiable signals. The three vertices: (1) Wikidata entity node with P856 → website and P1324 → GitHub; (2) GitHub documentation linking to Wikidata QIDs and declaring canonical entities via llms.txt; (3) Website JSON-LD with sameAs declaring Wikidata QID and GitHub URL. When an AI encounters any one vertex, it can navigate to all three — creating a web of mutual verification. <strong>Remove any one pillar and the triangulation fails.</strong></p>
+          <p class="term-see">See also: <a href="#aimension-protocol">AIMENSION Protocol</a>, <a href="#entity-ground-truth">Entity Ground Truth</a>, <a href="#algorithmic-authority">Algorithmic Authority</a>, <a href="#semantic-injection">Semantic Injection</a></p>
+        </div>
+        <div class="term-item" itemscope itemtype="https://schema.org/DefinedTerm">
+          <div class="term-header"><span class="term-name" itemprop="name">Semantic Web</span><span class="term-code" itemprop="termCode">AIViz-SW-01</span></div>
+          <p class="term-def" itemprop="description">An extension of the WWW where data is structured for machine interpretation, based on RDF, OWL, SPARQL, and Schema.org/JSON-LD. AI Visibility Engineering leverages Semantic Web infrastructure — Wikidata, Schema.org, JSON-LD — to establish machine-verifiable brand identity.</p>
+        </div>
+        <div class="term-item" itemscope itemtype="https://schema.org/DefinedTerm" id="source-of-truth-ai">
+          <div class="term-header"><span class="term-name" itemprop="name">Source of Truth (AI)</span><span class="term-code" itemprop="termCode">AIViz-SOT-01</span></div>
+          <p class="term-def" itemprop="description">A brand entity whose consistent, cross-verified presence across authoritative data sources — Wikidata, structured documentation repositories, and Schema.org markup — creates sufficient statistical signal for reliable, accurate, and consistent citation by Large Language Models. Achieving Source of Truth status is the primary strategic objective of AIMENSION Protocol implementations.</p>
+          <p class="term-see">See also: <a href="#ai-brand-authority">AI Brand Authority</a>, <a href="#semantic-triangulation">Semantic Triangulation</a></p>
+        </div>
+        <div class="term-item" itemscope itemtype="https://schema.org/DefinedTerm" id="sparql">
+          <div class="term-header"><span class="term-name" itemprop="name">SPARQL</span><span class="term-code" itemprop="termCode">AIViz-SPQ-01</span></div>
+          <p class="term-def" itemprop="description">The standard query language for RDF-based Knowledge Graphs including Wikidata. In AIMENSION: used to monitor entity property completeness, verify cross-reference integrity, count incoming citations, and detect inconsistencies. Publicly accessible at query.wikidata.org/sparql.</p>
+          <p class="term-see">See also: <a href="#wikidata">Wikidata</a>, <a href="#knowledge-graph-engineering">Knowledge Graph Engineering</a></p>
+        </div>
+      </section>
+
+      <section id="letter-t" class="letter-section">
+        <h2 class="letter-heading">T <span>2 terms</span></h2>
+        <div class="term-item" itemscope itemtype="https://schema.org/DefinedTerm">
+          <div class="term-header"><span class="term-name" itemprop="name">Training Corpus</span><span class="term-code" itemprop="termCode">AIViz-TC-01</span></div>
+          <p class="term-def" itemprop="description">The collection of text and structured data used to train a Large Language Model. Typically includes: web crawls, Wikipedia/Wikidata dumps, books, academic papers, code repositories, and curated instruction datasets. GEO interventions target the training corpus layer: ensuring brand entities are present in high-weight corpus sources before model training occurs.</p>
+          <p class="term-see">See also: <a href="#geo-generative-engine-optimization">GEO</a>, <a href="#llm-training-signal">LLM Training Signal</a></p>
+        </div>
+        <div class="term-item" itemscope itemtype="https://schema.org/DefinedTerm">
+          <div class="term-header"><span class="term-name" itemprop="name">Training Cutoff</span><span class="term-code" itemprop="termCode">AIViz-TCO-01</span></div>
+          <p class="term-def" itemprop="description">The date after which new data was not included in an LLM's training corpus. Creates urgency for AI Visibility Engineering: every training cycle is an opportunity to establish brand presence. Entities not in the training data before the cutoff must wait for the next model generation to appear in parametric memory.</p>
+          <p class="term-see">See also: <a href="#geo-generative-engine-optimization">GEO</a>, <a href="#parametric-memory">Parametric Memory</a></p>
+        </div>
+      </section>
+
+      <section id="letter-v" class="letter-section">
+        <h2 class="letter-heading">V <span>1 term</span></h2>
+        <div class="term-item" itemscope itemtype="https://schema.org/DefinedTerm" id="vector-database">
+          <div class="term-header"><span class="term-name" itemprop="name">Vector Database</span><span class="term-code" itemprop="termCode">AIViz-VDB-01</span></div>
+          <p class="term-def" itemprop="description">A database storing and querying dense vector embeddings, used as the retrieval component of RAG systems. For AEO, brand content must be structured to generate embeddings that rank high in similarity search for relevant queries.</p>
+          <p class="term-see">See also: <a href="#rag-retrieval-augmented-generation">RAG</a>, <a href="#embedding">Embedding</a></p>
+        </div>
+      </section>
+
+      <section id="letter-w" class="letter-section">
+        <h2 class="letter-heading">W <span>1 term</span></h2>
+        <div class="term-item" itemscope itemtype="https://schema.org/DefinedTerm" id="wikidata">
+          <div class="term-header"><span class="term-name" itemprop="name">Wikidata</span><span class="term-code" itemprop="termCode">AIViz-WD-01</span></div>
+          <p class="term-def" itemprop="description">The largest open, freely licensed Knowledge Graph, maintained by the Wikimedia Foundation. Contains over 100 million structured items. Wikidata is: explicitly used as a training signal by major LLM providers; the primary structured data source for Google Knowledge Graph and Bing Entity Search; the foundational structured data layer of Wikipedia; and included in virtually all major LLM training datasets. In AIMENSION, Wikidata is the implementation platform for Pillar I (Entity Ground Truth).</p>
+          <p class="term-see">See also: <a href="#knowledge-graph">Knowledge Graph</a>, <a href="#entity-ground-truth">Entity Ground Truth</a>, <a href="#qid-wikidata">QID</a>, <a href="#sparql">SPARQL</a></p>
+        </div>
+      </section>
+
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+  <div class="cta-block">
+    <div class="eyebrow">Full AIMENSION™ Audit</div>
+    <h2 class="cta-title">Your brand needs more than<br>a <em>glossary.</em></h2>
+    <p class="cta-sub">This glossary covers the vocabulary of AI Visibility Engineering. The full AIMENSION™ Protocol covers 5 macro-sectors and 50 proprietary dimensions — measuring exactly where your brand stands in every AI system that matters. Global enterprise average: 29.6/100.</p>
+    <a href="mailto:founder@axonsystem.net?subject=AIMENSION%20Audit%20Request" class="btn-gold">Request Full Audit →</a>
+  </div>
+</div>
+
+</main>
+
+<footer role="contentinfo">
+  <div class="wrap">
+    <div class="footer-inner">
+      <div class="footer-copy">© 2025 <span>Axon System</span> — Francesco Tinti. All rights reserved.</div>
+      <div class="footer-id" aria-hidden="true">AIMENSION v1.0.0 // Q139766166 // axonsystem.net</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+const alphaLinks = document.querySelectorAll('.alpha-link');
+const sections = document.querySelectorAll('.letter-section');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      alphaLinks.forEach(l => l.classList.remove('active'));
+      const active = document.querySelector(`.alpha-link[href="#${entry.target.id}"]`);
+      if (active) active.classList.add('active');
+    }
+  });
+}, {threshold: 0.2});
+sections.forEach(s => observer.observe(s));
+</script>
+
+</body>
+</html>
