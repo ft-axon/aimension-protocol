@@ -45,7 +45,7 @@ Comprehensive Schema.org and custom JSON-LD markup deployed across all digital p
 | Entity Ground Truth | EGT-01 | A verified Wikidata node serving as canonical reference for LLM entity resolution and RAG pipeline disambiguation |
 | Source of Truth (AI) | SOT-AI-01 | A brand entity whose consistent, cross-verified presence across multiple authoritative sources creates reliable LLM citation |
 
-Full glossary: [axonsystem.net/glossary](https://axonsystem.net/glossary)
+Full glossary: [axonsystem.net/en/glossary](https://axonsystem.net/en/glossary)
 
 ---
 
